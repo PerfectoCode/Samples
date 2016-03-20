@@ -74,9 +74,9 @@ public class TestNGSeleniumSearch {
 		System.out.println("Driver Closed");
 		
 		Map<String, Object> params = new HashMap<String, Object>();
-        driver.executeScript("mobile:execution:close", params);
+        	driver.executeScript("mobile:execution:close", params);
         
-        PerfectoLabUtils.downloadReport(driver, "html", GenericUtils.REPORT_PATH + "Report");
+        	PerfectoLabUtils.downloadReport(driver, "html", GenericUtils.REPORT_PATH + "Report");
         
 		driver.quit();
 		System.out.println("Driver Quit");
