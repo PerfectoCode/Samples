@@ -51,7 +51,7 @@ public class TestNGSeleniumSearch {
 		System.out.println("Browser Window was maximized");
 		
 		// Search Google
-		final String searchKey = "Boulderdash";
+		final String searchKey = "Perfecto Mobile";
 		System.out.println("Search " + searchKey + " in google");
 		driver.navigate().to("http://www.google.com");
 		WebElement element = driver.findElement(By.name("q"));
