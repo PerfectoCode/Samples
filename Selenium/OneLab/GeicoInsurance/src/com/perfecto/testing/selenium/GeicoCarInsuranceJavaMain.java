@@ -40,6 +40,9 @@ public class GeicoCarInsuranceJavaMain {
 			capabilities.setCapability("location", "US East");
 			capabilities.setCapability("takesScreenshot", true);
 			
+			// Name of script
+			capabilities.setCapability("scriptName", "GeicoCarInsuranceDesktopWeb");
+			
 			// Create Remote WebDriver
 			System.out.println("Creating Web Machine per specified capabilities");
 			driver = new RemoteWebDriver(new URL("https://" + PERFECTO_HOST + "/nexperience/perfectomobile/wd/hub"), capabilities);
@@ -51,6 +54,9 @@ public class GeicoCarInsuranceJavaMain {
 			capabilities.setCapability("user", USER_NAME);
 			capabilities.setCapability("password", PASSWORD);
 			capabilities.setCapability("deviceName", "1234567890"); // Set your target Device ID
+			
+			// Name of script
+			capabilities.setCapability("scriptName", "GeicoCarInsuranceMobileWeb");
 			
 			// Create Remote WebDriver
 			System.out.println("Allocating Mobile device per specified capabilities");
