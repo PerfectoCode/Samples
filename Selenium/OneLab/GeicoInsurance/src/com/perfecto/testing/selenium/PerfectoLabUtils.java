@@ -45,7 +45,7 @@ public class PerfectoLabUtils {
 			BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream(reportFile)); 
 			byte[] reportBytes = OutputType.BYTES.convertFromBase64Png(report); 
 			output.write(reportBytes);
-            output.close();
+			output.close();
 		} catch (Exception ex) { 
 			System.out.println("Got exception " + ex); }
 	}
