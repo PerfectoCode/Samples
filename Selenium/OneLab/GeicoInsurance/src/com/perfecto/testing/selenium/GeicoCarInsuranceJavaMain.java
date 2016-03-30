@@ -118,8 +118,8 @@ public class GeicoCarInsuranceJavaMain {
 					driver.executeScript("mobile:execution:close", params);
 				}
 				// In case you want to download the report or the report attachments, do it here.
-				// PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-				// PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
+				// PerfectoLabUtils.downloadAttachment(driver, "video", "C:/test/report/video", "flv");
+				// PerfectoLabUtils.downloadAttachment(driver, "image", "C:/test/report/images", "jpg");
 
 			} catch (Exception e) {
 				e.printStackTrace();
