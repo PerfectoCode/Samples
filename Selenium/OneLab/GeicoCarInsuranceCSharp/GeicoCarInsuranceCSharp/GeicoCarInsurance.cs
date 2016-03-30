@@ -133,9 +133,9 @@ namespace GeicoCarInsuranceCSharp
             // In case you want to download the report or the report attachments, do it here.
             //try
             //{
-            //    driver.DownloadReport(DownloadReportTypes.pdf, "C:\\test\\report");
-            //    driver.DownloadAttachment(DownloadAttachmentTypes.video, "C:\\test\\report\\video", "flv");
-            //    driver.DownloadAttachment(DownloadAttachmentTypes.image, "C:\\test\\report\\images", "jpg");
+            //    driver.DownloadReport(DownloadReportTypes.pdf, "C:/test/report");
+            //    driver.DownloadAttachment(DownloadAttachmentTypes.video, "C:/test/report/video", "flv");
+            //    driver.DownloadAttachment(DownloadAttachmentTypes.image, "C:/test/report/images", "jpg");
             //}
             //catch (Exception ex)
             //{
