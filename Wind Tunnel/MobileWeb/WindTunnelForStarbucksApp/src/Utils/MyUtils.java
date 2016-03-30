@@ -19,7 +19,7 @@ public abstract class MyUtils {
 	private static final String DEVICENAME = "MY_DEVICE_NAME";
 
 	// TODO: Set your reports folder path
-	public static final String REPORT_PATH = "C:\\Users\\MY_USER\\Automation\\Reports";
+	public static final String REPORT_PATH = "C:/Users/MY_USER/Automation/Reports";
 	
 	public static void setCloudCredentials(DesiredCapabilities capabilities) {
 		capabilities.setCapability("user", USERNAME);
