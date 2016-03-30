@@ -17,8 +17,8 @@ public class RemoteWebDriverTest {
         String browserName = "mobileOS";
         DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
         String host = "myHost.perfectomobile.com";
-        capabilities.setCapability("user", "myUser");
-        capabilities.setCapability("password", "myPassword");
+        capabilities.setCapability("user", "MY_USER");
+        capabilities.setCapability("password", "MY_PASSWORD");
 
         //TODO: Change your device ID
         capabilities.setCapability("deviceName", "12345");
@@ -42,9 +42,9 @@ public class RemoteWebDriverTest {
                 driver.close();
 
                 // In case you want to down the report or the report attachments, do it here.
-                // PerfectoLabUtils.downloadReport(driver, "pdf", "C:\\test\\report");
-                // PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-                // PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
+                // PerfectoLabUtils.downloadReport(driver, "pdf", "C:/test/report");
+                // PerfectoLabUtils.downloadAttachment(driver, "video", "C:/test/report/video", "flv");
+                // PerfectoLabUtils.downloadAttachment(driver, "image", "C:/test/report/images", "jpg");
 
             } catch (Exception e) {
                 e.printStackTrace();
