@@ -55,6 +55,9 @@ public class GeicoCarInsuranceJavaMain {
 			capabilities.setCapability("password", PASSWORD);
 			capabilities.setCapability("deviceName", "1234567890"); // Set your target Device ID
 			
+			// Define device allocation timeout, in minutes
+			capabilities.setCapability("openDeviceTimeout", 5);
+			
 			// Name of script
 			capabilities.setCapability("scriptName", "GeicoCarInsuranceMobileWeb");
 			
