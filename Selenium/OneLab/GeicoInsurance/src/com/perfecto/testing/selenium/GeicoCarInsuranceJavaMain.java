@@ -33,7 +33,7 @@ public class GeicoCarInsuranceJavaMain {
 			capabilities.setCapability("platformName", "Windows");
 			capabilities.setCapability("platformVersion", "8.1");
 			capabilities.setCapability("browserName", "Firefox");
-			capabilities.setCapability("browserVersion", "42");
+			capabilities.setCapability("browserVersion", "45");
 
 			// Additional capabilities
 			capabilities.setCapability("resolution", "1440x900");
