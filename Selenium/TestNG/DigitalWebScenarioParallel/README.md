@@ -3,6 +3,7 @@
 Demo java project, of parallel execution, mobile and desktop browsers side by side
 
 The project is a Maven project, utilizing the TestNG framework.
+
 **To do**:
 - Import the project as a Maven Project
 - Specify your target Web machines and mobile device IDs in the testng.xml file
