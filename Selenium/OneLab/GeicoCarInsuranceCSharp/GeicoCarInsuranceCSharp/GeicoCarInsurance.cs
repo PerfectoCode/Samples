@@ -61,6 +61,9 @@ namespace GeicoCarInsuranceCSharp
 
                 // Add a persona to your script (see https://community.perfectomobile.com/posts/1048047-available-personas)
                 //capabilities.SetCapability(WindTunnelUtils.WIND_TUNNEL_PERSONA_CAPABILITY, WindTunnelUtils.GEORGIA);
+                
+                // Define device allocation timeout, in minutes
+                capabilities.SetCapability("openDeviceTimeout", 5);
 
                 // Script name
                 capabilities.SetCapability("scriptName", "GeicoCarInsuranceCSharp");
