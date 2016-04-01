@@ -2,7 +2,6 @@ package com.perfecto.testing;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,25 +9,23 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.Select;
-
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.perfecto.testing.utils.Utils;
-
 
 public class WebScenarioParallel {
 	RemoteWebDriver driver;
 
-	
+	// Createe Remote WebDriver based on testng.xml configuration
 	@Parameters({ "platformName", "platformVersion", "browserName", "browserVersion", "deviceId" })
 	@BeforeTest
 	public void beforeTest(String platformName, String platformVersion, String browserName, String browserVersion, String deviceId) throws MalformedURLException {
 		driver = Utils.getRemoteWebDriver(platformName, platformVersion, browserName, browserVersion, deviceId);
 	}
 	
+	// Test Method, navigate to google and perform search
 	@Test
 	public void searchGoogle() throws MalformedURLException {				
 
@@ -51,13 +48,13 @@ public class WebScenarioParallel {
 		System.out.println("Done searchGoogle\n");
 	}
 
+	// Test Method, navigate to geico and get insurance quote
 	@Test
 	public void geicoInsurance() throws MalformedURLException {
 
 		driver.get("http://www.geico.com");
 
 		try {
-
 			Select type = new Select(driver.findElement(By.id("insurancetype")));
 
 			type.selectByVisibleText("Motorcycle");
@@ -96,7 +93,5 @@ public class WebScenarioParallel {
 		driver.close();
 		driver.quit();	
 	}	
-	
-	
 	
 }
