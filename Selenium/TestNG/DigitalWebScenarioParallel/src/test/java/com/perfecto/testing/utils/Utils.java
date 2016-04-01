@@ -8,8 +8,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Utils {
-    public static String REPORT_LIB = "C:/Development/Reports/ResponsiveWebRep/";
-    static String SCREENSHOTS_LIB = "C:/Development/Reports/ResponsiveWebRep/images/";
+    public static String REPORT_LIB = "C:/Development/Reports/";
+    static String SCREENSHOTS_LIB = "C:/Development/Reports/images/";
     
     public static String USER_NAME = "MY_USER";
     public static String PASSWORD = "MY_PASSWORD";
