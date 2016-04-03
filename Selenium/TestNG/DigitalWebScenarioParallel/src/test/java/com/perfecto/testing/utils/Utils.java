@@ -45,6 +45,10 @@ public class Utils {
 		RemoteWebDriver webdriver = new RemoteWebDriver(
 				new URL("https://" + PERFECTO_HOST + "/nexperience/perfectomobile/wd/hub"), capabilities);
 
+		// Define RemoteWebDriver timeouts
+		webdriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		webdriver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+
 		// Maximize browser window on Desktop
 		if (!platformName.isEmpty()) {
 			webdriver.manage().window().maximize();
