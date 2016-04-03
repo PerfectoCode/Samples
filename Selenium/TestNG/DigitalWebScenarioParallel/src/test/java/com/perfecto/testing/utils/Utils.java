@@ -3,8 +3,6 @@ package com.perfecto.testing.utils;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -17,27 +15,22 @@ public class Utils {
     public static String PERFECTO_HOST = "MY_HOST.perfectomobile.com";
 
 	public static RemoteWebDriver getRemoteWebDriver(String platformName, String platformVersion, String browserName,
-			String browserVersion, String deviceId) throws MalformedURLException {
+			String browserVersion, String screenResolution) throws MalformedURLException {
 
-		DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
+		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		capabilities.setCapability("user", USER_NAME);
 		capabilities.setCapability("password", PASSWORD);
-		if (!deviceId.isEmpty()) {
-			browserName = "mobileOS";
-			capabilities.setCapability("deviceName", deviceId);
-			System.out.println("Creating Remote WebDriver on: " + deviceId);
+		capabilities.setCapability("platformName", platformName);
+		capabilities.setCapability("platformVersion", platformVersion);
+		capabilities.setCapability("browserName", browserName);
+
+		if (!screenResolution.isEmpty()) {
+			capabilities.setCapability("resolution", screenResolution);
+			System.out.println("Creating Remote WebDriver on: " + platformName + " " + platformVersion + ", " + browserName + " " + browserVersion + ", " + screenResolution);
 		}
-
-		if (!platformName.isEmpty()) {
-			capabilities.setCapability("platformName", platformName);
-			capabilities.setCapability("platformVersion", platformVersion);
-			capabilities.setCapability("browserName", browserName);
-			capabilities.setCapability("browserVersion", browserVersion);
-			capabilities.setCapability("resolution", "1366x768");
-			capabilities.setCapability("location", "US East");
-
-			System.out.println("Creating Remote WebDriver on: " + platformName + " " + platformVersion + ", " + browserName + " " + browserVersion);
+		else {
+			System.out.println("Creating Remote WebDriver on: " + platformName + " " + platformVersion);
 		}
 
 		// Define test name
@@ -51,7 +44,7 @@ public class Utils {
 		webdriver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 
 		// Maximize browser window on Desktop
-		if (!platformName.isEmpty()) {
+		if (!screenResolution.isEmpty()) {
 			webdriver.manage().window().maximize();
 		}
 

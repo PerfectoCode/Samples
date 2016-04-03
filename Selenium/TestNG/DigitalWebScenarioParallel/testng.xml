@@ -6,7 +6,7 @@
 		<parameter name="platformVersion" value="7" />
 		<parameter name="browserName" value="Firefox" />
 		<parameter name="browserVersion" value="42" />
-		<parameter name="deviceId" value="" />
+		<parameter name="screenResolution" value="1366x768" />
 		<classes>
 			<class name="com.perfecto.testing.WebScenarioParallel" />
 		</classes>
@@ -16,27 +16,27 @@
 		<parameter name="platformVersion" value="8.1" />
 		<parameter name="browserName" value="Chrome" />
 		<parameter name="browserVersion" value="45" />
-		<parameter name="deviceId" value="" />
+		<parameter name="screenResolution" value="1280x1024" />
 		<classes>
 			<class name="com.perfecto.testing.WebScenarioParallel" />
 		</classes>
 	</test>
 	<test name="Test iPhone6 Plus">
-		<parameter name="platformName" value="" />
-		<parameter name="platformVersion" value="" />
-		<parameter name="browserName" value="Safari" />
+		<parameter name="platformName" value="iOS" />
+		<parameter name="platformVersion" value="8.3" />
+		<parameter name="browserName" value="mobileOS" />
 		<parameter name="browserVersion" value="" />		
-		<parameter name="deviceId" value="DD08F4D111D2EB62974C15597583BAE24189AED4" />
+		<parameter name="screenResolution" value="" />
 		<classes>
 			<class name="com.perfecto.testing.WebScenarioParallel" />
 		</classes>
 	</test>
 	<test name="Test Galaxy S6">
-		<parameter name="platformName" value="" />
-		<parameter name="platformVersion" value="" />
-		<parameter name="browserName" value="Chrome" />
+		<parameter name="platformName" value="Android" />
+		<parameter name="platformVersion" value="5.1.1" />
+		<parameter name="browserName" value="mobileOS" />
 		<parameter name="browserVersion" value="" />		
-		<parameter name="deviceId" value="1015FA089D682305" />
+		<parameter name="screenResolution" value="" />
 		<classes>
 			<class name="com.perfecto.testing.WebScenarioParallel" />
 		</classes>

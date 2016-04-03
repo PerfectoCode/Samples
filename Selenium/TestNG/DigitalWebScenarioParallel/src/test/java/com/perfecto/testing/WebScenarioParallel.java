@@ -18,11 +18,11 @@ import com.perfecto.testing.utils.Utils;
 public class WebScenarioParallel {
 	RemoteWebDriver driver;
 
-	// Createe Remote WebDriver based on testng.xml configuration
-	@Parameters({ "platformName", "platformVersion", "browserName", "browserVersion", "deviceId" })
+	// Create Remote WebDriver based on testng.xml configuration
+	@Parameters({ "platformName", "platformVersion", "browserName", "browserVersion", "screenResolution" })
 	@BeforeTest
-	public void beforeTest(String platformName, String platformVersion, String browserName, String browserVersion, String deviceId) throws MalformedURLException {
-		driver = Utils.getRemoteWebDriver(platformName, platformVersion, browserName, browserVersion, deviceId);
+	public void beforeTest(String platformName, String platformVersion, String browserName, String browserVersion, String screenResolution) throws MalformedURLException {
+		driver = Utils.getRemoteWebDriver(platformName, platformVersion, browserName, browserVersion, screenResolution);
 	}
 	
 	// Test Method, navigate to google and perform search
@@ -48,7 +48,7 @@ public class WebScenarioParallel {
 		System.out.println("Done searchGoogle\n");
 	}
 
-	// Test Method, navigate to geico and get insurance quote
+	// Test Method, navigate to Geico and get insurance quote
 	@Test
 	public void geicoInsurance() throws MalformedURLException {
 
@@ -84,12 +84,11 @@ public class WebScenarioParallel {
 			e.printStackTrace();
 		}
 
-		System.out.println("Done geicoInsurance\n");
+		System.out.println("Done geicoInsurance");
 	}
 
-	@Parameters({ "deviceId" })
 	@AfterTest
-	public void afterTest(String deviceId) throws IOException {
+	public void afterTest() throws IOException {
 		driver.close();
 		driver.quit();	
 	}	
