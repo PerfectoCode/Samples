@@ -7,20 +7,18 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Utils {
-    public static String REPORT_LIB = "C:/Development/Reports/";
-    static String SCREENSHOTS_LIB = "C:/Development/Reports/images/";
-    
-    public static String USER_NAME = "MY_USER";
-    public static String PASSWORD = "MY_PASSWORD";
-    public static String PERFECTO_HOST = "MY_HOST.perfectomobile.com";
 
 	public static RemoteWebDriver getRemoteWebDriver(String platformName, String platformVersion, String browserName,
 			String browserVersion, String screenResolution) throws MalformedURLException {
+	    
+		// Set cloud host and credentials values from CI, else use local values
+		String PERFECTO_HOST = System.getProperty("np.testHost", "MY_HOST.perfectomobile.com");
+		String PERFECTO_USER = System.getProperty("np.testUsername", "MY_USER@perfectomobile.com");
+		String PERFECTO_PASSWORD = System.getProperty("np.testPassword", "MY_PASSWORD");
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-
-		capabilities.setCapability("user", USER_NAME);
-		capabilities.setCapability("password", PASSWORD);
+		capabilities.setCapability("user", PERFECTO_USER);
+		capabilities.setCapability("password", PERFECTO_PASSWORD);
 		capabilities.setCapability("platformName", platformName);
 		capabilities.setCapability("platformVersion", platformVersion);
 		capabilities.setCapability("browserName", browserName);

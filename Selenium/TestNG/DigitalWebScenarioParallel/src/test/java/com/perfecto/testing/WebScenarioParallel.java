@@ -45,7 +45,7 @@ public class WebScenarioParallel {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Done searchGoogle\n");
+		System.out.println("Done: searchGoogle");
 	}
 
 	// Test Method, navigate to Geico and get insurance quote
@@ -84,7 +84,7 @@ public class WebScenarioParallel {
 			e.printStackTrace();
 		}
 
-		System.out.println("Done geicoInsurance");
+		System.out.println("Done: geicoInsurance");
 	}
 
 	@AfterTest
