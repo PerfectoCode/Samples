@@ -23,7 +23,7 @@
 	</test>
 	<test name="Test iPhone6 Plus">
 		<parameter name="platformName" value="iOS" />
-		<parameter name="platformVersion" value="8.3" />
+		<parameter name="platformVersion" value="" />
 		<parameter name="browserName" value="mobileOS" />
 		<parameter name="browserVersion" value="" />		
 		<parameter name="screenResolution" value="" />
@@ -33,7 +33,7 @@
 	</test>
 	<test name="Test Galaxy S6">
 		<parameter name="platformName" value="Android" />
-		<parameter name="platformVersion" value="5.1.1" />
+		<parameter name="platformVersion" value="" />
 		<parameter name="browserName" value="mobileOS" />
 		<parameter name="browserVersion" value="" />		
 		<parameter name="screenResolution" value="" />
