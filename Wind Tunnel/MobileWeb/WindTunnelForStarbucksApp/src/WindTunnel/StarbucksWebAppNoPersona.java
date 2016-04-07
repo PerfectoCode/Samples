@@ -26,7 +26,7 @@ public class StarbucksWebAppNoPersona {
 		MyUtils.setCloudCredentials(capabilities);
 		
 		// Define Script Name for Reporting
-		capabilities.setCapability("scriptName", "StarbucksWebAppNoPersona");
+		capabilities.setCapability("scriptName", "WindTunnel-StarbucksWebAppNoPersona");
 		runStarbucksTest(capabilities);			
 		
 		System.out.println("Run ended");

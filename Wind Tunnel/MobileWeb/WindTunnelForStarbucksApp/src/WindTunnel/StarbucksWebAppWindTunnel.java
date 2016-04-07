@@ -32,7 +32,7 @@ public class StarbucksWebAppWindTunnel {
 		capabilities.setCapability("windTunnelPersona", WindTunnelUtils.SARA);
 		
 		// Define Script Name for Reporting
-		capabilities.setCapability("scriptName", "StarbucksWebAppWindTunnel");
+		capabilities.setCapability("scriptName", "WindTunnel-StarbucksWebAppWindTunnel");
 		runStarbucksTest(capabilities);			
 		
 		System.out.println("Run ended");
