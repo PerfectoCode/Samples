@@ -18,14 +18,14 @@ namespace GeicoCsharp
         [TestInitialize]
         public void PerfectoOpenConnection()
         {
-            var host = "demo.perfectomobile.com";
-            var user = "daniela@perfectomobile.com";
-            var pass = "abcd1234";
+            var host = "My_Host.perfectomobile.com";
+            var user = "My_User@perfectomobile.com";
+            var pass = "My_Pass";
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.SetCapability("user", user);
             capabilities.SetCapability("password", pass);
-            // capabilities.SetCapability("deviceName", "04157DF47CA01828");
+            
             capabilities.SetCapability("platformName", "Windows");
             capabilities.SetCapability("platformVersion", "8.1");
             capabilities.SetCapability("browserName", "Chrome");
