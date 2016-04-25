@@ -10,8 +10,8 @@ import threading
 class test():
     
     """ Constructor creating devices and load host for each one"""
-    def __init__(self):
-        host = 'demo.perfectomobile.com'
+    def __init__(self , mcm):
+        host = mcm + '.perfectomobile.com'
         self.drivers = {}
         for testname , device in devices.iteritems(): 
             try:          
@@ -76,6 +76,14 @@ class test():
 
 
 if __name__ == '__main__':
-    t = test()
+    host = ''
+    if len(sys.argv) > 1:
+        host = sys.argv.pop() 
+        capabilities_hash.password = sys.argv.pop()
+        capabilities_hash.user = sys.argv.pop()
+        #SampleCode.platform_name = sys.argv.pop()
+        #SampleCode.description = sys.argv.pop()
+
+    t = test(host)
     t.start_test()
     t.end_test()
