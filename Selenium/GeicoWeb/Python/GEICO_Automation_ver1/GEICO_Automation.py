@@ -5,7 +5,7 @@ from PerfectoLabUtils import PerfectoLabUtils
 from capabilities_hash import devices
 import capabilities_hash
 import threading
-
+import sys
 
 class test():
     
