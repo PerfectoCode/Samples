@@ -1,0 +1,12 @@
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\bin\Debug\GeicoCsharp.dll
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\bin\Debug\GeicoCsharp.pdb
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\bin\Debug\NuGet.Core.dll
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\bin\Debug\PerfectoLab.dll
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\bin\Debug\PerfectoLab.Extended.dll
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\bin\Debug\WebDriver.dll
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\bin\Debug\PerfectoLab.xml
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\bin\Debug\PerfectoLab.Extended.xml
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\bin\Debug\WebDriver.xml
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\obj\Debug\GeicoCsharp.csprojResolveAssemblyReference.cache
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\obj\Debug\GeicoCsharp.dll
+c:\users\daniela\documents\visual studio 2015\Projects\GeicoCsharp\GeicoCsharp\obj\Debug\GeicoCsharp.pdb
