@@ -31,12 +31,12 @@ class Geico_test
     
     #Costumer Information Page
     costumer_info_page = CostumerInformationPage.new(driver)
-    costumer_info_page.set_FirstName("Daniel")
-    costumer_info_page.set_LastName("Alfasi")
-    costumer_info_page.set_StreetAdress("Amal 13")
+    costumer_info_page.set_FirstName("MyName")
+    costumer_info_page.set_LastName("MyLastName")
+    costumer_info_page.set_StreetAdress("MyStreetAddress")
     costumer_info_page.set_APT("1234")
     costumer_info_page.set_ZIP("50840")
-    costumer_info_page.set_BirthDay("23" , "8" , "1992")
+    costumer_info_page.set_BirthDay("11" , "1" , "1111")
     costumer_info_page.set_geico_auto_insurance_no
     costumer_info_page.set_motorcycle_insurance_no
     costumer_info_page.submit
