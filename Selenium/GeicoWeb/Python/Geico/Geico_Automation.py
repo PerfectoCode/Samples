@@ -11,7 +11,7 @@ class test():
     
     """ Constructor creating devices and load host for each one"""
     def __init__(self , mcm):
-        host = mcm + '.perfectomobile.com'
+        host = mcm #+ '.perfectomobile.com'
         self.drivers = {}
         for testname , device in devices.iteritems(): 
             try:          
