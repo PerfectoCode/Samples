@@ -18,7 +18,7 @@ capabilities_ios = {
     'user'              : user,
     'password'          : password,
     'platformName': 'iOS',
-    'model': 'iPhone-5',
+    'model': 'iPhone-6',
     }
 
 capabilities_windows7_Chrome49 = {
