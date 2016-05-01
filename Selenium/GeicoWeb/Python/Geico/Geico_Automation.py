@@ -83,7 +83,7 @@ if __name__ == '__main__':
         print capabilities_hash.user
         capabilities_hash.password = sys.argv[1]
         print capabilities_hash.password
-        print sts.argv
+        print sys.argv
         #SampleCode.platform_name = sys.argv.pop()
         #SampleCode.description = sys.argv.pop()
 
