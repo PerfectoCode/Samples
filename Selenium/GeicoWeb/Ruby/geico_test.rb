@@ -11,7 +11,8 @@ class Geico_test
   url           = "http://" + host + "/nexperience/perfectomobile/wd/hub"
   
   capabilities  = {
-    :deviceName => '123456',
+    'platformName': 'Android',
+    #:deviceName => '123456',
     :user       => user,
     :password   => pass  
 	#:CapabilitieExample => SomeValue,
