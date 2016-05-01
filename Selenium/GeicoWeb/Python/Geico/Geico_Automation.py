@@ -76,16 +76,13 @@ class test():
 
 
 if __name__ == '__main__':
-    host = 'demo.perfectomobile.com'
+    host = ''
     if len(sys.argv) > 1:
-        #host = sys.argv.pop() 
         capabilities_hash.user = sys.argv[1]
-        print capabilities_hash.user
         capabilities_hash.password = sys.argv[2]
-        print capabilities_hash.password
-        print sys.argv
-        #SampleCode.platform_name = sys.argv.pop()
-        #SampleCode.description = sys.argv.pop()
+        host = sys.argv[3]
+        #capabilities_hash.platform_name = sys.argv[3]
+        #capabilities_hash.description = sys.argv[4]
 
     t = test(host)
     t.start_test()
