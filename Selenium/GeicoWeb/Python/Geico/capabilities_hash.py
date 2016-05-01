@@ -47,7 +47,7 @@ Devices hash.
 Key     = 'Name of test case'.
 Value   = List [ PlatformName, device capabilities].
 """
-devices = {'GalaxyS6-test':         ['Mobile' , capabilities_ios],
+devices = {'GalaxyS6-test':         ['Mobile' , capabilities_ios]""",
            'Windows7 Chrome-test':  ['Windows' , capabilities_windows7_Chrome49],
-           'Windows7 Firefox-test': ['Windows', capabilities_windows7_Firefox45]
+           'Windows7 Firefox-test': ['Windows', capabilities_windows7_Firefox45]"""
           }
