@@ -1,6 +1,6 @@
 require 'selenium-webdriver'
 require 'uri'
-require 'Locators'
+require_relative 'Locators'
 
 class Geico_test
   include Locators
