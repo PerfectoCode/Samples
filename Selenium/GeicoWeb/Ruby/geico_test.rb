@@ -5,9 +5,9 @@ require 'Locators'
 class Geico_test
   include Locators
   
-  host          = 'My-Host.perfectomobile.com'
-  user          = 'My_User'
-  pass          = 'My_Password'
+  host          = ARGV[0] #'My-Host.perfectomobile.com'
+  user          = ARGV[1] #'My_User'
+  pass          = ARGV[2] #'My_Password'
   url           = "http://" + host + "/nexperience/perfectomobile/wd/hub"
   
   capabilities  = {
