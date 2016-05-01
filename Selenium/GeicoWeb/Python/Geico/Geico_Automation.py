@@ -79,9 +79,9 @@ if __name__ == '__main__':
     host = 'demo.perfectomobile.com'
     if len(sys.argv) > 1:
         #host = sys.argv.pop() 
-        capabilities_hash.user = sys.argv[0]
+        capabilities_hash.user = sys.argv[1]
         print capabilities_hash.user
-        capabilities_hash.password = sys.argv[1]
+        capabilities_hash.password = sys.argv[2]
         print capabilities_hash.password
         print sys.argv
         #SampleCode.platform_name = sys.argv.pop()
