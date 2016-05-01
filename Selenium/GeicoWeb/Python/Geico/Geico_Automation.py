@@ -15,7 +15,7 @@ class test():
         self.drivers = {}
         for testname , device in devices.iteritems(): 
             try:          
-                driver = webdriver.Remote('https://' + demo.perfectomobile.com + '/nexperience/perfectomobile/wd/hub' , device[1])
+                driver = webdriver.Remote('https://' + 'demo.perfectomobile.com' + '/nexperience/perfectomobile/wd/hub' , device[1])
                 driver.implicitly_wait(25)
                 driver.get('http://www.geico.com')
                 if device[0] == 'Windows':
