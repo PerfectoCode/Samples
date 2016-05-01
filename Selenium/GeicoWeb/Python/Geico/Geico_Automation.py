@@ -80,7 +80,9 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         #host = sys.argv.pop() 
         capabilities_hash.user = sys.argv[0]
+        print capabilities_hash.user
         capabilities_hash.password = sys.argv[1]
+        print capabilities_hash.password
         #SampleCode.platform_name = sys.argv.pop()
         #SampleCode.description = sys.argv.pop()
 
