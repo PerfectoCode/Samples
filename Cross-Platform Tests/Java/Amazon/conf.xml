@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+ 	<test name="Test iPhone 6 and win8">
+  		<parameter name= "platformName" value = "iOS" />
+  		<parameter name= "model" value = "iPhone-6" />
+  		<parameter name= "deviceName" value = "DeviceID" />
+    	<classes>
+      		<class name="mobileTest"/>
+    	</classes>
+  	</test>
+ 	<test name="Test Galaxy S7">
+  		<parameter name= "platformName" value = "Android" />
+  		<parameter name= "model" value = "Galaxy S7" />
+  		<parameter name= "deviceName" value = "DeviceID" />
+    	<classes>
+      		<class name="mobileTest"/>
+    	</classes>
+  	</test> 
+   
+</suite> <!-- Suite -->
