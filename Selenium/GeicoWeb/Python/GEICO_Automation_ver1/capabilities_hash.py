@@ -4,7 +4,7 @@ Import this module to the test class in order to import this capabilities.
 """
 
 user     = 'My_User' #your perfecto user.
-password = 'My_Pass'                   #your perfecto password.
+password = 'My_Pass' #your perfecto password.
 
 #########################################################################
 #Down here copy capabilities for the device and update the devices dict.#
