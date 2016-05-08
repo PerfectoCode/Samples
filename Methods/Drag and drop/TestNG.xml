@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+ 	<test name="Test Galaxy S7">
+  		<parameter name= "platformName" value = "Windows" />
+  		<parameter name= "platformVersion" value = "7" />
+  		<parameter name= "browserVersion" value = "49" />
+  		<parameter name= "browserName"	value = "Chrome"/>
+    	<classes>
+      		<class name="DragAndDropSample"/>
+    	</classes>
+  	</test> 
+</suite> <!-- Suite -->
