@@ -22,17 +22,21 @@ public class Utils {
 		capabilities.setCapability("platformName", platformName);
 		capabilities.setCapability("platformVersion", platformVersion);
 		capabilities.setCapability("browserName", browserName);
+		capabilities.setCapability("browserVersion", browserVersion);
+
+		// Define test name
+		capabilities.setCapability("scriptName", "Webinar-SeleniumAcrossDigital");
 
 		if (!screenResolution.isEmpty()) {
 			capabilities.setCapability("resolution", screenResolution);
 			System.out.println("Creating Remote WebDriver on: " + platformName + " " + platformVersion + ", " + browserName + " " + browserVersion + ", " + screenResolution);
 		}
 		else {
-			System.out.println("Creating Remote WebDriver on: " + platformName + " " + platformVersion);
+			if (!platformName.isEmpty())
+				System.out.println("Creating Remote WebDriver on: " + platformName + " " + platformVersion);
+			else
+				System.out.println("Creating Remote WebDriver on: " + browserName);
 		}
-
-		// Define test name
-		capabilities.setCapability("scriptName", "DigitalWebScenarioParallel");
 
 		RemoteWebDriver webdriver = new RemoteWebDriver(
 				new URL("https://" + PERFECTO_HOST + "/nexperience/perfectomobile/wd/hub"), capabilities);
@@ -48,6 +52,4 @@ public class Utils {
 
 		return webdriver;
 	}
-
-
 }
