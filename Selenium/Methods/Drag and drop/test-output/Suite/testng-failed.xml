@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="platformVersion" value="7"/>
+  <parameter name="browserVersion" value="49"/>
+  <parameter name="browserName" value="Chrome"/>
+  <parameter name="platformName" value="Windows"/>
+  <test name="Test Galaxy S7(failed)">
+    <parameter name="platformVersion" value="7"/>
+    <parameter name="browserVersion" value="49"/>
+    <parameter name="browserName" value="Chrome"/>
+    <parameter name="platformName" value="Windows"/>
+    <classes>
+      <class name="DragAndDropSample">
+        <methods>
+          <include name="f"/>
+        </methods>
+      </class> <!-- DragAndDropSample -->
+    </classes>
+  </test> <!-- Test Galaxy S7(failed) -->
+</suite> <!-- Failed suite [Suite] -->

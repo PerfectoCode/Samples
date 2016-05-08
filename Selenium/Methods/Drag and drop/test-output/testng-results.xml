@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="62542" started-at="2016-05-08T07:38:49Z" finished-at="2016-05-08T07:39:52Z">
+    <groups>
+    </groups>
+    <test name="Test Galaxy S7" duration-ms="62542" started-at="2016-05-08T07:38:49Z" finished-at="2016-05-08T07:39:52Z">
+      <class name="DragAndDropSample">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:DragAndDropSample@5442a311]" name="beforeMethod" is-config="true" duration-ms="25231" started-at="2016-05-08T10:38:49Z" finished-at="2016-05-08T10:39:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Windows]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[49]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="f()[pri:0, instance:DragAndDropSample@5442a311]" name="f" duration-ms="28364" started-at="2016-05-08T10:39:14Z" finished-at="2016-05-08T10:39:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:DragAndDropSample@5442a311]" name="afterMethod" is-config="true" duration-ms="8936" started-at="2016-05-08T10:39:43Z" finished-at="2016-05-08T10:39:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- DragAndDropSample -->
+    </test> <!-- Test Galaxy S7 -->
+  </suite> <!-- Suite -->
+</testng-results>
