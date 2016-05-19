@@ -71,7 +71,7 @@ public class Register2Airbnb {
         mobileCapabilities.setCapability("bundleId", "com.apple.MobileSMS");
         //use AndroidDriver for android devices
         IOSDriver mobileDriver = new IOSDriver(new URL("https://" + HOST + "/nexperience/perfectomobile/wd/hub"), mobileCapabilities);
-		mobileDriver.context("NATIVE_APP");
+		switchToContext(mobileDriver, "NATIVE_APP");
 		mobileDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         
         objectsXpaths objXPath = new objectsXpaths();
