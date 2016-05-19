@@ -49,7 +49,7 @@ public class Register2Airbnb {
         //setExecutionIdCapability(desktopCapabilities, HOST);
 
         RemoteWebDriver desktopDriver = new RemoteWebDriver(new URL("https://" + HOST + "/nexperience/perfectomobile/wd/hub"), desktopCapabilities);
-        switchToContext(desktopDriver, "WEBVIEW");
+        desktopDriver.context("WEBVIEW");
 
         desktopDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         desktopDriver.manage().window().maximize();
@@ -71,7 +71,7 @@ public class Register2Airbnb {
         mobileCapabilities.setCapability("bundleId", "com.apple.MobileSMS");
         //use AndroidDriver for android devices
         IOSDriver mobileDriver = new IOSDriver(new URL("https://" + HOST + "/nexperience/perfectomobile/wd/hub"), mobileCapabilities);
-		switchToContext(mobileDriver, "NATIVE_APP");
+		mobileDriver.context("NATIVE_APP");
 		mobileDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         
         objectsXpaths objXPath = new objectsXpaths();
