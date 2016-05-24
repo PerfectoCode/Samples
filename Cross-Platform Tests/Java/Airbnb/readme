@@ -1,7 +1,7 @@
 This test performs double step authentication, where a mobile number is entered into an Airbnb account, 
 the Web app sends an SMS to the mobile, and the code in the SMS is entered into the Web app to complete authentication.
 
-Two drivers are created in a single test - RemoteWebDriver and IOSDriver, using WEBVIEW and NATIVE_APP contexts, respectively. 
+Two drivers are created in a single test - RemoteWebDriver and IOSDriver, the later using NATIVE_APP context. 
 
 To do before running this test:
 
