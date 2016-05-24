@@ -49,8 +49,7 @@ public class Register2Airbnb {
         //setExecutionIdCapability(desktopCapabilities, HOST);
 
         RemoteWebDriver desktopDriver = new RemoteWebDriver(new URL("https://" + HOST + "/nexperience/perfectomobile/wd/hub"), desktopCapabilities);
-        desktopDriver.context("WEBVIEW");
-
+        
         desktopDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         desktopDriver.manage().window().maximize();
         desktopDriver.get("https://www.airbnb.com/");
