@@ -1,4 +1,7 @@
 # Android and Chrome cross platform code sample.
+
+:information_source: This test requires the IMDb application, which can be found [here](https://github.com/PerfectoCode/AppsForSamples/tree/master/IMDb).
+
 This code sample shows how to create a cross platform test.
 The scenario includes: Application installation, login, locating elements , 
 Working with desktop driver in order to complite the scenario.
