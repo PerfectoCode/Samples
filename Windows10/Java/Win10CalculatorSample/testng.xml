@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+    <test name="Test Surface Pro 4">
+        <parameter name="platformName" value="Windows" />
+        <parameter name="platformVersion" value="10" />
+        <parameter name="manufacturer" value="Microsoft" />
+        <parameter name="model" value="Surface Pro 4" />
+        <!--<parameter name="screenResolution" value="" />  Optional -->
+        <classes>
+            <class name="Win10CalculatorTest" />
+        </classes>
+    </test>
+
+</suite>

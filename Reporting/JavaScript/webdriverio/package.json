@@ -1,0 +1,18 @@
+{
+  "name": "webdriverio_jasmine_perfecto_reporting",
+  "version": "1.0.0",
+  "description": "sample of perfecto reporting using webdriverio and jasmine framework",
+  "main": "wdio.conf.js",
+  "scripts": {
+    "test": "wdio wdio.conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "perfecto-reporting": "0.0.9",
+    "selenium-webdriver": "^2.53.3",
+    "wdio-jasmine-framework": "^0.2.5",
+    "webdriverio": "^4.2.5"
+  }
+}

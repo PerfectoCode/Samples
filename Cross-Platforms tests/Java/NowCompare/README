@@ -1,0 +1,9 @@
+The Web app tested by the script behaves the same, and uses the same objects across both desktop and mobile browsers,
+with a single difference - the top menu in the desktop browser (on the green band) is "squeezed" into a hamburger menu
+in the mobile browser (top-right), thus requiring an additional step to select the +HEALTH menu item.
+
+TO DO - Set values for:
+* your lab
+* your username
+* your password
+* device name

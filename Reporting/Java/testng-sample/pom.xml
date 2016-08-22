@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>testng-sample</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>testng-full</module>
+        <module>testng-listener-only</module>
+    </modules>
+
+    <groupId>com.perfecto.reporting-sdk</groupId>
+    <version>1.0.0.9999-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <testng.version>6.9.10</testng.version>
+        <selenium.version>2.53.0</selenium.version>
+        <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <reportium-sdk.version>0.0.24</reportium-sdk.version>
+
+        <allure.version>1.4.4</allure.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Reportium SDK -->
+            <dependency>
+                <groupId>com.perfecto.reporting-sdk</groupId>
+                <artifactId>reportium-java</artifactId>
+                <version>${reportium-sdk.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.perfecto.reporting-sdk</groupId>
+                <artifactId>reportium-java-annotations</artifactId>
+                <version>${reportium-sdk.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.perfecto.reporting-sdk</groupId>
+                <artifactId>reportium-testng</artifactId>
+                <version>${reportium-sdk.version}</version>
+            </dependency>
+
+            <!-- TestNG -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+            </dependency>
+
+            <!-- Selenium -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-api</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-remote-driver</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-firefox-driver</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-support</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-java-annotations</artifactId>
+                <version>${allure.version}</version>
+            </dependency>
+
+            <!-- Apache Commons Logging -->
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-logging.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>perfectomobile</id>
+            <name>Perfecto mobile</name>
+            <url>http://repository-perfectomobile.forge.cloudbees.com/public</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Repo1</name>
+            <url>http://repo1.maven.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Repo1</name>
+            <url>http://repo1.maven.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

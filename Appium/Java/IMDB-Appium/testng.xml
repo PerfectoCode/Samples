@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="tests">
+
+	<test name="Android Galaxy S7">
+		<parameter name= "platformName" value = "Android" />
+  		<parameter name= "deviceName" value = "Your Device Name" />
+		<classes>
+      		<class name="IMDBappium"/>
+    	</classes>
+	</test> <!-- Test -->
+  
+  	<test name="iOS Iphone -6">
+		<parameter name= "platformName" value = "iOS" />
+  		<parameter name= "deviceName" value = "Your Device Name" />
+		<classes>
+      		<class name="IMDBappium"/>
+    	</classes>
+	</test> <!-- Test -->
+  
+</suite> <!-- Suite -->

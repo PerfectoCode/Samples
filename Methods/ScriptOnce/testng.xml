@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1">
+ 	<parameter name="cloud" value="your cloud"/>
+	<parameter name="userN" value="your cloud username"/>
+	<parameter name="userPw" value="your cloud password"/>
+ 
+   <test name="test1">
+ 	<parameter name="OperSys" value="Android"/>
+	<parameter name="OSver" value="6.0.*"/>
+	<parameter name="pkgName" value="com.wsl.noom"/>
+	<parameter name="repAppLoc" value="PRIVATE:applications/Noom Healthy Weight Loss Coach_v5.0.2_apkpure.com.apk"></parameter>
+      <classes>
+         <class name="Test.NoomTest" />
+      </classes>
+   </test>
+    
+   <test name="test2">
+ 	<parameter name="OperSys" value="ios"/>
+	<parameter name="OSver" value="9.*"/>
+	<parameter name="pkgName" value="com.noom.wlc"/>
+	<parameter name="repAppLoc" value="PRIVATE:applications/Noom Weight 4.0.1.ipa"/>
+      <classes>
+         <class name="Test.NoomTest" />
+      </classes>
+   </test>
+   
+</suite>

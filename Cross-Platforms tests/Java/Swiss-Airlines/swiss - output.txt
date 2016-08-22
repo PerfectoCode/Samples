@@ -1,0 +1,40 @@
+
+------------------------------
+Outbound flight
+---------------------------------
+Results for desktop are:
+---------------------------------
+Departure Aireport: ZRH
+06:40
+Departure Time:     06:40
+Arrival Airport:    LCY
+07:20
+London City Airport
+Arrival Time:       07:20
+Economy Price:      from CHF 158
+currency:           from CHF
+---------------------------------
+
+
+------------------------------
+Inbound flight
+---------------------------------
+Results for desktop are:
+---------------------------------
+Departure Aireport: LHR
+06:00
+London Heathrow
+Departure Time:     06:00
+Arrival Airport:    ZRH
+08:40
+Arrival Time:       08:40
+Economy Price:      from CHF 117
+currency:           from CHF
+---------------------------------
+
+
+--------------------------------------------------
+First standard column A available seat is 11a
+--------------------------------------------------
+
+h3 of first outbound flight: /html[1]/body[1]/div[3]/div[2]/div[3]/div[1]/span[1]/div[1]/div[1]/div[3]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/h3[1]

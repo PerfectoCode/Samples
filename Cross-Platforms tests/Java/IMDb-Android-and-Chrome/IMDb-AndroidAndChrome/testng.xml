@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="tests">
+
+	<test name="Android">
+		<parameter name= "platformName" value = "Android" />
+		<parameter name= "model" value = "Your_DeviceModel" />
+		<parameter name= "deviceName" value = "Your_DeviceID" />
+		
+		<classes>
+      		<class name="IMDbTest"/>
+    	</classes>
+  	</test>   <!-- Test -->
+  	
+  	
+</suite> <!-- Suite -->
