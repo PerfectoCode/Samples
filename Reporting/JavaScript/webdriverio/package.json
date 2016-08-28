@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "jasmine": "^2.4.1",
-    "perfecto-reporting": "0.0.9",
+    "perfecto-reporting": "^1.0.0",
     "selenium-webdriver": "^2.53.3",
     "wdio-jasmine-framework": "^0.2.5",
     "webdriverio": "^4.2.5"
