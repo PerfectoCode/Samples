@@ -50,7 +50,7 @@
 	<maven.compiler.target>1.7</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- {latest-reporting-version} -->
-    <reportium-sdk.version>0.0.24</reportium-sdk.version>
+    <reportium-sdk.version>1.0.0</reportium-sdk.version>
   </properties>
 
 	<dependencies>

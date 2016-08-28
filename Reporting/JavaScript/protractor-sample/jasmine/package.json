@@ -4,7 +4,7 @@
   "description": "",
   "main": "conf.js",
   "dependencies": {
-    "perfecto-reporting": "0.0.1",
+    "perfecto-reporting": "^1.0.0",
     "protractor": "^4.0.0",
     "selenium-webdriver": "^2.53.3"
   },

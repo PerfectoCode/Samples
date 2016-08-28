@@ -13,7 +13,7 @@
         <selenium.version>2.53.0</selenium.version>
         <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
         <commons-logging.version>1.2</commons-logging.version>
-        <reportium-sdk.version>0.0.24</reportium-sdk.version>
+        <reportium-sdk.version>1.0.0</reportium-sdk.version>
     </properties>
 
     <dependencies>
