@@ -1,10 +1,10 @@
 ## Test Application Landscape and Portrait
 
-If you would like to jump directly to the quick start and running the tests click [here](#quick-start) .
+If you would like to jump directly to the ***quick start*** and running the tests click [here](#quick-start) .
 
 ## AndroidDriverExtended:
 
-[AndroidDriverExtended](main/java/AndroidDriverExtended.java) class extendes AndroidDriver and overrides findElement method.<br/>
+[AndroidDriverExtended](src/main/java/AndroidDriverExtended.java) class extendes AndroidDriver and overrides findElement method.<br/>
 The new implementation for findElement searching for an element by given locator. <br/>
 **If the element not found instead of throwing an exception it will try to scroll down and retry to find the element agian.**
 
