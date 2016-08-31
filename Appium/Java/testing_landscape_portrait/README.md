@@ -44,8 +44,9 @@ private final String Perfecto_Pass = "MyPass";
 private final String Perfecto_Host = "MyHost.perfectomobile.com";
 ```
 
-Download the test's application from [here](https://github.com/PerfectoCode/AppsForSamples/tree/master/selendroid-test-app-0.17.0) and upload to your mobile cloud.<br/>
-Change the following line at [PerfectoTestNG](src/test/java/PerfectoTestNG.java) class, set the "NEW_APP_PATH" field to be the path of the application in your mobile cloud repository.
+- Download the test's application from [here](https://github.com/PerfectoCode/AppsForSamples/tree/master/selendroid-test-app-0.17.0) and upload to your mobile cloud.<br/>
+
+- Set the "NEW_APP_PATH" field to be the path of the application in your mobile cloud repository. This can be done at [PerfectoTestNG](src/test/java/PerfectoTestNG.java) class.
 ```Java
 capabilities.setCapability("app", "NEW_APP_PATH");
 ```
