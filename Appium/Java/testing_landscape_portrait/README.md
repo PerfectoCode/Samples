@@ -1,6 +1,6 @@
 ## Test Application Landscape and Portrait
 
-If you would like to jump directly to the quick start and running the tests press [here](## Quick Start):
+If you would like to jump directly to the quick start and running the tests press [here](## Quick Start: ):
 
 ## AndroidDriverExtended:
 
