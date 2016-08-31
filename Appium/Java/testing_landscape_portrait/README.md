@@ -1,6 +1,6 @@
 ## Test Application Landscape and Portrait
 
-If you would like to jump directly to the quick start and running the tests press [here](## Quick Start: ):
+If you would like to jump directly to the quick start and running the tests click [here](##Quick Start:) .
 
 ## AndroidDriverExtended:
 
@@ -31,7 +31,7 @@ This can be changed to the 2nd, 3rd and so on... elements by changing setScrolla
  driver.findElement( By.XXX )
 ```
 
-## Quick Start: 
+##Quick Start:
 :information_source: This project uses "selendroid" application which can be found [here](https://github.com/PerfectoCode/AppsForSamples/tree/master/selendroid-test-app-0.17.0).
 
 - Setting up the test : 
