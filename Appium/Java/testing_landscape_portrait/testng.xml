@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+
+    <!-- Define your landscape device capabilities here -->
+    <test name="Test landscape">
+        <parameter name="platformName" value="Android"/>
+        <parameter name="model" value=""/>
+        <parameter name="browserName" value="mobileOS"/>
+        <parameter name="mode" value="landscape"/>
+        <classes>
+            <class name="TestClass"/>
+        </classes>
+    </test>
+
+    <!-- Define your portrait device capabilities here -->
+    <test name="Test portrait">
+        <parameter name="platformName" value="Android"/>
+        <parameter name="model" value=""/>
+        <parameter name="browserName" value="mobileOS"/>
+        <parameter name="mode" value="portrait"/>
+        <classes>
+            <class name="TestClass"/>
+        </classes>
+    </test>
+
+</suite>
