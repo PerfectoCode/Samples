@@ -1,6 +1,8 @@
 ## Test Application Landscape and Portrait
 
-If you would like to jump directly to the ***quick start*** and running the tests click [here](#quick-start) .
+This test shows how to test an application in landscape and protrait modes. It uses [AndroidDriverExtended](src/main/java/AndroidDriverExtended.java) to find the element using scrolling if needed.
+
+Click [here](#quick-start) for the ***quick start***.
 
 ## AndroidDriverExtended:
 
@@ -40,11 +42,11 @@ This can be changed to the 2nd, 3rd and so on... elements by changing setScrolla
 In addition you will need to insert your Perfecto Lab username, password and host.
 ```Java
 private final String Perfecto_User = "MyUser";
-private final String Perfecto_Pass = "MyPass";
+private final String Perfecto_Pass = "MyPass";mo
 private final String Perfecto_Host = "MyHost.perfectomobile.com";
 ```
 
-- Download the test's application from [here](https://github.com/PerfectoCode/AppsForSamples/tree/master/selendroid-test-app-0.17.0) and upload to your mobile cloud.<br/>
+- Download the test's application from [here](https://github.com/PerfectoCode/AppsForSamples/tree/master/selendroid-test-app-0.17.0) and upload to your Perfecto Lab repository.<br/>
 
 - Set the "NEW_APP_PATH" field to be the path of the application in your mobile cloud repository. This can be done at [PerfectoTestNG](src/test/java/PerfectoTestNG.java) class.
 ```Java
