@@ -96,5 +96,5 @@ For each step Cucumber will look for a matching step definition. Each step defin
 
 Use Cucumber in the command line: <br/>
 `cucumber` <br/>
-To see more available options use:
+To see more available options use:<br/>
 `cucumber -h`
