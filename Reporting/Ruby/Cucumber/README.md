@@ -7,7 +7,7 @@ This Project shows how to build a Ruby test with Cucumber testing framework inte
 ## Getting Started
 
 Install Perfecto-Reporting and Cucumber Gems using the following Gem commands:<br/>
-`gem install perfecto-reporting`
+`gem install perfecto-reporting`<br/>
 `gem install cucumber`
 
 ## Integration With Perfecto :
