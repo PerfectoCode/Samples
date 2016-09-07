@@ -22,7 +22,7 @@ For more information about this three sub modules click [here](features/lib/util
 
 ## Feature file and Steps implementation:
 
-The [feature](feature/feature.Feature) file contains one or more scenarios for implementation.<br/>
+The [feature](features/feature.Feature) file contains one or more scenarios for implementation.<br/>
 Each scenario contains one or more steps, which must start with one of the keywords *Given*, *When*, *Then* and *And*.<br/>
 ```Feature
   Scenario: Getting insurance from Geico
@@ -34,10 +34,10 @@ Each scenario contains one or more steps, which must start with one of the keywo
     And I submit the Customer Information form
 ```
 
-The implementation of this steps is within the [step_definistions](step_definistions/) directory.<br/>
-For this project the the implementation of the steps is within the [steps_implementation.rb](feature/step_definistions/steps_implementation.rb) file.
+The implementation of this steps is within the [step_definistions](features/step_definistions/) directory.<br/>
+For this project the the implementation of the steps is within the [steps_implementation.rb](features/step_definistions/steps_implementation.rb) file.
 
-Test behavior of the test such as before and after each scenario methods implemented in [env.rb](feature/support/env.rb) file.<br/>
+Test behavior of the test such as before and after each scenario methods implemented in [env.rb](features/support/env.rb) file.<br/>
 For example the before each scenario the following method will be executed:
 ```Ruby
 # Do before each scenario
@@ -90,7 +90,7 @@ end
 ```
 For each step Cucumber will look for a matching step definition. Each step definition consists of a *keyword*, a *string* or *regular expression*.<br/>
 `Utils::Reporting.logStep` - Will log the step in reporting, this step will be available in reporting ui. <br/>
-`@homePage = Geico::HomePage.new Utils::Device.driver` - Using the Page object model, for the page implementation see [geico_pages.rb](feature/lib/geico_pages.rb) file. 
+`@homePage = Geico::HomePage.new Utils::Device.driver` - Using the Page object model, for the page implementation see [geico_pages.rb](features/lib/geico_pages.rb) file. 
 
 ## Running the project :
 
