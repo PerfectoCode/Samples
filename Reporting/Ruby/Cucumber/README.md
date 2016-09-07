@@ -34,8 +34,8 @@ Each scenario contains one or more steps, which must start with one of the keywo
     And I submit the Customer Information form
 ```
 
-The implementation of this steps is within the [step_definistions](features/step_definistions/) directory.<br/>
-For this project the the implementation of the steps is within the [steps_implementation.rb](features/step_definistions/steps_implementation.rb) file.
+The implementation of this steps is within the [step_definitions](features/step_definitions) directory.<br/>
+For this project the the implementation of the steps is within the [steps_implementation.rb](features/step_definitions/steps_implementation.rb) file.
 
 Test behavior of the test such as before and after each scenario methods implemented in [env.rb](features/support/env.rb) file.<br/>
 For example the before each scenario the following method will be executed:
