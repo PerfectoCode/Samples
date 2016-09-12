@@ -1,8 +1,8 @@
 const Reporting = require('perfecto-reporting');
 
-const PerfectoUser = 'daniela@perfectomobile.com';
-const PerfectoPass = 'Shelby1967';
-const PerfectoHost = 'qatestlab.perfectomobile.com';
+const PerfectoUser = 'My_User';
+const PerfectoPass = 'My_Pass';
+const PerfectoHost = 'My_Host.perfectomobile.com';
 
 /**
  * Protractor setup
@@ -60,7 +60,7 @@ exports.config = {
         browser.reportingClient = new Reporting.Perfecto.PerfectoReportingClient(
             new Reporting.Perfecto.PerfectoExecutionContext({
                 webdriver: browser.driver,
-                tags: ['daniela@perfectomobile.com', 'cucumber', 'NodeJS'] // optional
+                tags: ['Tag 1', 'Tag 2', 'Tag 3'] // optional
             }));
 
     }
