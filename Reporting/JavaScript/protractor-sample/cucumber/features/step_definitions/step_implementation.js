@@ -1,3 +1,9 @@
+/**
+ * Steps implementation
+ *
+ * Implement here the scenario's steps.
+ * Protractor browser is available at this point.
+ */
 module.exports = function () {
 
     this.Given(/^I in google search page$/, function (callback) {
@@ -5,7 +11,7 @@ module.exports = function () {
             .then(callback);
     });
 
-    this.Then(/^searching for Perfecto\-Code repositorys$/, function (callback) {
+    this.Then(/^I search for Perfecto-Code repository$/, function (callback) {
         browser.driver.findElement(by.name('q'))
             .sendKeys('Perfecto-Code GitHub');
         browser.driver.findElement(by.id('tsbb'))

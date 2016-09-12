@@ -1,5 +1,10 @@
 const Reporting = require('perfecto-reporting');
 
+/**
+ * Hooks determines test setup and teardown.
+ * For the full hooks API reference:
+ * https://github.com/cucumber/cucumber-js/blob/master/docs/support_files/hooks.md
+ */
 var myHooks = function () {
 
     /**
@@ -11,11 +16,6 @@ var myHooks = function () {
         browser.reportingClient.testStart(scenario.getName());
         callback();
     });
-
-    // this.BeforeStep(function(Step, callback){
-    //     browser.reportingClient.testStep(Step.getName());
-    //     callback();
-    // });
 
     /**
      * After scenario function.
