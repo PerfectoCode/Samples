@@ -1,9 +1,15 @@
 
 var myHandlers = function () {
 
-    //Handler for BeforeStep Event
+    /**
+     * BeforeStep handler.
+     * Logging the step to reporting client.
+     * This is a workaround to get the step name.
+     */
     this.registerHandler('BeforeStep', function (Step, callback) {
-        browser.stepName = Step.getName();
+        if(Step.getName() != null) {
+            browser.reportingClient.testStep(Step.getName());
+        }
         callback();
     });
 }
