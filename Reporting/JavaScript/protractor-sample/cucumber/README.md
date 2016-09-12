@@ -1,8 +1,8 @@
 ## Protractor + Cucumber
 
-This project shows how to add Perfecto-Reporting functionality to Protracot tests using Cucumber framework.<br/>
+This project shows how to add Perfecto-Reporting functionality to Protractor tests using Cucumber testing framework.<br/>
 
-Scenario's steps will be automatically will be logged to reporting ui as a test step.
+Scenario's steps will be automatically logged to reporting ui as a test step.
 
 ## Getting started
 
