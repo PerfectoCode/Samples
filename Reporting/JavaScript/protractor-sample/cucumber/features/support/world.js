@@ -1,10 +1,8 @@
 const Reporting = require('perfecto-reporting');
 
-const STEP_TIMEOUT_SEC = 20;
-
 module.exports = function () {
 
-    this.setDefaultTimeout(STEP_TIMEOUT_SEC * 1000);
+    this.setDefaultTimeout(20 * 1000);
 
     this.World = function World() {
 
@@ -14,31 +12,17 @@ module.exports = function () {
         chai.use(chaiAsPromised);
         this.expect = chai.expect;
 
-        this.reportiumClient = function setupReportingClient() {
-            // Setup Perfecto reporting client
-            const perfectoExecutionContext = new Reporting.Perfecto.PerfectoExecutionContext({
-                webdriver: browser.driver,
-                tags: ['Cucumber', 'nodejs', 'daniela@perfectomobile.com'] // optional
-            });
-            return new Reporting.Perfecto.PerfectoReportingClient(perfectoExecutionContext);
-        }
+        this.reportiumClient = setupReportingClient();
+
     }
 
-    this.Before(function(scenario){
-        this.reportiumClient.testStart(scenario.getName());
-    });
+    function setupReportingClient() {
+        // Setup Perfecto reporting client
+        const perfectoExecutionContext = new Reporting.Perfecto.PerfectoExecutionContext({
+            webdriver: browser.driver,
+            tags: ['daniela@perfectomobile.com', 'cucumber', 'NodeJS'] // optional
+        });
+        return new Reporting.Perfecto.PerfectoReportingClient(perfectoExecutionContext);
+    }
 
-    this.After(function (scenario) {
-        if (scenario.isSuccessful()) {
-            this.reportiumClient.testStop({
-                status: Reporting.Constants.results.passed
-            });
-        }
-        else {
-            this.reportiumClient.testStop({
-                status: Reporting.Constants.results.failed,
-                message: JSON.stringify(scenario.getException())
-            });
-        }
-    });
 }

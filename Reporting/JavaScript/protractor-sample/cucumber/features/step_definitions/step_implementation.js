@@ -1,13 +1,13 @@
 module.exports = function () {
 
     this.Given(/^I in google search page$/, function (callback) {
-        // this.reportiumClient().testStep(browser.currentStepName);
+        this.reportiumClient.testStep(browser.stepName);
         browser.driver.get('http://www.google.com')
             .then(callback);
     });
 
     this.Then(/^searching for Perfecto\-Code repositorys$/, function (callback) {
-        // this.reportiumClient().testStep(browser.currentStepName);
+        this.reportiumClient.testStep(browser.stepName);
         browser.driver.findElement(by.name('q'))
             .sendKeys('Perfecto-Code GitHub');
         browser.driver.findElement(by.id('tsbb'))
@@ -16,14 +16,14 @@ module.exports = function () {
     });
 
     this.Then(/^click the first search result$/, function (callback) {
-        // this.reportiumClient().testStep(browser.currentStepName);
-        browser.driver.findElement(by.css('#rso > div.srg > div:nth-child(1) > div > div > div._OXf > h3 > a'))
+        this.reportiumClient.testStep(browser.stepName);
+        browser.driver.findElement(by.css('#rso > div > div:nth-child(1) > div > div > div._OXf > h3 > a'))
             .click()
             .then(callback);
     });
 
     this.Then(/^I validate the page's title\.$/, function (callback) {
-        // this.reportiumClient().testStep(browser.currentStepName);
+        this.reportiumClient.testStep(browser.stepName);
         this.expect(browser.driver.getTitle())
             .to.eventually.equal('GitHub - PerfectoCode/Samples: Product Samples');
         callback();
