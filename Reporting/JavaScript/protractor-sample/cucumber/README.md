@@ -60,7 +60,7 @@ onPrepare: function () {
 ## Running the tests
 
 Run the tests using the following command (within the same configuration file directory): 
-> npm tests
+> npm test
 
 Or using Protractor command:
 > protractor
