@@ -1,7 +1,8 @@
 ## Cucumber
 
-This Project shows how to build a Ruby test with Cucumber testing framework integrated with PerfectoLab and Perfecto Reporting.<br/>
-:information_source: Click [here](https://github.com/PerfectoCode/Samples/wiki/C%23-Implementation) for the complite SDK documentation.<br/>
+This Project shows how to build a Ruby test with Cucumber testing framework integrated with PerfectoLab and Perfecto Reporting.
+
+:information_source: Click [here](https://github.com/PerfectoCode/Samples/wiki/C%23-Implementation) for the complete SDK documentation.<br/>
 :information_source: Click [here](https://github.com/PerfectoCode/Samples/wiki/Reporting) to get started with Perfecto Reporting. 
 
 ## Getting Started
