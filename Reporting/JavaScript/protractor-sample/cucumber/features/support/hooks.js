@@ -18,7 +18,10 @@ var myHooks = function () {
         for(var i = 0; i < tagObj.length; i++){
             tags.push(tagObj[i].getName());
         }
+        //Adding the current feature to reporting tags
+        tags.push(browser.currentFeature);
         browser.reportingClient.testStart(scenario.getName(), tags);
+
         callback();
     });
 
@@ -27,7 +30,7 @@ var myHooks = function () {
      * Determines if test failed or succeed
      * and log the result to reporting client.
      */
-    this.After(function (scenario) {
+    this.After(function (scenario, callback) {
         if (scenario.isSuccessful()) {
             browser.reportingClient.testStop({
                 status: Reporting.Constants.results.passed
@@ -39,6 +42,10 @@ var myHooks = function () {
                 message: JSON.stringify(scenario.getException())
             });
         }
+        browser.reportingClient.getReportUrl().then((url)=>{
+           console.log(`Report-url: ${url}`);
+        });
+        callback();
     });
 
 };

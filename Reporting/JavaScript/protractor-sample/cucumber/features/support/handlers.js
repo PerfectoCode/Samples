@@ -1,5 +1,11 @@
-
 var myHandlers = function () {
+
+    this.registerHandler('BeforeFeature', (Feature, callback)=>{
+        if(Feature.getName() != null){
+            browser.currentFeature = Feature.getName();
+        }
+        callback();
+    });
 
     /**
      * BeforeStep handler.
@@ -7,11 +13,12 @@ var myHandlers = function () {
      * This is a workaround to get the step name.
      */
     this.registerHandler('BeforeStep', function (Step, callback) {
-        if(Step.getName() != null) {
+        if (Step.getName() != null) {
             browser.reportingClient.testStep(Step.getName());
         }
         callback();
     });
-}
+};
+;
 
 module.exports = myHandlers;
