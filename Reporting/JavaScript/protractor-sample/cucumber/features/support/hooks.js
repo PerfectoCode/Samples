@@ -13,7 +13,12 @@ var myHooks = function () {
      * Test named same as scenario's name.
      */
     this.Before(function (scenario, callback) {
-        browser.reportingClient.testStart(scenario.getName());
+        var tags = [];
+        var tagObj = scenario.getTags();
+        for(var i = 0; i < tagObj.length; i++){
+            tags.push(tagObj[i].getName());
+        }
+        browser.reportingClient.testStart(scenario.getName(), tags);
         callback();
     });
 
