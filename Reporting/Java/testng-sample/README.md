@@ -4,7 +4,7 @@ The project demonstrates adding Reportium calls to Selenium tests that are run v
 It includes 2 sub modules which personify different use cases:
 
 1. Adopt Reporting with minimal changes to the code base, not changing any test script.
-This type of user will gain seamless breakdown into tests by atuomatic reporting of _test start_ and _test end_.
+This type of user will gain seamless breakdown into tests by automatic reporting of _test start_ and _test end_.
 This use case is implemented in the _testng_listener_only_ project.
 2. Full usage of Reporting API, including update of test scripts to report functional test steps.
 This use case is implemented in the _testng_full_ project.
