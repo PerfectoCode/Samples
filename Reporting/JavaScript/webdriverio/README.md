@@ -15,6 +15,6 @@ const host = 'MY_HOST.perfectomobile.com';
 const user = 'MY_USER';
 const pass = 'MY_PASS';
 ```
-You can run [spec.js](spec.js) with this command:
+You can run [https://github.com/PerfectoCode/Samples/blob/master/Reporting/JavaScript/webdriverio/specs.js](spec.js) with this command:
 
 > npm test
