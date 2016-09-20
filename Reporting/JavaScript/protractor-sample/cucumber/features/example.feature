@@ -4,7 +4,7 @@ Feature: As a user I would like to navigate to google.
 
   @ScenarioTag
   Scenario: Searching and navigating to Perfecto-Code repository.
-    Given I in google search page
-    Then I search for Perfecto-Code repository
+    Given I'm on the google search page
+    And I search for Perfecto-Code repository
     And click the first search result
     Then I validate the page's title.
