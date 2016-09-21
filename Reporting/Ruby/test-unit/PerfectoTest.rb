@@ -67,7 +67,7 @@ class PerfectoTest < Test::Unit::TestCase
   # add here additional before test settings.
   def setup
     puts 'starting a new test: ' + self.name
-    @reportiumClient.testStart(self.name, TestContext.new('Ruby', 'daniela@perfectomobile.com', 'unittest'))
+    @reportiumClient.testStart(self.name, TestContext.new('Tag1', 'Tag2', 'unittest'))
   end
 
   # End test method
