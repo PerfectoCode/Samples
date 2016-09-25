@@ -2,8 +2,8 @@
 
 This project demonstrates adding reporting client using [Reporting SDK for C#](https://www.nuget.org/packages/Perfecto-Reporting) to your SpecFlow tests.
 
-Note! this project requires Reporting SDK for C#. Read more at our [wiki](https://github.com/PerfectoCode/Samples/wiki) .
 
+:information_source: This project requires [Perfecto Reporting SDK](https://github.com/PerfectoCode/Samples/wiki) for C#.
 
 
 The project contains three main files:<br/>
@@ -13,15 +13,15 @@ The project contains three main files:<br/>
 
 **TODO:**
 
-- Make sure you have installed Perfecto [plugin for Visual Studio](https://www.perfectomobile.com/integrations/continuous-quality-integrated-visual-studio) and [Reporting SDK for C#](https://www.nuget.org/packages/Perfecto-Reporting).
+- Make sure you have installed the [Perfecto plugin for Visual Studio](https://www.perfectomobile.com/ni/resources/downloads/add-ins-plugins-and-extensions) and [Reporting SDK for C#](https://www.nuget.org/packages/Perfecto-Reporting).
 - Download the project and import the .sln file to Visual Studio IDE.
 - Set your Perfecto lab User, Password and Host in the [PerfectoHooks](PerfectoSpecFlow/PerfectoHooks.cs) file. 
-```Csharp
+     ```Csharp
 //Perfecto Lab credentials
 const string PerfectoUser = "My_User";
 const string PerfectoPass = "My_Pass";
 const string PerfectoHost = "My_Host.perfectomobile.com"; 
-``` 
+     ``` 
 - Run the tests as SpecFlow tests. 
 
 Once the test run is complete, the report URL can be found in the test output.<br/>
