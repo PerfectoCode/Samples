@@ -3,12 +3,12 @@
 The project demonstrates adding Reportium calls to Selenium tests that are run via JBehave.
 
 It includes a customized reporter [PerfectoReporter](src/test/java/Reporter/PerfectoReporter.java) which implements Reportium calls.<br/>
-PerfectoReporter logs every scenario as a sepearate test report. Each step (Given, When, Then) logged as a test step. <br/>
+PerfectoReporter use Reportium to log each scenario as a sepearate test report.<br/> Each step (Given, When, Then) will be logged as a test step. <br/>
 After each successful scenario it will report on successful test, otherwise it will report a failure and log the failure message and exception.
 
 In addition this project includes two scenarios:<br/>
-1. First scenario should succeed to show successful test execution within reporting UI.<br/>
-2. The second scenario should fail in order to show failure test execution within reporting UI.
+1. The first scenario should succeed to show a successful test execution within reporting UI.<br/>
+2. The second scenario should fail in order to show a failure test execution within reporting UI.
 
 **Adding the additional reporter:**
 
@@ -25,12 +25,12 @@ public Configuration configuration() {
 }
 ```
 
-:information_source: Note that driverProvider must be specify in order to user PerfectoReporter. <br/>
+:information_source: Note that driverProvider must be specify in order to use PerfectoReporter. <br/>
 
 **Using the Driverprovider Class:**
 
 The [DriverProvider](src/test/java/Objects/DriverProvider.java) instance holds the webdriver. <br/>
-This in order to be able to get it later via PerfectoReporter and test steps implementation.<br/>
+It's later provides the WebDriver instance to the PerfectoReporter and steps implementation classes.<br/>
 Set your Perfecto Lab User, Password, host and DesiredCapabilities at the ***initialize*** method: 
 ```Java
 @Override
