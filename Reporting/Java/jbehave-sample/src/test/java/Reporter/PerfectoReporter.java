@@ -10,8 +10,6 @@ import com.perfecto.reportium.test.TestContext;
 import com.perfecto.reportium.test.result.TestResultFactory;
 import org.jbehave.core.model.*;
 import org.jbehave.core.reporters.StoryReporter;
-import org.jbehave.web.selenium.WebDriverProvider;
-import org.openqa.selenium.WebDriver;
 
 import java.util.*;
 

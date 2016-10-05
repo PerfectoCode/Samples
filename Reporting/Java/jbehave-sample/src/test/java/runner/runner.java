@@ -5,10 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import Objects.DriverProvider;
-import Reporter.GenericReporter;
 import Reporter.PerfectoReporter;
-import com.thoughtworks.selenium.Selenium;
-import com.thoughtworks.selenium.condition.ConditionRunner;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.io.CodeLocations;
@@ -19,7 +16,6 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 import org.jbehave.core.steps.Steps;
-import org.jbehave.web.selenium.*;
 import test.Customized;
 
 
@@ -39,7 +35,7 @@ public class runner extends JUnitStories {
 
     @Override
     public InjectableStepsFactory stepsFactory() {
-        ArrayList<Steps> stepFileList = new ArrayList<Steps>();
+        ArrayList<Steps> stepFileList = new ArrayList<>();
         stepFileList.add(new Customized(driverProvider));
 
         return new InstanceStepsFactory(configuration(), stepFileList);
