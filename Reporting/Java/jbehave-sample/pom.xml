@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.testing</groupId>
+    <artifactId>testJbehave</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <compilerArgument></compilerArgument>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${failsafe.and.surefire.version}</version>
+                    <executions>
+                        <execution>
+                            <id>integration-test</id>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <includes>
+                            <include>**/*Test.java</include>
+                        </includes>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jbehave</groupId>
+                    <artifactId>jbehave-maven-plugin</artifactId>
+                    <version>4.0.2</version>
+                    <executions>
+                        <execution>
+                            <id>run-stories-as-embeddables</id>
+                            <phase>integration-test</phase>
+                            <configuration>
+
+                                <includes>
+                                    <include>**/*Test.java</include>
+                                </includes>
+                                <ignoreFailureInStories>false</ignoreFailureInStories>
+                                <ignoreFailureInView>false</ignoreFailureInView>
+
+                                <systemProperties>
+                                    <property>
+                                        <name>java.awt.headless</name>
+                                        <value>true</value>
+                                    </property>
+                                </systemProperties>
+
+
+                            </configuration>
+                            <goals>
+                                <goal>run-stories-as-embeddables</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>perfectomobile</id>
+            <name>Perfecto mobile</name>
+            <url>http://repository-perfectomobile.forge.cloudbees.com/public</url>
+        </repository>
+    </repositories>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.perfecto.reporting-sdk</groupId>
+            <artifactId>reportium-java</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-core</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.53.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jbehave.web/jbehave-web-selenium -->
+        <dependency>
+            <groupId>org.jbehave.web</groupId>
+            <artifactId>jbehave-web-selenium</artifactId>
+            <version>3.5.5</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
