@@ -77,5 +77,7 @@ Then I click the first search result
 Then I validate Perfecto is in the page's title
 ```
 
+![Failure](img/grid.png)
+
 **Running The Project:**<br/>
 Run the [runner.java](src/test/java/runner/runner.java) file as Junit via IDE (Eclipse or Intellij).
