@@ -1,15 +1,17 @@
 ## JBehave 
 
-The project demonstrates adding Reportium calls to Selenium tests that are run via JBehave.
+The project demonstrates adding Reportium calls to Selenium tests that are run via [JBehave](http://jbehave.org/).
 
-It includes a customized reporter [PerfectoReporter](src/test/java/Reporter/PerfectoReporter.java) which implements Reportium calls.<br/>
-PerfectoReporter use Reportium to log each scenario as a sepearate test report.<br/> Each step (Given, When, Then) will be logged as a test step. <br/>
-After each successful scenario it will report on successful test, otherwise it will report a failure and log the failure message and exception.
+It includes a customized reporter [PerfectoReporter](src/test/java/Reporter/PerfectoReporter.java) which implements [Perfecto Reporting](https://github.com/PerfectoCode/Samples/wiki/Reporting) calls.<br/>
 
-In addition this project includes two scenarios:<br/>
-1. The first scenario should succeed to show a successful test execution within reporting UI.<br/>
-2. The second scenario should fail in order to show a failure test execution within reporting UI.
+Jbehave Story contains multiple scenarios, each scenario is represented as a single test report in the Perfecto Reporting platform.
+Each step (Given, When, Then) will be logged as a test step. 
 
+In addition, this project includes two scenarios:<br/>
+1. The first scenario shows a successful test execution within reporting UI.<br/>
+![Success](img/success.png)
+2. The second scenario shows a failure test execution within reporting UI.
+![Failure](img/failure.png)
 **Adding the additional reporter:**
 
 Use your runner class (in this sample [runner](src/test/java/runner/runner.java)) and add the following lines to the configuration method:
@@ -25,13 +27,17 @@ public Configuration configuration() {
 }
 ```
 
-:information_source: Note that driverProvider must be specify in order to use PerfectoReporter. <br/>
+:information_source: driverProvider must be specified to use PerfectoReporter. <br/>
 
 **Using the Driverprovider Class:**
 
 The [DriverProvider](src/test/java/Objects/DriverProvider.java) instance holds the webdriver. <br/>
-It's later provides the WebDriver instance to the PerfectoReporter and steps implementation classes.<br/>
-Set your Perfecto Lab User, Password, host and DesiredCapabilities at the ***initialize*** method: 
+It later provides the WebDriver instance to the PerfectoReporter and steps implementation classes.<br/>
+Set your Perfecto Lab user, password, host and DesiredCapabilities at the ***initialize*** method below.
+
+:information_source: Initializing and closing the driver is done by PerfectoSteps which extends JBehave's Steps class.<br/>
+That way before each story new instance of DriverProvider with a new WebDriver created and after each it taking care of closing the driver.
+
 ```Java
 @Override
 public void initialize() {
@@ -50,9 +56,6 @@ public void initialize() {
 	}
 }
 ```
-
-Initializing and closing the driver done by PerfectoSteps which extends JBehave's Steps class.<br/>
-That way before each story new instance of DriverProvider with a new WebDriver created and after each it taking care of closing the driver.
 
 **Adding ContextTags:**
 
