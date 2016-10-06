@@ -1,6 +1,6 @@
 ## JBehave 
 
-The project demonstrates adding Reportium calls to Selenium tests that are run via [JBehave](http://jbehave.org/).
+This project demonstrates adding Reportium calls to Selenium tests that are run via [JBehave](http://jbehave.org/).
 
 It includes a customized reporter [PerfectoReporter](src/test/java/Reporter/PerfectoReporter.java) which implements [Perfecto Reporting](https://github.com/PerfectoCode/Samples/wiki/Reporting) calls.<br/>
 
