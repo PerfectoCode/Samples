@@ -165,6 +165,7 @@ public class App {
                 e.printStackTrace();
             }
 
+            driver.close();
             driver.quit();
         }
 
