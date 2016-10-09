@@ -54,6 +54,7 @@ public class AbstractPerfectoSeleniumTestNG {
     public void baseAfterClass() {
         System.out.println("Report url = " + reportiumClient.getReportUrl());
         if (driver != null) {
+            driver.close();
             driver.quit();
         }
     }
