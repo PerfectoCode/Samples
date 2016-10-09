@@ -40,6 +40,7 @@ public class WebScenarioParallel {
             System.out.println("Report URL = " + reportiumClient.getReportUrl());
         }
         if (driver != null) {
+            driver.close();
             driver.quit();
         }
     }
