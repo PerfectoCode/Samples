@@ -28,6 +28,7 @@ public class PerfectoSteps extends Steps{
 
     @AfterStories
     public void AfterStory(){
+        driver.close();
         driver.quit();
     }
 }
