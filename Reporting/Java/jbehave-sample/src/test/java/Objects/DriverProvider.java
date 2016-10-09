@@ -45,6 +45,7 @@ public class DriverProvider implements WebDriverProvider {
 
     @Override
     public void end() {
+        driver.close();
         driver.quit();
     }
 }
