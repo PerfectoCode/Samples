@@ -56,6 +56,7 @@ public class TodoMvcWithListenerTest implements WebDriverProvider {
     @AfterClass
     public void quitDriver() {
         if (driver != null) {
+            driver.close();
             driver.quit();
         }
     }
