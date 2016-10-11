@@ -58,15 +58,13 @@ public class KeepTest {
 					"REM: Tomorrow"},
 			new Object[] {"Updating Community Categories", "Decide on set of categories",
 					"Review all posts", "REM: Next Week"}
-			};
-		}
+		};
+	}
 	
 	@Parameters({"OperSys", "device", "pkgName", "cloud", "userN", "userPw"})
 	@BeforeTest
-	public void preTest(String os, String dev, String pkg, 
-			String hostC, String uname, String pw) {
-		
-        try {
+	public void preTest(String os, String dev, String pkg, String hostC, String uname, String pw) {		
+        	try {
 			DesiredCapabilities capabilities = new DesiredCapabilities("", "", Platform.ANY);
 			String host = hostC;
 			// provide Lab credentials
@@ -89,7 +87,7 @@ public class KeepTest {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		    repClient = createReportiumClient(driver);
-        } catch (Exception e) {
+        	} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Unable to initialize the Driver instance!");
 		}
