@@ -97,26 +97,26 @@ public class KeepTest {
 	
 	@AfterTest
 	public void finishUp() {
-        try {
-            // Retrieve the URL of the Single Test Report, can be saved to your execution summary and used to download the report at a later point
-            // String reportURL = (String)(driver.getCapabilities().getCapability(WindTunnelUtils.SINGLE_TEST_REPORT_URL_CAPABILITY));
-        	driver.closeApp();
-            driver.close();
-            
-            // In case you want to download the report or the report attachments, do it here.
-            PerfectoLabUtils.downloadReport(driver, "pdf", "C:\\test\\report" + reportName);
-            // PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-            // PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
+		try {
+		    // Retrieve the URL of the Single Test Report, can be saved to your execution summary and used to download the report at a later point
+		    // String reportURL = (String)(driver.getCapabilities().getCapability(WindTunnelUtils.SINGLE_TEST_REPORT_URL_CAPABILITY));
+			driver.closeApp();
+		    driver.close();
 
-            System.out.println(repClient.getReportUrl());
+		    // In case you want to download the report or the report attachments, do it here.
+		    PerfectoLabUtils.downloadReport(driver, "pdf", "C:\\test\\report" + reportName);
+		    // PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
+		    // PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-	    System.out.println("Report url = " + repClient.getReportUrl());
+		    System.out.println(repClient.getReportUrl());
 
-        driver.quit();
-        System.out.println("Run ended");		
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
+		    System.out.println("Report url = " + repClient.getReportUrl());
+
+		driver.quit();
+		System.out.println("Run ended");		
 	}
 	
 	@Test(dataProvider = "NoteLists")
