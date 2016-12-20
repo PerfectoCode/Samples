@@ -38,7 +38,7 @@ namespace GeicoCarInsuranceCSharp
                 capabilities.SetCapability("browserVersion", "54");
 
                 var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", PERFECTO_HOST));
-                driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+                driver = new RemoteWebDriver(url, capabilities);
             }
             else
             {
@@ -61,7 +61,7 @@ namespace GeicoCarInsuranceCSharp
                 capabilities.SetCapability("scriptName", "GeicoCarInsuranceCSharp");
 
                 var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", PERFECTO_HOST));
-                driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+                driver = new RemoteWebDriver(url, capabilities);
 
             }
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
