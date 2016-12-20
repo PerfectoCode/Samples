@@ -29,5 +29,5 @@ capabilities.SetCapability("password", PASSWORD);
 
 //Create a webdriver
 var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", PERFECTO_HOST));
-driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+driver = new RemoteWebDriver(url, capabilities);
 ```
