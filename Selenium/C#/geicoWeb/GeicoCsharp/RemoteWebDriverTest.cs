@@ -13,7 +13,7 @@ namespace GeicoCsharp
     [TestClass]
     public class RemoteWebDriverTest
     {
-        private RemoteWebDriverExtended driver;
+        private RemoteWebDriver driver;
 
         [TestInitialize]
         public void PerfectoOpenConnection()
@@ -33,7 +33,7 @@ namespace GeicoCsharp
             capabilities.SetCapability("resolution", "1366x768");
 
             var url = new Uri("http://" + host + "/nexperience/perfectomobile/wd/hub");
-            driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+            driver = new RemoteWebDriver(url, capabilities);
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(25));
         }
 
