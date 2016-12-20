@@ -75,7 +75,7 @@ It's optional to add context tags to specific test:
 # add here additional before test settings.
 def setup
   puts 'starting a new test: ' + self.name
-  @reportiumClient.testStart(self.name, TestContext.new('Ruby', 'daniela@perfectomobile.com', 'unittest'))
+  @reportiumClient.testStart(self.name, TestContext.new('Ruby', 'unittest'))
 end
 ``` 
 
