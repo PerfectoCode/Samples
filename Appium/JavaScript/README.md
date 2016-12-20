@@ -3,8 +3,10 @@
 The following sample shows how to Install an application and use WebDriverIO to automate and test it.<br/>
 It uses selendroid test application which can be downloaded from [here](https://github.com/PerfectoCode/AppsForSamples/tree/master/selendroid-test-app-0.17.0).
 
+The sample uses [WebDriverIO](http://webdriver.io/) and [Jasmine](jasmine.github.io) testing framework. 
+
 ## Getting Started: 
-- After downloading the sample use `npm install` command within the sample's directory. 
+- use `npm install` command within the sample's directory to download the project's dependencies. 
 - Set your Perfecto Lab User, Password and Host (cloud) within the file [wdio.conf.js](wdio.conf.js):
 ```JavaScript
 //Set your Perfecto lab user, pass and host here.
@@ -25,4 +27,4 @@ const pass = 'MY_PASS';
         appPackage: 'io.selendroid.testapp', // app's package
     }],
 ```
-- Run the test using `npm test` command . 
+- Run the test using `npm test` command.
