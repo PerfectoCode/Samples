@@ -28,3 +28,23 @@ const pass = 'MY_PASS';
     }],
 ```
 - Run the test using `npm test` command.
+
+## Writing your test: 
+- Write your test within "describe" and "it" functions: 
+```JavaScript
+describe('Perfecto Native NodeJS - Selendroid app', function () {
+
+	it('Test Native and Webview', function () {
+
+        // Your test should go here
+
+    });
+});
+```
+
+- Using assertions: 
+```JavaScript
+expect(Value1).toContain(Value2);
+```
+
+See full WebDriverIO API [here](http://webdriver.io/api.html).
