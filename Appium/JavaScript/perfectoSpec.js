@@ -22,6 +22,3 @@ describe('Perfecto Native NodeJS - Selendroid app', function () {
 			.click('//*[@content-desc="Send me your name!"]');
 	});
 });
-
-
-
