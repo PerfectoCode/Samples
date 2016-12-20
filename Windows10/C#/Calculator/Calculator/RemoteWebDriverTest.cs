@@ -17,7 +17,7 @@ namespace Calculator
     [TestClass]
     public class RemoteWebDriverTest
     {
-        private RemoteWebDriverExtended driver;
+        private RemoteWebDriver driver;
 
         [TestInitialize]
         public void PerfectoOpenConnection()
@@ -40,7 +40,7 @@ namespace Calculator
 
             var url = new Uri(string.Format("https://{0}/nexperience/perfectomobile/wd/hub", host));
             
-            driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+            driver = new RemoteWebDriver(url, capabilities);
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
             Trace.WriteLine("Driver created, execution start");
         }
