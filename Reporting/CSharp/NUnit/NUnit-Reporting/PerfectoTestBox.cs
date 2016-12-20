@@ -12,7 +12,7 @@ namespace ReportingTests.NUnit
     /// Test base class
     /// </summary>
     /// <remarks> 
-    /// Create RemoteWebDriverExtended and Reportium client object.
+    /// Create RemoteWebDriver and Reportium client object.
     /// Configure here what happensed before and after each test and
     /// before and after all tests.
     /// </remarks>
@@ -20,11 +20,11 @@ namespace ReportingTests.NUnit
     class PerfectoTestBox
     {
         //Perfecto lab username, password and host.
-        private const string PERFECTO_USER = "myUser";
-        private const string PERFECTO_PASS = "myPassword";
-        private const string PERFECTO_HOST = "myLab.perfectomobile.com";
+        private const string PERFECTO_USER = "MY_USER";
+        private const string PERFECTO_PASS = "MY_PASS";
+        private const string PERFECTO_HOST = "MY_HOST.perfectomobile.com";
 
-        internal static RemoteWebDriverExtended driver;
+        internal static RemoteWebDriver driver;
         internal static ReportiumClient reportiumClient;
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace ReportingTests.NUnit
 
             //Create RemoteWebDriver
             var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", PERFECTO_HOST));
-            driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+            driver = new RemoteWebDriver(url, capabilities);
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
 
             //Initialize driver
