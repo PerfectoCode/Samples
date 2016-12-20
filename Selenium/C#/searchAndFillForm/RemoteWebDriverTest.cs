@@ -13,7 +13,7 @@ namespace GoogleSearchAndFillForm
     [TestClass]
     public class RemoteWebDriverTest
     {
-        private RemoteWebDriverExtended driver;
+        private RemoteWebDriver driver;
 
         [TestInitialize]
         public void PerfectoOpenConnection()
@@ -39,7 +39,7 @@ namespace GoogleSearchAndFillForm
             capabilities.SetPerfectoLabExecutionId(host);
 
             var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", host));
-            driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+            driver = new RemoteWebDriver(url, capabilities);
 
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
             driver.Manage().Window.Maximize();
