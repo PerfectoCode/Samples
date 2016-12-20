@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.UI;
 
 namespace GeicoCarInsuranceCSharp
 {
@@ -13,7 +12,7 @@ namespace GeicoCarInsuranceCSharp
     [TestClass]
     public class GeicoCarInsurance
     {
-        private RemoteWebDriverExtended driver;
+        private RemoteWebDriver driver;
 
         // TODO: Set your cloud host and credentials
         public static String USER_NAME = "MY_USER";
@@ -35,18 +34,11 @@ namespace GeicoCarInsuranceCSharp
                 // Target Web Machine configuration
                 capabilities.SetCapability("platformName", "Windows");
                 capabilities.SetCapability("platformVersion", "8.1");
-                capabilities.SetCapability("browserName", "Firefox");
-                capabilities.SetCapability("browserVersion", "42");
+                capabilities.SetCapability("browserName", "Chrome");
+                capabilities.SetCapability("browserVersion", "54");
 
-                // Additional capabilities
-                capabilities.SetCapability("resolution", "1440x900");
-                capabilities.SetCapability("location", "US East");
-                capabilities.SetCapability("takesScreenshot", true);
-
-                // Create Remote WebDriver
-                Console.WriteLine("Creating Web Machine per specified capabilities");
                 var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", PERFECTO_HOST));
-                driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+                driver = new RemoteWebDriver(url, capabilities);
             }
             else
             {
@@ -69,7 +61,7 @@ namespace GeicoCarInsuranceCSharp
                 capabilities.SetCapability("scriptName", "GeicoCarInsuranceCSharp");
 
                 var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", PERFECTO_HOST));
-                driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+                driver = new RemoteWebDriver(url, capabilities);
 
             }
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
@@ -85,37 +77,25 @@ namespace GeicoCarInsuranceCSharp
 
             // Maximize browser window on desktop
             if (TARGET_EXECUTION == "Desktop")
+            {
                 driver.Manage().Window.Maximize();
-
+            }
+                
             // Enter form data
-            SelectElement type = new SelectElement(driver.FindElement(By.Id("insurancetype")));
-            type.SelectByText("Motorcycle");
-
+            driver.FindElementById("motorcycle").Click();
             driver.FindElement(By.Id("zip")).SendKeys("01434");
             driver.FindElement(By.Id("submitButton")).Click();
 
+            driver.FindElementByXPath("//*[@class = 'row control-item']/div/label[2]").Click();
             driver.FindElement(By.Id("firstName")).SendKeys("MyFirstName");
             driver.FindElement(By.Id("lastName")).SendKeys("MyFamilyName");
             driver.FindElement(By.Id("street")).SendKeys("My Address");
-
+            driver.FindElementById("apt").SendKeys("");
             driver.FindElement(By.Id("date-monthdob")).SendKeys("8");
             driver.FindElement(By.Id("date-daydob")).SendKeys("3");
             driver.FindElement(By.Id("date-yeardob")).SendKeys("1981");
 
-            // Set Radio buttons, 1-Yes; 2-No
-            driver.FindElement(By.XPath("//*[@class='radio'][2]")).Click();
-            driver.FindElement(By.Id("btnSubmit")).Click();
-
-            //driver.FindElement(By.Id("hasCycle-error")).Displayed();
-
-            // select yes
-            SelectElement hasCycle = new SelectElement(driver.FindElement(By.Id("hasCycle")));
-            hasCycle.SelectByIndex(1);
-
-            // new select added (which current company)
-            SelectElement current = new SelectElement(driver.FindElement(By.Id("currentInsurance")));
-            current.SelectByText("Other");
-            driver.FindElement(By.Id("btnSubmit")).Click();
+            driver.FindElementById("hasCycle").Click();
         }
 
 

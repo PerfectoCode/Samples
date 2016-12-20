@@ -11,7 +11,7 @@ using Reportium.model;
 namespace ReportingTests
 {
     /// <summary>
-    /// RemoteWebDriverExtended test class. 
+    /// RemoteWebDriver test class. 
     /// </summary>
     /// <remarks>
     /// This sample shows how to use Perfecto Reporting
@@ -25,7 +25,7 @@ namespace ReportingTests
         const string PERFECTO_PASS = "MY_PASS";
         const string PERFECTO_HOST = "MY_HOST.perfectomobile.com";
 
-        private static RemoteWebDriverExtended driver;
+        private static RemoteWebDriver driver;
         private static TestContext testContextInstance;
         private static ReportiumClient reportiumClient;
 
@@ -53,7 +53,7 @@ namespace ReportingTests
 
             //Create RemoteWebDriver
             var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", PERFECTO_HOST));
-            driver = new RemoteWebDriverExtended(new HttpAuthenticatedCommandExecutor(url), capabilities);
+            driver = new RemoteWebDriver(url, capabilities);
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
 
             //Initialize Reportium Client
