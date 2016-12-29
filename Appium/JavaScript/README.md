@@ -47,4 +47,4 @@ describe('Perfecto Native NodeJS - Selendroid app', function () {
 expect(Value1).toContain(Value2);
 ```
 
-See full WebDriverIO API [here](http://webdriver.io/api.html).
+For the complite WebDriverIO API click [here](http://webdriver.io/api.html).
