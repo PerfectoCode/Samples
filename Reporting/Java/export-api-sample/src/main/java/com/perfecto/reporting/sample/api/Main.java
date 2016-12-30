@@ -73,7 +73,7 @@ public class Main {
         JsonObject commandsEntity = gson.fromJson(new InputStreamReader(getCommandsResponse.getEntity().getContent()), JsonObject.class);
         System.out.println("List of commands response:\n" + commandsEntity.toString());
 
-        // Retrieves summary PDF report an execution (can contain several tests)
+        // Retrieves summary PDF report of an execution (can contain several tests)
         uriBuilder = new URIBuilder(REPORTING_SERVER_URL + "/export/api/v1/test-executions/pdf");
         uriBuilder.addParameter("externalId[0]", driverExecutionId);
         uriBuilder.addParameter("timeZoneOffsetMinutes", Integer.toString(timeZoneOffsetMinutes));
