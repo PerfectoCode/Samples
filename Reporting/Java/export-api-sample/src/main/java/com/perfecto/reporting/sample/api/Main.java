@@ -1,6 +1,7 @@
 package com.perfecto.reporting.sample.api;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
@@ -38,7 +39,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         HttpClient httpClient = HttpClientBuilder.create().build();
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String accessToken;
 
         // Use your personal offline token to retrieve an access token
@@ -59,7 +60,7 @@ public class Main {
         System.out.println(getExecutions);
         HttpResponse getExecutionsResponse = httpClient.execute(getExecutions);
         JsonObject executionsEntity = gson.fromJson(new InputStreamReader(getExecutionsResponse.getEntity().getContent()), JsonObject.class);
-        System.out.println("List of test executions response:\n" + executionsEntity.toString());
+        System.out.println("List of test executions response:\n" + gson.toJson(executionsEntity));
 
         String testId = executionsEntity.getAsJsonArray("resources").get(0).getAsJsonObject().get("id").getAsString();
         String driverExecutionId = executionsEntity.getAsJsonArray("resources").get(0).getAsJsonObject().get("externalId").getAsString();
@@ -71,7 +72,7 @@ public class Main {
         System.out.println(getCommands);
         HttpResponse getCommandsResponse = httpClient.execute(getCommands);
         JsonObject commandsEntity = gson.fromJson(new InputStreamReader(getCommandsResponse.getEntity().getContent()), JsonObject.class);
-        System.out.println("List of commands response:\n" + commandsEntity.toString());
+        System.out.println("List of commands response:\n" + gson.toJson(commandsEntity));
 
         // Retrieves summary PDF report of an execution (can contain several tests)
         uriBuilder = new URIBuilder(REPORTING_SERVER_URL + "/export/api/v1/test-executions/pdf");
