@@ -1,6 +1,6 @@
 Narrative:
 In order to navigate to the PerfectoCode GitHub repository
-As a user or a costumer
+As a user or a customer
 I want to make sure google search works as well
 
 Meta:
