@@ -1,8 +1,6 @@
 package com.perfecto.reporting.sample;
 
-import com.perfecto.reportium.client.ReportiumClient;
-import com.perfecto.reportium.client.ReportiumClientFactory;
-import com.perfecto.reportium.testng.ReportiumTestNgListener;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
 import static com.perfecto.reporting.sample.TodoMvcWithListenerTest.IS_LOCAL_DRIVER;
@@ -13,12 +11,7 @@ import static com.perfecto.reporting.sample.TodoMvcWithListenerTest.IS_LOCAL_DRI
 public class CustomReportingTestListener extends ReportiumTestNgListener {
 
     @Override
-    protected ReportiumClient createReportiumClient(ITestResult testResult) {
-        if (!Boolean.parseBoolean(System.getProperty(IS_LOCAL_DRIVER))) {
-            return super.createReportiumClient(testResult);
-        }
-        else {
-            return new ReportiumClientFactory().createLoggerClient();
-        }
+    protected WebDriver getWebDriver(ITestResult testResult) {
+       return null; // take WebDriver from somewhere
     }
 }
