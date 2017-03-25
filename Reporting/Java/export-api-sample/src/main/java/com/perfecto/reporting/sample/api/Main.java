@@ -67,7 +67,6 @@ public class Main {
         downloadAttachments(testExecution);
     }
 
-
     private static JsonObject retrieveTestExecutions(String accessToken)
             throws URISyntaxException, IOException {
         URIBuilder uriBuilder = new URIBuilder(REPORTING_SERVER_URL + "/export/api/v1/test-executions");
@@ -198,13 +197,10 @@ public class Main {
             EntityUtils.consumeQuietly(response.getEntity());
             IOUtils.closeQuietly(fileOutputStream);
         }
-
     }
 
     private static void addDefaultRequestHeaders(HttpRequestBase request, String accessToken) {
-        request.addHeader("TENANTID", CQL_NAME);
         request.addHeader("Authorization", "Bearer " + accessToken);
     }
-
 }
 
