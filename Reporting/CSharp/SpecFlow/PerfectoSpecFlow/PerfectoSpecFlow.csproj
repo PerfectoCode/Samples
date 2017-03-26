@@ -81,8 +81,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="TechTalk.SpecFlow">
-      <HintPath>..\..\SpecFlow\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="TechTalk.SpecRun">
       <HintPath>..\..\SpecFlow\packages\SpecRun.SpecFlow.1.5.2\lib\net45\TechTalk.SpecRun.dll</HintPath>
