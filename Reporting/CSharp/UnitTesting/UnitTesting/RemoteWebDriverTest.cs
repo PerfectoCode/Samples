@@ -76,7 +76,6 @@ namespace ReportingTests
                 .withJob(new Job("Job name", 12345)) //optional 
                 .withWebDriver(driver)
                 .build();
-            new Platform.PlatformBuilder().build();
             return PerfectoClientFactory.createPerfectoReportiumClient(perfectoExecutionContext);
         }
 
