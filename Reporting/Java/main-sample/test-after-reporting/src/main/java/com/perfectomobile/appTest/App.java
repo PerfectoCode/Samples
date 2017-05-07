@@ -82,7 +82,7 @@ public class App {
             reportiumClient.testStart("PerfectoCommunityAppLogIn", new TestContext("ValidateLogIn"));
 
             //step1: Validate login page
-            reportiumClient.testStep("step1: Validate login page");
+            reportiumClient.stepStart("step1: Validate login page");
             WebDriverWait wait = new WebDriverWait(driver, 15);  // timeout of 15 seconds
             try {
                 wait.until(ExpectedConditions.visibilityOf(driver.findElementByXPath("//*[@resource-id='com.bloomfire.android.perfecto:id/sso']")));
@@ -91,7 +91,7 @@ public class App {
             }
 
             // Step2: Login to app
-            reportiumClient.testStep("step2: Login to app");
+            reportiumClient.stepStart("step2: Login to app");
 
             // Enter community username
             AndroidElement email = (AndroidElement) driver.findElementByXPath("//*[@resource-id='com.bloomfire.android.perfecto:id/email_address']");
@@ -104,15 +104,17 @@ public class App {
             AndroidElement Done = (AndroidElement) driver.findElementByName("Done");
             Done.click();
 
-            // Validate successful login
+            // Validate successful login and add assertion to the execution report
             try {
                 wait.until(ExpectedConditions.visibilityOf(driver.findElementByXPath("//*[@resource-id='android:id/action_bar_title']")));
+                reportiumClient.reportiumAssert("successful login", true);
             } catch (TimeoutException t) {
                 System.out.println("Did not find the home screen title");
+                reportiumClient.reportiumAssert("unsuccessful login - timeout", false);
             }
 
             // Step3: Open profile and validate name
-            reportiumClient.testStep("step3: Open profile and validate name");
+            reportiumClient.stepStart("step3: Open profile and validate name");
 
             // Click menu icon
             driver.findElementByXPath("//*[@resource-id='android:id/action_bar_title']").click();
@@ -124,7 +126,7 @@ public class App {
             Assert.assertEquals("Profile", titleBarText);
 
             // Step4: Logout and Uninstall app
-            reportiumClient.testStep("step4: Logout and Uninstall app");
+            reportiumClient.stepStart("step4: Logout and Uninstall app");
 
             // Click More options icon
             driver.findElementByXPath("//*[@content-desc='More options']").click();
