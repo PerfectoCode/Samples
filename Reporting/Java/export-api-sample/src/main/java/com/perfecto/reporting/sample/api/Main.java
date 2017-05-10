@@ -5,13 +5,10 @@ import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 import java.io.FileOutputStream;
@@ -22,7 +19,6 @@ import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -32,7 +28,7 @@ public class Main {
     // The reporting Server address depends on the location of the lab. Please refer to the documentation at
     // http://developers.perfectomobile.com/display/PD/Reporting#Reporting-ReportingserverAccessingthereports to find your relevant address
     // For example the following is used for US:
-    public static final String REPORTING_SERVER_URL = "https://" + CQL_NAME + ".reporting-01.perfectomobile.com";
+    public static final String REPORTING_SERVER_URL = "https://" + CQL_NAME + ".reporting.perfectomobile.com";
 
     // See http://developers.perfectomobile.com/display/PD/Using+the+Reporting+Public+API on how to obtain an Offline Token
     public static final String OFFLINE_TOKEN = "MY_CONTINUOUS_QUALITY_LAB_OFFLINE_TOKEN";
@@ -41,34 +37,35 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-        // Use your personal offline token to obtain an access token
-        String accessToken = obtainAccessToken();
-
         // Retrieve a list of the test executions in your lab (as a json)
-        JsonObject executions = retrieveTestExecutions(accessToken);
+        JsonObject executions = retrieveTestExecutions();
 
-        JsonObject testExecution = executions.getAsJsonArray("resources").get(0).getAsJsonObject();
-        String testId = testExecution.get("id").getAsString();
-        String driverExecutionId = testExecution.get("externalId").getAsString();
+        JsonArray resources = executions.getAsJsonArray("resources");
+        if (resources.size() == 0) {
+            System.out.println("there are no test executions for that period of time");
+        } else {
+            JsonObject testExecution = resources.get(0).getAsJsonObject();
+            String testId = testExecution.get("id").getAsString();
+            String driverExecutionId = testExecution.get("externalId").getAsString();
 
-        // Retrieves a list of commands of a single test (as a json)
-        retrieveTestCommands(testId, accessToken);
+            // Retrieves a list of commands of a single test (as a json)
+            retrieveTestCommands(testId);
 
-        // Download an execution summary PDF report of an execution (may contain several tests)
-        downloadExecutionSummaryReport(driverExecutionId, accessToken);
+            // Download an execution summary PDF report of an execution (may contain several tests)
+            downloadExecutionSummaryReport(driverExecutionId);
 
-        // Download a PDF report of a single test
-        downloadTestReport(testId, accessToken);
+            // Download a PDF report of a single test
+            downloadTestReport(testId);
 
-        // Download video
-        downloadVideo(testExecution);
+            // Download video
+            downloadVideo(testExecution);
 
-        // Download attachments such as device logs, vitals or network files (relevant for Mobile tests only)
-        downloadAttachments(testExecution);
+            // Download attachments such as device logs, vitals or network files (relevant for Mobile tests only)
+            downloadAttachments(testExecution);
+        }
     }
 
-    private static JsonObject retrieveTestExecutions(String accessToken)
-            throws URISyntaxException, IOException {
+    private static JsonObject retrieveTestExecutions() throws URISyntaxException, IOException {
         URIBuilder uriBuilder = new URIBuilder(REPORTING_SERVER_URL + "/export/api/v1/test-executions");
 
         // Optional: Filter by range. In this example: retrieve test executions of the past month (result may contain tests of multiple driver executions)
@@ -79,23 +76,28 @@ public class Main {
         // uriBuilder.addParameter("externalId[0]", "SOME_DRIVER_EXECUTION_ID");
 
         HttpGet getExecutions = new HttpGet(uriBuilder.build());
-        addDefaultRequestHeaders(getExecutions, accessToken);
+        addDefaultRequestHeaders(getExecutions);
         HttpClient httpClient = HttpClientBuilder.create().build();
 
         HttpResponse getExecutionsResponse = httpClient.execute(getExecutions);
         JsonObject executions;
         try (InputStreamReader inputStreamReader = new InputStreamReader(getExecutionsResponse.getEntity().getContent())) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            executions = gson.fromJson(IOUtils.toString(inputStreamReader), JsonObject.class);
+            String response = IOUtils.toString(inputStreamReader);
+            try {
+                executions = gson.fromJson(response, JsonObject.class);
+            } catch (JsonSyntaxException e) {
+                throw new RuntimeException("Unable to parse response: " + response);
+            }
             System.out.println("\nList of test executions response:\n" + gson.toJson(executions));
         }
         return executions;
     }
 
-    private static void retrieveTestCommands(String testId, String accessToken)
+    private static void retrieveTestCommands(String testId)
             throws URISyntaxException, IOException {
         HttpGet getCommands = new HttpGet(new URI(REPORTING_SERVER_URL + "/export/api/v1/test-executions/" + testId + "/commands"));
-        addDefaultRequestHeaders(getCommands, accessToken);
+        addDefaultRequestHeaders(getCommands);
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpResponse getCommandsResponse = httpClient.execute(getCommands);
         try (InputStreamReader inputStreamReader = new InputStreamReader(getCommandsResponse.getEntity().getContent())) {
@@ -105,21 +107,20 @@ public class Main {
         }
     }
 
-    private static void downloadExecutionSummaryReport(String driverExecutionId, String accessToken)
+    private static void downloadExecutionSummaryReport(String driverExecutionId)
             throws URISyntaxException, IOException {
         URIBuilder uriBuilder = new URIBuilder(REPORTING_SERVER_URL + "/export/api/v1/test-executions/pdf");
         uriBuilder.addParameter("externalId[0]", driverExecutionId);
-        downloadFileAuthenticated(driverExecutionId, uriBuilder.build(), ".pdf", "execution summary PDF report", accessToken);
+        downloadFileAuthenticated(driverExecutionId, uriBuilder.build(), ".pdf", "execution summary PDF report");
     }
 
-    private static void downloadTestReport(String testId, String accessToken)
+    private static void downloadTestReport(String testId)
             throws URISyntaxException, IOException {
         URIBuilder uriBuilder = new URIBuilder(REPORTING_SERVER_URL + "/export/api/v1/test-executions/pdf/" + testId);
-        downloadFileAuthenticated(testId, uriBuilder.build(), ".pdf", "test PDF report", accessToken);
+        downloadFileAuthenticated(testId, uriBuilder.build(), ".pdf", "test PDF report");
     }
 
-    private static void downloadVideo(JsonObject testExecution)
-            throws IOException, URISyntaxException {
+    private static void downloadVideo(JsonObject testExecution) throws IOException, URISyntaxException {
         JsonArray videos = testExecution.getAsJsonArray("videos");
         if (videos.size() > 0) {
             JsonObject video = videos.get(0).getAsJsonObject();
@@ -151,30 +152,15 @@ public class Main {
 
     // Utils
 
-    private static String obtainAccessToken() throws URISyntaxException, IOException {
-        HttpPost tokenPost = new HttpPost(new URI(CQL_SERVER_URL + "/services/v2.0/auth/access-token"));
-        tokenPost.setEntity(new UrlEncodedFormEntity(Collections.singletonList(new BasicNameValuePair("offline_token", OFFLINE_TOKEN))));
-        HttpClient httpClient = HttpClientBuilder.create().build();
-        HttpResponse tokenResponse = httpClient.execute(tokenPost);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String accessToken;
-        try (InputStreamReader inputStreamReader = new InputStreamReader(tokenResponse.getEntity().getContent())) {
-            JsonObject tokenEntity = gson.fromJson(inputStreamReader, JsonObject.class);
-            accessToken = tokenEntity.getAsJsonObject("data").get("access_token").getAsString();
-            System.out.println("Got access token:\n" + accessToken);
-        }
-        return accessToken;
-    }
-
     private static void downloadFile(String fileName, URI uri, String suffix, String description)
             throws IOException {
         downloadFileToFS(new HttpGet(uri), fileName, suffix, description);
     }
 
-    private static void downloadFileAuthenticated(String fileName, URI uri, String suffix, String description, String accessToken)
+    private static void downloadFileAuthenticated(String fileName, URI uri, String suffix, String description)
             throws IOException {
         HttpGet httpGet = new HttpGet(uri);
-        addDefaultRequestHeaders(httpGet, accessToken);
+        addDefaultRequestHeaders(httpGet);
         downloadFileToFS(httpGet, fileName, suffix, description);
     }
 
@@ -199,8 +185,8 @@ public class Main {
         }
     }
 
-    private static void addDefaultRequestHeaders(HttpRequestBase request, String accessToken) {
-        request.addHeader("Authorization", "Bearer " + accessToken);
+    private static void addDefaultRequestHeaders(HttpRequestBase request) {
+        request.addHeader("PERFECTO_AUTHORIZATION", OFFLINE_TOKEN);
     }
 }
 
