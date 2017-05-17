@@ -19,7 +19,7 @@ New features - assert and step end commands
 Required cloud version - 10.3  
 New features - assert and step end commands  
 
-##### 2.0.0  
+##### 1.1.3  
 Stable version  
 
 ### C# SDK (https://www.nuget.org/packages/Perfecto-Reporting)
