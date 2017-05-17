@@ -1,8 +1,7 @@
-Release notes
+Release Notes
 =============
 
-Java SDK
-========
+### Java SDK
 1.1.15
 Required cloud version - 10.3
 New features - assert and step end commands
@@ -10,14 +9,11 @@ New features - assert and step end commands
 1.1.10
 Stable version
 
-Python SDK
-==========
+### Python SDK
 
-Ruby SDK
-========
+### Ruby SDK
 
-C# SDK
-======
+### C# SDK
 
-Javascript SDK
-==============
+### Javascript SDK
+
