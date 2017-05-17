@@ -3,7 +3,9 @@ SDK Release Notes
 
 ### Java SDK
 1.1.15
+
 Required cloud version - 10.3
+
 New features - assert and step end commands
 
 1.1.10
