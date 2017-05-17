@@ -8,8 +8,7 @@ New features - assert and step end commands
 
 ##### 1.1.10  
 Stable version
-    
-  
+     
 ### Javascript SDK (https://www.npmjs.com/package/perfecto-reporting)
 ##### 2.0.0  
 Required cloud version - 10.3  
