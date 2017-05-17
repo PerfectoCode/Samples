@@ -14,7 +14,7 @@ Stable version
 Required cloud version - 10.3  
 New features - assert and step end commands  
 
-### Ruby SDK (https://rubygems.org/gems/perfecto-reporting/)
+### Ruby SDK (https://rubygems.org/gems/perfecto-reporting)
 Coming release  
 Required cloud version - 10.3  
 New features - assert and step end commands  
@@ -22,7 +22,7 @@ New features - assert and step end commands
 2.0.0  
 Stable version  
 
-### C# SDK (https://www.nuget.org/packages/Perfecto-Reporting/)
+### C# SDK (https://www.nuget.org/packages/Perfecto-Reporting)
 2.0.0  
 Required cloud version - 10.3  
 New features - assert and step end commands  
