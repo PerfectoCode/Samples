@@ -13,7 +13,7 @@ Stable version
 
 ### Javascript SDK (https://www.npmjs.com/package/perfecto-reporting)
 2.0.0
-Required cloud version - 10.3
+Required cloud version - 10.3  
 New features - assert and step end commands
 
 ### Ruby SDK (https://rubygems.org/gems/perfecto-reporting/)
