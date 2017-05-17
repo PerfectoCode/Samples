@@ -1,4 +1,4 @@
-Release Notes
+SDK Release Notes
 =============
 
 ### Java SDK
@@ -14,6 +14,9 @@ Stable version
 ### Ruby SDK
 
 ### C# SDK
+2.0.0
+Required cloud version - 10.3
+New features - assert and step end commands
 
 ### Javascript SDK
 
