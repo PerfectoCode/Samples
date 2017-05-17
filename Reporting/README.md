@@ -35,5 +35,5 @@ Stable version
 Required cloud version - 10.3  
 New features - assert and step end commands 
 
-0.1.1
+0.1.1  
 Stable version  
