@@ -2,36 +2,34 @@ SDK Release Notes
 =============
 
 ### Java SDK
-1.1.15
+1.1.15  
+Required cloud version - 10.3  
+New features - assert and step end commands  
 
-Required cloud version - 10.3
-
-New features - assert and step end commands
-
-1.1.10
+1.1.10  
 Stable version
 
 ### Javascript SDK (https://www.npmjs.com/package/perfecto-reporting)
-2.0.0
+2.0.0  
 Required cloud version - 10.3  
-New features - assert and step end commands
+New features - assert and step end commands  
 
 ### Ruby SDK (https://rubygems.org/gems/perfecto-reporting/)
-Coming release
-Required cloud version - 10.3
-New features - assert and step end commands
+Coming release  
+Required cloud version - 10.3  
+New features - assert and step end commands  
 
-2.0.0
-Stable version
+2.0.0  
+Stable version  
 
 ### C# SDK (https://www.nuget.org/packages/Perfecto-Reporting/)
-2.0.0
-Required cloud version - 10.3
-New features - assert and step end commands
+2.0.0  
+Required cloud version - 10.3  
+New features - assert and step end commands  
 
-1.0.1
-Stable version
+1.0.1  
+Stable version  
 
 ### Python SDK (https://pydigger.com/pypi/perfecto-reporting)
-0.1.1
-Stable version
+0.1.1  
+Stable version  
