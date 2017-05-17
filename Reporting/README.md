@@ -30,6 +30,10 @@ New features - assert and step end commands
 1.0.1  
 Stable version  
 
-### Python SDK (https://pydigger.com/pypi/perfecto-reporting)
-0.1.1  
+### Python SDK (https://pypi.python.org/pypi/perfecto)
+0.1.1.4
+Required cloud version - 10.3  
+New features - assert and step end commands 
+
+0.1.1
 Stable version  
