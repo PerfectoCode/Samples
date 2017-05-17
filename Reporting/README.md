@@ -1,7 +1,7 @@
 SDK Release Notes
 =============
 
-### Java SDK
+### Java SDK (https://repository-perfectomobile.forge.cloudbees.com/public/com/perfecto/reporting-sdk/reportium-java)
 ##### 1.1.15  
 Required cloud version - 10.3  
 New features - assert and step end commands  
