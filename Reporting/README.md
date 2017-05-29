@@ -2,6 +2,9 @@ SDK Release Notes
 =============
 
 ### Java SDK (https://repository-perfectomobile.forge.cloudbees.com/public/com/perfecto/reporting-sdk/reportium-java)
+##### 1.1.16  
+Required cloud version - 10.3  
+New features - Remove dependency on specific selenium version   
 ##### 1.1.15  
 Required cloud version - 10.3  
 New features - assert and step end commands  
