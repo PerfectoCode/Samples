@@ -1,0 +1,14 @@
+{
+  "name": "reporting-public-api-nodejs",
+  "version": "1.0.0",
+  "description": "sample demonstrate how  to use reporting public api with NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "request": "^2.81.0"
+  }
+}
