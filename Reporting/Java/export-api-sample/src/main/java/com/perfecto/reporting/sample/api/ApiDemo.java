@@ -21,20 +21,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class ApiDemo {
+
     // The Perfecto Continuous Quality Lab you work with
     public static final String CQL_NAME = "demo";
 
-    // The reporting Server address depends on the location of the lab. Please refer to the documentation at
-    // http://developers.perfectomobile.com/display/PD/Reporting#Reporting-ReportingserverAccessingthereports to find your relevant address
-    // For example the following is used for US:
     public static final String REPORTING_SERVER_URL = "https://" + CQL_NAME + ".reporting.perfectomobile.com";
 
-    // See http://developers.perfectomobile.com/display/PD/Using+the+Reporting+Public+API on how to obtain an Offline Token
-    public static final String OFFLINE_TOKEN = "MY_CONTINUOUS_QUALITY_LAB_OFFLINE_TOKEN";
-
-    public static final String CQL_SERVER_URL = "https://" + CQL_NAME + ".perfectomobile.com";
-
+    // See http://developers.perfectomobile.com/display/PD/Using+the+Reporting+Public+API on how to obtain a Security Token
+    public static final String SECURITY_TOKEN = "MY_CONTINUOUS_QUALITY_LAB_SECURITY_TOKEN";
 
     public static void main(String[] args) throws Exception {
         // Retrieve a list of the test executions in your lab (as a json)
@@ -45,17 +40,9 @@ public class Main {
             System.out.println("there are no test executions for that period of time");
         } else {
             JsonObject testExecution = resources.get(0).getAsJsonObject();
-            String testId = testExecution.get("id").getAsString();
-            String driverExecutionId = testExecution.get("externalId").getAsString();
 
             // Retrieves a list of commands of a single test (as a json)
-            retrieveTestCommands(testId);
-
-            // Download an execution summary PDF report of an execution (may contain several tests)
-            downloadExecutionSummaryReport(driverExecutionId);
-
-            // Download a PDF report of a single test
-            downloadTestReport(testId);
+            retrieveTestCommands(testExecution);
 
             // Download video
             downloadVideo(testExecution);
@@ -94,8 +81,8 @@ public class Main {
         return executions;
     }
 
-    private static void retrieveTestCommands(String testId)
-            throws URISyntaxException, IOException {
+    private static void retrieveTestCommands(JsonObject testExecution) throws URISyntaxException, IOException {
+        String testId = testExecution.get("id").getAsString();
         HttpGet getCommands = new HttpGet(new URI(REPORTING_SERVER_URL + "/export/api/v1/test-executions/" + testId + "/commands"));
         addDefaultRequestHeaders(getCommands);
         HttpClient httpClient = HttpClientBuilder.create().build();
@@ -105,19 +92,6 @@ public class Main {
             JsonObject commands = gson.fromJson(IOUtils.toString(inputStreamReader), JsonObject.class);
             System.out.println("\nList of commands response:\n" + gson.toJson(commands));
         }
-    }
-
-    private static void downloadExecutionSummaryReport(String driverExecutionId)
-            throws URISyntaxException, IOException {
-        URIBuilder uriBuilder = new URIBuilder(REPORTING_SERVER_URL + "/export/api/v1/test-executions/pdf");
-        uriBuilder.addParameter("externalId[0]", driverExecutionId);
-        downloadFileAuthenticated(driverExecutionId, uriBuilder.build(), ".pdf", "execution summary PDF report");
-    }
-
-    private static void downloadTestReport(String testId)
-            throws URISyntaxException, IOException {
-        URIBuilder uriBuilder = new URIBuilder(REPORTING_SERVER_URL + "/export/api/v1/test-executions/pdf/" + testId);
-        downloadFileAuthenticated(testId, uriBuilder.build(), ".pdf", "test PDF report");
     }
 
     private static void downloadVideo(JsonObject testExecution) throws IOException, URISyntaxException {
@@ -133,8 +107,7 @@ public class Main {
         }
     }
 
-    private static void downloadAttachments(JsonObject testExecution)
-            throws IOException, URISyntaxException {
+    private static void downloadAttachments(JsonObject testExecution) throws IOException, URISyntaxException {
         // Example for downloading device logs
         JsonArray artifacts = testExecution.getAsJsonArray("artifacts");
         for (JsonElement artifactElement : artifacts) {
@@ -152,20 +125,11 @@ public class Main {
 
     // Utils
 
-    private static void downloadFile(String fileName, URI uri, String suffix, String description)
-            throws IOException {
+    private static void downloadFile(String fileName, URI uri, String suffix, String description) throws IOException {
         downloadFileToFS(new HttpGet(uri), fileName, suffix, description);
     }
 
-    private static void downloadFileAuthenticated(String fileName, URI uri, String suffix, String description)
-            throws IOException {
-        HttpGet httpGet = new HttpGet(uri);
-        addDefaultRequestHeaders(httpGet);
-        downloadFileToFS(httpGet, fileName, suffix, description);
-    }
-
-    private static void downloadFileToFS(HttpGet httpGet, String fileName, String suffix, String description)
-            throws IOException {
+    private static void downloadFileToFS(HttpGet httpGet, String fileName, String suffix, String description) throws IOException {
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpResponse response = httpClient.execute(httpGet);
         FileOutputStream fileOutputStream = null;
@@ -186,7 +150,7 @@ public class Main {
     }
 
     private static void addDefaultRequestHeaders(HttpRequestBase request) {
-        request.addHeader("PERFECTO_AUTHORIZATION", OFFLINE_TOKEN);
+        request.addHeader("PERFECTO_AUTHORIZATION", SECURITY_TOKEN);
     }
 }
 
