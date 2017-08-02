@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="com.perfectomobile.eclipse.MOBILECLOUD_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/lees/Downloads/opencsv-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lees/Downloads/jxl-2.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

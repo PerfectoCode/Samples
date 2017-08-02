@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="179133" started-at="2016-07-26T06:46:39Z" finished-at="2016-07-26T06:49:38Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="179133" started-at="2016-07-26T06:46:39Z" finished-at="2016-07-26T06:49:38Z">
+      <class name="RemoteWebDriverTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:RemoteWebDriverTest@1753acfe]" name="beforeClass" is-config="true" duration-ms="10538" started-at="2016-07-26T09:46:39Z" finished-at="2016-07-26T09:46:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="test(java.lang.Integer, java.lang.Integer)[pri:0, instance:RemoteWebDriverTest@1753acfe]" name="test" duration-ms="10323" started-at="2016-07-26T09:46:50Z" data-provider="test1" finished-at="2016-07-26T09:47:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test(java.lang.Integer, java.lang.Integer)[pri:0, instance:RemoteWebDriverTest@1753acfe]" name="test" duration-ms="14973" started-at="2016-07-26T09:47:00Z" data-provider="test1" finished-at="2016-07-26T09:47:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test(java.lang.Integer, java.lang.Integer)[pri:0, instance:RemoteWebDriverTest@1753acfe]" name="test" duration-ms="14733" started-at="2016-07-26T09:47:15Z" data-provider="test1" finished-at="2016-07-26T09:47:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[19]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test(java.lang.Integer, java.lang.Integer)[pri:0, instance:RemoteWebDriverTest@1753acfe]" name="test" duration-ms="14404" started-at="2016-07-26T09:47:30Z" data-provider="test1" finished-at="2016-07-26T09:47:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[22]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test(java.lang.Integer, java.lang.Integer)[pri:0, instance:RemoteWebDriverTest@1753acfe]" name="test" duration-ms="14247" started-at="2016-07-26T09:47:44Z" data-provider="test1" finished-at="2016-07-26T09:47:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[23]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test(java.lang.Integer, java.lang.Integer)[pri:0, instance:RemoteWebDriverTest@1753acfe]" name="test" duration-ms="14829" started-at="2016-07-26T09:47:58Z" data-provider="test1" finished-at="2016-07-26T09:48:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[49]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:RemoteWebDriverTest@1753acfe]" name="afterClass" is-config="true" duration-ms="85036" started-at="2016-07-26T09:48:13Z" finished-at="2016-07-26T09:49:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- RemoteWebDriverTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
