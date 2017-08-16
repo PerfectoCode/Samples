@@ -96,8 +96,7 @@ public class KeepTest {
 	@AfterTest
 	public void finishUp() {
 		try {
-		    // Retrieve the URL of the Single Test Report, can be saved to your execution summary and used to download the report at a later point
-		    // String reportURL = (String)(driver.getCapabilities().getCapability(WindTunnelUtils.SINGLE_TEST_REPORT_URL_CAPABILITY));
+			
 			driver.closeApp();
 		    driver.close();
 

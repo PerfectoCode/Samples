@@ -102,9 +102,7 @@ namespace GeicoCarInsuranceCSharp
         [TestCleanup]
         public void PerfectoCloseConnection()
         {
-            // Retrieve the URL of the Single Test Report, can be saved to your execution summary and used to download the report at a later point
-            string reportUrl = (string)(driver.Capabilities.GetCapability(WindTunnelUtils.SINGLE_TEST_REPORT_URL_CAPABILITY));
-
+    
             driver.Close();
 
             if (TARGET_EXECUTION == "Desktop")

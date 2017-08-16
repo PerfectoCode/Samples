@@ -37,9 +37,6 @@ public class mobileSessionMaps{
 			ex.printStackTrace();
 		}finally {
 			try {
-				// Retrieve the URL of the Wind Tunnel Report, can be saved to
-				// your execution summary and used to download the report at a later point
-				String reportURL = (String)(driver.getCapabilities().getCapability(WindTunnelUtils.WIND_TUNNEL_REPORT_URL_CAPABILITY));
 				
 				driver.close();
 				
