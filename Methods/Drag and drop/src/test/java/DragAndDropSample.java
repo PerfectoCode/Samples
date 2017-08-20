@@ -19,8 +19,9 @@ public class DragAndDropSample {
 	
 	WebDriver driver;
 	final static String host = "My_Host.perfectomobile.com";
-	final static String user = "My_User";
-	final static String pass = "My_Pass";
+	final static String token = "My Security Token"
+	//final static String user = "My_User";
+	//final static String pass = "My_Pass";
 	
     @BeforeMethod
 	@Parameters({"platformName" , "platformVersion" , "browserVersion" , "browserName"})
@@ -30,8 +31,9 @@ public class DragAndDropSample {
     	capabilities.setCapability("platformVersion", platformVersion);
     	capabilities.setCapability("browserVersion", browserVersion);
     	capabilities.setCapability("browserName", browserName);
-		capabilities.setCapability("user", user);
-		capabilities.setCapability("password", pass);
+		capabilities.setCapability("securityToken", token);
+		//capabilities.setCapability("user", user);
+		//capabilities.setCapability("password", pass);
 		
 	  	driver = new RemoteWebDriver(new URL("https://" + host + "/nexperience/perfectomobile/wd/hub") , capabilities);
 	  	driver.manage().window().maximize();
