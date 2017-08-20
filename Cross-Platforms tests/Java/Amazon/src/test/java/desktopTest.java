@@ -20,8 +20,9 @@ public class desktopTest {
 	public void beforeTest() throws MalformedURLException{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "c:/selenium/chromedriver.exe");
-		capabilities.setCapability("user", Properties.user);
-		capabilities.setCapability("password", Properties.pass);
+		//capabilities.setCapability("user", Properties.user);
+		//capabilities.setCapability("password", Properties.pass);
+		capabilities.setCapability("securityToken", Properties.Token);
 		capabilities.setCapability("platformName", "Windows");
 		capabilities.setCapability("platformVersion", "8.1");
 		capabilities.setCapability("browserName", "Chrome");

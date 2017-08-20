@@ -7,8 +7,9 @@
 public class Properties{
 	
 	//perfecto properties.
-	public static final String user 			= "My_User";
-	public static final String pass 			= "My_Password";
+	//public static final String user 			= "My_User";
+	//public static final String pass 			= "My_Password";
+	public static final String Token            = "API_TOKEN";
 	public static final String mobileHost 		= "My_Host.perfectomobile.com";
 	public static final String webHost 			= "My_Host.perfectomobile.com";
 	//Application properties.

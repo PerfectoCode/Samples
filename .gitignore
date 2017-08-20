@@ -213,3 +213,7 @@ ModelManifest.xml
 
 .idea
 .vscode
+
+# Gradle
+gradle/
+gradlew

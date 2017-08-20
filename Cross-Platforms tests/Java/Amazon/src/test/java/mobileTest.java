@@ -40,9 +40,10 @@ public class mobileTest {
 	@BeforeTest
 	public void beforeTest(String platformName , String model , String deviceName) throws IOException {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("user", Properties.user);
-		capabilities.setCapability("password", Properties.pass);
-		
+		//capabilities.setCapability("user", Properties.user);
+		//capabilities.setCapability("password", Properties.pass);
+		capabilities.setCapability("securityToken", Properties.Token);
+
 		//Set this capabilities from the ".XML" file:
 		capabilities.setCapability("platformName", platformName);
 		capabilities.setCapability("model", model);
