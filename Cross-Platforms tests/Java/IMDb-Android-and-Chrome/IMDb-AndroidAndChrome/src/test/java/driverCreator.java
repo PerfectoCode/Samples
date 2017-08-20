@@ -10,19 +10,25 @@ import io.appium.java_client.ios.IOSDriver;
 
 public class driverCreator{
 	
-	private static String cloudUser 		= "Your_User";
-	private static String cloudPass 		= "Your_Pass";
-	private static String cloudHost 		= "YourHost.perfectomobile.com";
+	//private static String cloudUser 		= "Your_User";
+	//private static String cloudPass 		= "Your_Pass";
+	//private static String cloudHost 		= "YourHost.perfectomobile.com";
+	private static final String TOKEN = System.getenv("token");
+	private static final String HOST = System.getenv("host");
+
 	private static String AppPathAndroid	= "App installetion path on cloud repository";
 	
 	//Creating AndroidDriver (Appium).
 	@SuppressWarnings("rawtypes")
 	public static AndroidDriver createAndroidDriver(String platformName , String model , String deviceName) throws MalformedURLException{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		//User capabilities
-		capabilities.setCapability("user", cloudUser);
-		capabilities.setCapability("password", cloudPass);
-		
+		//User capabilities - use security token instead.
+		//capabilities.setCapability("user", cloudUser);
+		//capabilities.setCapability("password", cloudPass);
+
+		//Security Token
+		capabilities.setCapability("securityToken", TOKEN);
+
 		//Device capabilities
 		capabilities.setCapability("platformName", platformName);
 		capabilities.setCapability("deviceName", deviceName);
@@ -54,10 +60,13 @@ public class driverCreator{
 	//Creating a desktop driver .
 	public static RemoteWebDriver desktopDriver() throws MalformedURLException{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		//User capabilities
-		capabilities.setCapability("user", cloudUser);
-		capabilities.setCapability("password", cloudPass);
-		
+		//User capabilities - use security token instead
+		//capabilities.setCapability("user", cloudUser);
+		//capabilities.setCapability("password", cloudPass);
+
+		//Security Token
+		capabilities.setCapability("securityToken", TOKEN);
+
 		capabilities.setCapability("platformName", "Windows");
 		capabilities.setCapability("platformVersion", "8.1");
 		capabilities.setCapability("browserName", "Chrome");
@@ -69,7 +78,7 @@ public class driverCreator{
 	
 	//Returns the cloud as a URL.
 	public static URL getCloud() throws MalformedURLException{
-		return new URL("https://" + cloudHost + "/nexperience/perfectomobile/wd/hub");
+		return new URL("https://" + HOST + "/nexperience/perfectomobile/wd/hub");
 	}
 	
 }
