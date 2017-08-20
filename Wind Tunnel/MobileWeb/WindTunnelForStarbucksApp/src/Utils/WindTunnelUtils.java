@@ -26,7 +26,6 @@ public final class WindTunnelUtils {
     public static final String WIND_TUNNEL_ORIENTATION_CAPABILITY = "windTunnelOrientation";
     public static final String WIND_TUNNEL_VNETWORK_CAPABILITY = "windTunnelVNetwork";
     public static final String WIND_TUNNEL_BACKGROUND_RUNNING_APPS_CAPABILITY = "windTunnelBackgroundRunningApps";
-    public static final String WIND_TUNNEL_REPORT_URL_CAPABILITY = "windTunnelReportUrl";
 
     public static final String DEVICE_NAME_CAPABILITY = "deviceName";
     public static final String DEVICE_PLATFORM_NAME_CAPABILITY = "platformName";
