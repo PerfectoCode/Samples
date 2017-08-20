@@ -23,18 +23,15 @@ import io.appium.java_client.ios.*;
 
 public class Register2Airbnb {
 
+    private static final String TOKEN = System.getenv("token");
+    private static final String HOST = System.getenv("host");
+
     public static void main(String[] args) throws MalformedURLException, IOException {
         System.out.println("Run started");
-
         String browserName = "mobileOS";
         
         //Opening desktop driver
         DesiredCapabilities desktopCapabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
-        String HOST = "yourCloud.perfectomobile.com";
-        String USER = "yourUser";
-        String PSWD = "yourPassword";
-        desktopCapabilities.setCapability("user", USER);
-        desktopCapabilities.setCapability("password", PSWD);
 
         desktopCapabilities.setCapability("platformName", "Windows");
         desktopCapabilities.setCapability("platformVersion", "8.1");
@@ -42,7 +39,6 @@ public class Register2Airbnb {
         desktopCapabilities.setCapability("browserVersion", "50");
         desktopCapabilities.setCapability("resolution", "1440x900");
         desktopCapabilities.setCapability("location", "US East");
-
         desktopCapabilities.setCapability("scriptName", "Register2Airbnb");
 
         // Call this method if you want the script to share the devices with the Perfecto Lab plugin.
@@ -56,8 +52,7 @@ public class Register2Airbnb {
 
         //Opening mobile driver
         DesiredCapabilities mobileCapabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
-        mobileCapabilities.setCapability("user", USER);
-        mobileCapabilities.setCapability("password", PSWD);
+        capabilities.setCapability("securityToken", TOKEN);
 
         // This is a specific device containing a SIM card
         mobileCapabilities.setCapability("deviceName", "device id os mobile with SIM");

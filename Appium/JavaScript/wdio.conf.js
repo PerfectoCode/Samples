@@ -1,4 +1,4 @@
-//Set your Perfecto lab user, pass and host here.
+Aooium//Set your Perfecto lab user, pass and host here.
 const host = 'MY_HOST.perfectomobile.com';
 const user = 'MY_USER@perfectomobile.com';
 const pass = 'MY_PASS';

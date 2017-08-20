@@ -44,7 +44,7 @@ public class PerfectoLabUtils {
 		try { 
 			String command = "mobile:report:download"; 
 			Map<String, Object> params = new HashMap<>(); 
-			params.put("type", type); 
+			params.put("type", type);
 			String report = (String)driver.executeScript(command, params); 
 			File reportFile = new File(fileName + "." + type); 
 			BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream(reportFile)); 
