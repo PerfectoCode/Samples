@@ -12,8 +12,9 @@ class PerfectoLabUtils:
     UPLOAD = "upload"
     OVERWRITE = "overwrite"
     OPERATION = "operation"
-    USER = "user"
-    PASSWORD = "password"
+    # USER = "user"
+    # PASSWORD = "password"
+    TOKEN = "Security Token"
 
     def __init__(self):
         pass

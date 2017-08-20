@@ -5,8 +5,7 @@ TODO: Replace hardcoded with sys.args
 
 #Host information:
 host        = 'My_Host.perfectomobile.com'
-user        = 'My_User'
-password    = 'My_Pass'
+token       = 'My_Token'
 
 #Application information:
 AppUser     = 'My_AppUser'
@@ -16,14 +15,12 @@ searchValue = 'Pink Floyd'
 
 #devices information:
 iPhone_6 = {
-            'user'      : user,
-            'password'  : password,
+            'token': token,
             'deviceName': 'My Device Name'
 }
 
 desktop_chome = {
-                 'user'      : user,
-                 'password'  : password,
+                 'token': token,
                  'platformName': 'Windows',
                  'platformVersion': '7',
                  'browserName': 'Chrome',
