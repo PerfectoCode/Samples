@@ -32,13 +32,16 @@ public class SwissNativeAndWeb {
         Map<String, String> desktopFlightData = new HashMap<>();
         
         String host = "yourlab.perfectomobile.com";
-        String user = "yourUserName"; 
-        String pswd = "yourPassword";
+		String token = "your security token";
+        //String user = "yourUserName";
+        //String pswd = "yourPassword";
 
         //mobile capabilities
         DesiredCapabilities mobileCapabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
-        mobileCapabilities.setCapability("user", user);
-        mobileCapabilities.setCapability("password", pswd);
+		mobileCapabilities.setCapability("securityToken", token);
+        //mobileCapabilities.setCapability("user", user);
+        //mobileCapabilities.setCapability("password", pswd);
+
         //Device ID where Swiss native app is installed
         mobileCapabilities.setCapability("deviceName", "DeviceWithInstrumentedAppInstalled");
         mobileCapabilities.setCapability("automationName", "Appium");
@@ -50,8 +53,9 @@ public class SwissNativeAndWeb {
         
         //Desktop capabilities
         DesiredCapabilities desktopCapabilities = new DesiredCapabilities();
-        desktopCapabilities.setCapability("user", user);
-        desktopCapabilities.setCapability("password", pswd);
+        //desktopCapabilities.setCapability("user", user);
+        //desktopCapabilities.setCapability("password", pswd);
+		desktopCapabilities.setCapability("securityToken", token);
         desktopCapabilities.setCapability("platformName", "Windows");
         desktopCapabilities.setCapability("platformVersion", "8.1");
         desktopCapabilities.setCapability("browserName", "Firefox");
