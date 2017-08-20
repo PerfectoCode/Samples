@@ -25,8 +25,11 @@ public class NowCompareTest {
         // TODO: Set your cloud host and credentials
         DesiredCapabilities capabilities = new DesiredCapabilities();
         String host = "yourLab.perfectomobile.com";
-        capabilities.setCapability("user", "yourUser");
-        capabilities.setCapability("password", "yourPassword");
+		String token = "Security Token";
+
+        //capabilities.setCapability("user", "yourUser");
+        //capabilities.setCapability("password", "yourPassword");
+		capabilities.setCapability("securityToken", token);
 
     	String TARGET_EXECUTION = "Desktop"; // If "Desktop" create Web Machine, else run on Mobile browser
     	//String TARGET_EXECUTION = "Mobile"; // If "Desktop" create Web Machine, else run on Mobile browser
