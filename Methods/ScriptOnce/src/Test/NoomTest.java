@@ -74,15 +74,16 @@ public class NoomTest {
 		EmailEntry email = details.gotoEmail();	
 	}
 
-	@Parameters({ "OperSys", "OSver", "pkgName", "repAppLoc", "cloud", "userN", "userPw" })
+	@Parameters({ "OperSys", "OSver", "pkgName", "repAppLoc", "cloud", "token" })
 	@BeforeMethod
 	public void setupDriver(String opS, String vers, String appID, String repKey, 
-			String cloud, String user, String pw) {
+			String cloud, String token) {
 		opSystem = opS;
         DesiredCapabilities capabilities = new DesiredCapabilities("", "", Platform.ANY);
         String host = cloud;
-        capabilities.setCapability("user", user);
-        capabilities.setCapability("password", pw);
+        //capabilities.setCapability("user", user);
+        //capabilities.setCapability("password", pw);
+		capabilities.setCapability("securityToken", token);
         
         // provide application parameters
         capabilities.setCapability("app", repKey);

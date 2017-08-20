@@ -3,8 +3,9 @@
 
 <suite name="Suite1">
  	<parameter name="cloud" value="your cloud"/>
-	<parameter name="userN" value="your cloud username"/>
-	<parameter name="userPw" value="your cloud password"/>
+	<!--<parameter name="userN" value="your cloud username"/>
+	<parameter name="userPw" value="your cloud password"/>-->
+	<parameter name="token" value="your security token"/>
  
    <test name="test1">
  	<parameter name="OperSys" value="Android"/>
