@@ -21,13 +21,15 @@ namespace RemoteExecuteJS
         [TestInitialize]
         public void PerfectoOpenConnection()
         {
-            var user = "MY_USER";
-            var pass = "MY_PASS";
+            //var user = "MY_USER";
+            //var pass = "MY_PASS";
+            var token = "MY_TOKEN";
             var host = "my_host.perfectomobile.com";
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.SetCapability("user", user);
-            capabilities.SetCapability("password", pass);
+            //capabilities.SetCapability("user", user);
+            //capabilities.SetCapability("password", pass);
+            capabilities.setCapability("securityToken", token);
 
             //TODO: Provide your device capabilities
             //Capabilities example

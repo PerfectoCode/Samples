@@ -2,14 +2,17 @@ require 'selenium-webdriver'
 require 'uri'
 
 host  = 'MY_HOST.perfectomobile.com'
-user  = 'MY_USER'
-pass  = 'MY_PASS'
+token = 'MY_TOKEN'
+# user  = 'MY_USER'
+# pass  = 'MY_PASS'
+
 url   = "http://" + host + "/nexperience/perfectomobile/wd/hub"
   
 capabilities  = {
-  :user             => user,
-  :password         => pass,
-:platformName       => 'Windows',
+  #:user             => user,
+  #:password         => pass,
+  :securityToken  => token,
+  :platformName     => 'Windows',
   :platformVersion  => '8.1',
   :browserName 	    => 'Chrome',
   :browserVersion   => '50',

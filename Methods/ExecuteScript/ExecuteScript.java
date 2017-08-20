@@ -9,17 +9,19 @@ public class ExecutingJS_Java {
 
 	static RemoteWebDriver driver;
 	
-	//TODO: Set your Perfecto lab User ,Pass and Host.
-	static String user = "MY_USER";
-	static String pass = "MY_PASS";
+	//TODO: Set your Perfecto lab Security Token and Host.
+	//static String user = "MY_USER";
+	//static String pass = "MY_PASS";
+	static String token = "MY_TOKEN";
 	static String host = "MY_HOST.perfectomobile.com";
 	
 	//Initialize driver
 	public static RemoteWebDriver InitDriver() throws MalformedURLException{
 		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("user", user);
-		capabilities.setCapability("password", pass);
+		//capabilities.setCapability("user", user);
+		//capabilities.setCapability("password", pass);
+		capabilities.setCapability("securityToken", token);
 		
 		//TODO: Set your device capabilities here:
 		capabilities.setCapability("platformName", "Windows");

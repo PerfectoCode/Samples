@@ -11,8 +11,9 @@ class TestClass(unittest.TestCase):
     def setUp(self):
         print "Run started"
         host = 'MY_HOST.perfectomobile.com'
-        user = 'MY_USER'
-        password = 'MY_PASS' 
+        # user = 'MY_USER'
+        # password = 'MY_PASS'
+        token = 'MY_TOKEN'
         
         capabilities = {
                         #Capabilities example 
@@ -20,8 +21,9 @@ class TestClass(unittest.TestCase):
                         'platformVersion'   : '7',
                         'browserName'       : 'Chrome',
                         'browserVersion'    : '50',
-                        'user'              : user,
-                        'password'          : password
+                        #'user'              : user,
+                        #'password'          : password
+                        'securityToken'     : token
                         }
         
         self.driver = webdriver.Remote('https://' + host + '/nexperience/perfectomobile/wd/hub' , capabilities)
