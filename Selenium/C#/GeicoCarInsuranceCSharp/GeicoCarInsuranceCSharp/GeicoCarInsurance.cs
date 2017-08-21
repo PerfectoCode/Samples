@@ -14,10 +14,14 @@ namespace GeicoCarInsuranceCSharp
     {
         private RemoteWebDriver driver;
 
-        // TODO: Set your cloud host and credentials
-        public static String USER_NAME = "MY_USER";
-        public static String PASSWORD = "MY_PASSWORD";
-        public static String PERFECTO_HOST = "MY_HOST.perfectomobile.com";
+        // TODO: Set your cloud host and security token (Recommended)
+        public static String TOKEN = "Your Security Token"
+        public static String HOST = "MY_HOST.perfectomobile.com";
+
+        // Old School Credentials (We suggest using Security Token)
+        //public static String USER_NAME = "MY_USER";
+        //public static String PASSWORD = "MY_PASSWORD";
+
 
         private static String TARGET_EXECUTION = "Desktop"; // If "Desktop" create Web Machine, else run on Mobile browser
 
@@ -28,8 +32,11 @@ namespace GeicoCarInsuranceCSharp
             if (TARGET_EXECUTION == "Desktop")
             {
                 DesiredCapabilities capabilities = new DesiredCapabilities();
-                capabilities.SetCapability("user", USER_NAME);
-                capabilities.SetCapability("password", PASSWORD);
+                capabilities.SetCapability("securityToken", TOKEN);
+
+                // User name and Password Login
+                //capabilities.SetCapability("user", USER_NAME);
+                //capabilities.SetCapability("password", PASSWORD);
 
                 // Target Web Machine configuration
                 capabilities.SetCapability("platformName", "Windows");
@@ -37,7 +44,7 @@ namespace GeicoCarInsuranceCSharp
                 capabilities.SetCapability("browserName", "Chrome");
                 capabilities.SetCapability("browserVersion", "54");
 
-                var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", PERFECTO_HOST));
+                var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", HOST));
                 driver = new RemoteWebDriver(url, capabilities);
             }
             else
@@ -60,7 +67,7 @@ namespace GeicoCarInsuranceCSharp
                 // Script name
                 capabilities.SetCapability("scriptName", "GeicoCarInsuranceCSharp");
 
-                var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", PERFECTO_HOST));
+                var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", HOST));
                 driver = new RemoteWebDriver(url, capabilities);
 
             }
