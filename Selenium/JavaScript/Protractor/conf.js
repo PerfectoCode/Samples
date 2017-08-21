@@ -7,8 +7,9 @@ exports.config = {
   	//Capabilities to be passed to the webdriver instance.
 	capabilities: {
 		browserName: 'chrome',
-		user: 'MY_USER',
-		password: 'MY_PASS',
+		securityToken: 'MY_TOKEN',
+		//user: 'MY_USER',
+		//password: 'MY_PASS',
 		platformName: 'Android',
 		//deviceName: '123456',
   	}, 

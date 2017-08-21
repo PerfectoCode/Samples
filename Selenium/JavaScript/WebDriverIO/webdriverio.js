@@ -6,12 +6,14 @@ var options = {
              platformName: 'ANDROID',                       
              browserName: 'mobileOS',                                             
              //deviceName: 'yourDeviceID',
-             user: 'MY_USER@perfectomobile.com',
-             password:'MY_PASS',
-    },
-    host: 'demo.perfectomobile.com',
-    path: '/nexperience/perfectomobile/wd/hub',
-port:80 
+             // Old School credentials, we recommend using Security Token instead.
+             //user: 'MY_USER@perfectomobile.com',
+             //password:'MY_PASS',
+             securityToken: 'MY_TOKEN',
+        },
+        host: 'demo.perfectomobile.com',
+        path: '/nexperience/perfectomobile/wd/hub',
+        port:80
 };
  
  //Init driver, gets url and navigate

@@ -1,6 +1,8 @@
 var reportingClient,
-    user = 'MyUser',
-    pass = 'MyPass',
+    token = 'MyToken',
+    // Old School credentials, we recommend using security token instead.
+    //user = 'MyUser',
+    //pass = 'MyPass',
     host = 'MyHost'; // Only host name 
 
 exports.config = {
@@ -10,8 +12,9 @@ exports.config = {
   //Capabilities to be passed to the webdriver instance.
   capabilities: {
     browserName: 'chrome',
-    user: user,
-    password: pass,
+    securityToken: token,
+    //user: user,
+    //password: pass,
     platformName: 'Windows',
     platformVersion: '8.1',
     browserName: 'Chrome',
