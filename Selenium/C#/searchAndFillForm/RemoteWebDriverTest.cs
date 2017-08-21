@@ -18,16 +18,22 @@ namespace GoogleSearchAndFillForm
         [TestInitialize]
         public void PerfectoOpenConnection()
         {
-        	
-            var browserName = "mobileOS";
-	    //TODO: Provide you cloud host, user and password.
+            //TODO: Provide you cloud host, user and password.
+            var token = "Security Token";
             var host = "My_Host.perfectomobile.com";
-	    var user = "My_User";
-	    var pass = "My_Password";
+
+            //Old School Credentials:
+            //var user = "My_User";
+            //var pass = "My_Password";
+
+            var browserName = "mobileOS";
 
             DesiredCapabilities capabilities = new DesiredCapabilities(browserName, string.Empty, new Platform(PlatformType.Any));
-            capabilities.SetCapability("user", user);
-            capabilities.SetCapability("password", pass);
+            capabilities.SetCapability("securityToken", token);
+
+            //Old School Credentials Login
+            //capabilities.SetCapability("user", user);
+            //capabilities.SetCapability("password", pass);
 
             //TODO: Provide your device capabilities.
 			//Capabilities for example: 

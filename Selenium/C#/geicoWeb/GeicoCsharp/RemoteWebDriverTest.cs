@@ -18,13 +18,19 @@ namespace GeicoCsharp
         [TestInitialize]
         public void PerfectoOpenConnection()
         {
+            var token = "Security Token";
             var host = "My_Host.perfectomobile.com";
-            var user = "My_User@perfectomobile.com";
-            var pass = "My_Pass";
+
+            //Old School Credentials:
+            //var user = "My_User@perfectomobile.com";
+            //var pass = "My_Pass";
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.SetCapability("user", user);
-            capabilities.SetCapability("password", pass);
+            capabilities.SetCapability("securityToken", token);
+
+            //Old School Credentials Login:
+            //capabilities.SetCapability("user", user);
+            //capabilities.SetCapability("password", pass);
             
             capabilities.SetCapability("platformName", "Windows");
             capabilities.SetCapability("platformVersion", "8.1");
