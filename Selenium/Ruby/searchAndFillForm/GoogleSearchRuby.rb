@@ -5,17 +5,19 @@ require 'uri'
 class GoogleSearchRuby
   
   host          = 'My_Host.perfectomobile.com'
-  user          = 'My_User'
-  pass          = 'My_Password'
+  token         = 'My_Security_Token'
+  #user          = 'My_User'
+  #pass          = 'My_Password'
   
   #Provide your device capabilities here.
   @@capabilities  = {
-    :user             => user,
-    :password         => pass,
-    :platformName     => 'Windows',
-    :platformVersion  => '8.1',
-    :browserName      => 'Chrome',
-    :browserVersion   => '49'
+      :securityToken   => token,
+    #:user             => user,
+    #:password         => pass,
+      :platformName     => 'Windows',
+      :platformVersion  => '8.1',
+      :browserName      => 'Chrome',
+      :browserVersion   => '49'
   }
   
   @@url           = "http://" + host + "/nexperience/perfectomobile/wd/hub"

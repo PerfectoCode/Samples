@@ -6,15 +6,17 @@ class Geico_test
   include Locators
   
   host          = ARGV[0] #'My-Host.perfectomobile.com'
-  user          = ARGV[1] #'My_User'
-  pass          = ARGV[2] #'My_Password'
+  token         = ARGV[1] #'My_Security_Token'
+  #user          = ARGV[1] #'My_User'
+  #pass          = ARGV[2] #'My_Password'
   url           = "http://" + host + "/nexperience/perfectomobile/wd/hub"
   
   capabilities  = {
     'platformName': 'Android',
+    :securityToken => token
     #:deviceName => '123456',
-    :user       => user,
-    :password   => pass  
+    #:user       => user,
+    #:password   => pass
 	#:CapabilitieExample => SomeValue,
   }
   
