@@ -10,10 +10,13 @@ import com.perfectomobile.selenium.util.EclipseConnector;
 
 public class WebMapsTest {
 
-	// TODO: Set your Perfecto Lab host,user and password
+	// TODO: Set your Perfecto Lab host and security token
 	static String host = "MY_HOST.perfectomobile.com";
-	static String user = "MY_USER";
-	static String pswd = "MY_PASS";
+	static String token = "MY_TOKEN";
+
+	//Old school credentials, we recommend using Security Token instead.
+	//static String user = "MY_USER";
+	//static String pswd = "MY_PASS";
 
 	//TODO: set your Google account
 	static String Google_user = "MY_USER@google.com";
@@ -23,8 +26,11 @@ public class WebMapsTest {
 		System.out.println("Run started");
 		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("user", user);
-		capabilities.setCapability("password", pswd);
+		capabilities.setCapability("securityToken", token);
+
+		//Old school credentials login
+		//capabilities.setCapability("user", user);
+		//capabilities.setCapability("password", pswd);
 
 		// TODO: Change browser capabilities
 		capabilities.setCapability("platformName", "Windows");

@@ -14,11 +14,15 @@ import io.appium.java_client.android.AndroidDriver;
 public class mobileSessionMaps{
 	
 	AndroidDriver driver;
-	
+
 	public mobileSessionMaps() throws MalformedURLException{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("user", WebMapsTest.user);
-		capabilities.setCapability("password", WebMapsTest.pswd); 
+		capabilities.setCapability("securityToken", WebMapeTest.token);
+
+		//old school credentials
+		//capabilities.setCapability("user", WebMapsTest.user);
+		//capabilities.setCapability("password", WebMapsTest.pswd);
+
 		capabilities.setCapability("deviceName", "MyDeviceID");
 		
 		driver = new AndroidDriver<>(new URL("https://" + WebMapsTest.host + "/nexperience/perfectomobile/wd/hub"), capabilities);
