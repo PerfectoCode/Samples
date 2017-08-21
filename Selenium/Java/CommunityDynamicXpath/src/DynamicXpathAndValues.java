@@ -24,12 +24,22 @@ import jxl.Sheet;
 public class DynamicXpathAndValues {
 	public static void main(String[] args) throws MalformedURLException, IOException {
 		System.out.println("Run started");
-		
+
+		static final string TOKEN = "Security Token";
+		static final string HOST = "cloudName.perfectomobile.com";
+
+		//Old School Credentials
+		//static final string USER = "username";
+		//static final string PASSWORD = "password";
+
 		String browserName = "mobileOS";
+
 		DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
-		String host = "cloudName.perfectomobile.com";
-		capabilities.setCapability("user", "user@perfectomobile.com");
-		capabilities.setCapability("password", "password");
+		capabilities.setCapability("securityToken", TOKEN);
+
+		// Old School Credentials Login:
+		//capabilities.setCapability("user", USER);
+		//capabilities.setCapability("password", PASSWORD);
 
 		// TODO: Change your device ID
 		capabilities.setCapability("deviceName", "device#");
@@ -42,7 +52,7 @@ public class DynamicXpathAndValues {
 		// Perfecto Lab plugin.
 		PerfectoLabUtils.setExecutionIdCapability(capabilities, host);
 
-		RemoteWebDriver driver = new RemoteWebDriver(new URL("https://" + host + "/nexperience/perfectomobile/wd/hub"),
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("https://" + HOST + "/nexperience/perfectomobile/wd/hub"),
 				capabilities);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);		
 		

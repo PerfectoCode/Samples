@@ -12,8 +12,12 @@ import org.openqa.selenium.support.ui.Select;
 public class GeicoCarInsuranceJavaMain {
 
 	private static RemoteWebDriver driver;
-	public static String USER_NAME = "MY_USER";
-	public static String PASSWORD = "MY_PASSWORD";
+
+	//Old School Credentials
+	//public static String USER_NAME = "MY_USER";
+	//public static String PASSWORD = "MY_PASSWORD";
+
+	public static String PERFECTO_TOKEN = "Security Token";
 	public static String PERFECTO_HOST = "MY_HOST.perfectomobile.com";
 	
 	private static String TARGET_EXECUTION = "Desktop"; // If "Desktop" create Web Machine, else run on Mobile browser
@@ -25,9 +29,12 @@ public class GeicoCarInsuranceJavaMain {
 		if (TARGET_EXECUTION == "Desktop") {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			// Cloud User/Pass
-			capabilities.setCapability("user", USER_NAME);
-			capabilities.setCapability("password", PASSWORD);
+			//Security Token
+			capabilities.setCapability("securityToken", PERFECTO_TOKEN);
+
+			// Old school credentials:
+			//capabilities.setCapability("user", USER_NAME);
+			//capabilities.setCapability("password", PASSWORD);
 
 			// Target Web Machine configuration
 			capabilities.setCapability("platformName", "Windows");
@@ -51,8 +58,14 @@ public class GeicoCarInsuranceJavaMain {
 			// Define target mobile device
 			String browserName = "mobileOS";
 			DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
-			capabilities.setCapability("user", USER_NAME);
-			capabilities.setCapability("password", PASSWORD);
+
+			//Security Token
+			capabilities.setCapability("securityToken", PERFECTO_TOKEN);
+
+			// Old school credentials:
+			//capabilities.setCapability("user", USER_NAME);
+			//capabilities.setCapability("password", PASSWORD);
+
 			capabilities.setCapability("deviceName", "1234567890"); // Set your target Device ID
 			
 			// Define device allocation timeout, in minutes

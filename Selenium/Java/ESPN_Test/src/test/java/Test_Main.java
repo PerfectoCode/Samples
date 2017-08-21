@@ -33,6 +33,7 @@ public class Test_Main {
     String PERFECTO_HOST        = System.getProperty("np.testHost", "My_Host.perfectomobile.com");
     String PERFECTO_USER        = System.getProperty("np.testUsername", "My_User");
     String PERFECTO_PASSWORD    = System.getProperty("np.testPassword", "My_Pass");
+    String PERFECTO_TOKEN       = System.getProperty("np.testToken", "My_Token");
 
     //TODO: Insert your device capabilities at testng.XML file.
     @Parameters({"platformName" , "model" , "browserName" , "location"})
@@ -40,8 +41,12 @@ public class Test_Main {
     public void beforMethod(String platformName, String model, String browserName, String location) throws MalformedURLException {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("user" , PERFECTO_USER);
-        capabilities.setCapability("password" , PERFECTO_PASSWORD);
+        capabilities.setCapabilty("securityToken", PERFECTO_TOKEN);
+
+        //Old School Credentials Login
+        //capabilities.setCapability("user" , PERFECTO_USER);
+        //capabilities.setCapability("password" , PERFECTO_PASSWORD);
+
         capabilities.setCapability("platformName" , platformName);
         capabilities.setCapability("model" , model);
         capabilities.setCapability("browserName" , browserName);

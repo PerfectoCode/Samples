@@ -13,12 +13,19 @@ public class Utils {
 	    
 		// Set cloud host and credentials values from CI, else use local values
 		String PERFECTO_HOST = System.getProperty("np.testHost", "MY_HOST.perfectomobile.com");
-		String PERFECTO_USER = System.getProperty("np.testUsername", "MY_USER");
-		String PERFECTO_PASSWORD = System.getProperty("np.testPassword", "MY_PASS");
+		String PERFECTO_TOKEN = System.getProperty("np.testToken", "MY_TOKEN");
+
+		//Old School Credentials:
+		//String PERFECTO_USER = System.getProperty("np.testUsername", "MY_USER");
+		//String PERFECTO_PASSWORD = System.getProperty("np.testPassword", "MY_PASS");
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("user", PERFECTO_USER);
-		capabilities.setCapability("password", PERFECTO_PASSWORD);
+		capabilities.setCapability("securityToken", PERFECTO_TOKEN);
+
+		//Old School Credentials Login:
+		//capabilities.setCapability("user", PERFECTO_USER);
+		//capabilities.setCapability("password", PERFECTO_PASSWORD);
+
 		capabilities.setCapability("platformName", platformName);
 		capabilities.setCapability("platformVersion", platformVersion);
 		capabilities.setCapability("browserName", browserName);

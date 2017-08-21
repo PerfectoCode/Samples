@@ -10,16 +10,22 @@ public class GoogleSearchTest{
 	
 	static RemoteWebDriver driver;
 	
-	//TODO: Provide your cloud's information: host, user and password.
+	//TODO: Provide your cloud's information: host and security token.
 	static String host = "My_Host.perfectomobile.com";
-	static String user = "My_User";
-	static String pass = "My_Pass";
+	static String token = "Security Token";
+
+	//Old school credentials
+	//static String user = "My_User";
+	//static String pass = "My_Pass";
 	
 	//Driver initializing. 
 	public static void initDriver() throws MalformedURLException{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("user", user); 
-		capabilities.setCapability("password", pass);
+		capabilities.setCapability("securityToken", token);
+
+		//Old school credentials login:
+		//capabilities.setCapability("user", user);
+		//capabilities.setCapability("password", pass);
 		
 		//TODO: Change the capabilities.
 		//Desktop capabilities for example.
