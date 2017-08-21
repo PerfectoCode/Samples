@@ -7,12 +7,13 @@ class GeicoTest:
     
     def __init__(self):
         self.capabilities = {
-                            'user' : argv[1], 
-                            'password' : argv[2],
+                            #'user' : argv[1],
+                            #'password' : argv[2],
+                            'securityToken' : argv[1],
                             'browserName' : 'mobileOS' 
                              }
-        
-        self.driver = webdriver.Remote('https://' + argv[3] + '/nexperience/perfectomobile/wd/hub' , self.capabilities)
+        HOST = argv[2] #use argv[3] if username and password credentials are used.
+        self.driver = webdriver.Remote('https://' + HOST + '/nexperience/perfectomobile/wd/hub' , self.capabilities)
         #self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(20)
         

@@ -19,14 +19,16 @@ class RemoteWebDriverTest:
         print('Run started')
         
 		""" Provide over here your cloud information : Host , user and password """
-        host        = "My_Host.perfectomobile.com" 
-        user        = "My_User" 
-        password    = "My_Password" 
+        host        = "My_Host.perfectomobile.com"
+        token       = "MY_SECURITY_TOKEN"
+        #user        = "My_User"
+        #password    = "My_Password"
         
 		#Capabilities for example , Provide your device capabilities here.
         capabilities = {
-            'user'              : user,
-            'password'          : password,
+            'securityToken'     : 'token',
+            #'user'              : user,
+            #'password'          : password,
             'platformName'      : 'Windows',
             'platformVersion'   : '8.1',
             'browserName'       : 'Chrome',

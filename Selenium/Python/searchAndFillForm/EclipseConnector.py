@@ -9,8 +9,9 @@ class EclipseConnector:
     LOCALHOST = "localhost"
     PORT = 3287
     GET_HOST = "getHost"
-    GET_USER = "getUser"
-    GET_PASSWORD = "getPassword"
+    #GET_USER = "getUser"
+    #GET_PASSWORD = "getPassword"
+    GET_TOKEN = "getSecurityToken"
     GET_EXECUTION_ID = "getExecutionId"
     SET_EXECUTION_ID = "setExecutionId"
     GET_DEVICE_ID = "getDeviceId"
@@ -66,19 +67,29 @@ class EclipseConnector:
         print("Received eclipse host: " + host)
         return host
 
-    def get_user(self):
-        user = self.connect(self.GET_USER)
-        print("Received eclipse user: " + user)
-        return user
+    #These functions support the old credentials of username and password
+    #def get_user(self):
+    #    user = self.connect(self.GET_USER)
+    #    print("Received eclipse user: " + user)
+    #    return user
+    #
+    #def get_password(self):
+    #    password = self.connect(self.GET_PASSWORD)
+    #    if password == '':
+    #        msg = "Received empty eclipse password."
+    #    else:
+    #        msg = "Received eclipse password."
+    #    print(msg)
+    #    return password
 
-    def get_password(self):
-        password = self.connect(self.GET_PASSWORD)
-        if password == '':
-            msg = "Received empty eclipse password."
+    def get_token(self):
+        token = self.connect(self.GET_TOKEN)
+        if token == '':
+            msg = "Received empty security token."
         else:
-            msg = "Received eclipse password."
+            msg = "Received security token."
         print(msg)
-        return password
+        return token
 
     def set_execution_id(self, execution_id):
         self.connect(self.SET_EXECUTION_ID + " " + execution_id)
@@ -89,8 +100,9 @@ class EclipseConnector:
         client_socket = EclipseConnector()
         client_socket.get_execution_id()
         client_socket.get_host()
-        client_socket.get_user()
-        client_socket.get_password()
+        client_socket.get_token()
+        #client_socket.get_user()
+        #client_socket.get_password()
         client_socket.get_execution_id()
         client_socket.close()
         print("done")
