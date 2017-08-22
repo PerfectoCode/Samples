@@ -18,10 +18,13 @@ import java.net.URL;
  */
 public class Win10CalculatorTest {
 
-    //Your Perfecto lab user, password and host
-    static String PERFECTO_USER = "MY_USER";
-    static String PERFECTO_PASS = "MY_PASS";
+    //Your Perfecto lab security token and host
+    static String PERFECTO_TOKEN = "MY_SECURITY_TOKEN";
     static String PERFECTO_HOST = "MY_HOST.perfectomobile.com";
+
+    //Old school credentials:
+    //static String PERFECTO_USER = "MY_USER";
+    //static String PERFECTO_PASS = "MY_PASS";
 
     static RemoteWebDriver driver;
 
@@ -29,8 +32,11 @@ public class Win10CalculatorTest {
     @Parameters({"platformName" , "platformVersion" , "manufacturer" , "model"})
     public void beforeTest(String platformName, String platformVersion, String manufacturer, String model) throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("user", PERFECTO_USER);
-        capabilities.setCapability("password", PERFECTO_PASS);
+        capabilities.setCapability("securityToken", PERFECTO_TOKEN);
+
+        //Use these if you want to use old school credentials:
+        //capabilities.setCapability("user", PERFECTO_USER);
+        //capabilities.setCapability("password", PERFECTO_PASS);
 
         System.out.println("Run Started");
 

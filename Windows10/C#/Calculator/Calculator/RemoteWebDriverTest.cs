@@ -24,14 +24,18 @@ namespace Calculator
         {
             var browserName = "mobileOS";
             var host = "your cloud";
-            var user = "your user";
-            var pw = "your pw";
+            var token = "your security token"
+
+            //Old school credentials:
+            //var user = "your user";
+            //var pw = "your pw";
 
             DesiredCapabilities capabilities = new DesiredCapabilities(browserName, string.Empty, new Platform(PlatformType.Any));
-            capabilities.SetCapability("user", user);
+            capabilities.setCapability("securityToken", token);
 
-            //TODO: Provide your password
-            capabilities.SetCapability("password", pw);
+            //Old school credentials login:
+            //capabilities.SetCapability("user", user);
+            //capabilities.SetCapability("password", pw);
 
             //TODO: Provide your device ID
             capabilities.SetCapability("winAppId", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
