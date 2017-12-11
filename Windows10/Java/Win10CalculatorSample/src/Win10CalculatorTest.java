@@ -85,5 +85,4 @@ public class Win10CalculatorTest {
           ex.printStackTrace();
       }
     }
-
 }

@@ -22,7 +22,6 @@ namespace GeicoCarInsuranceCSharp
         //public static String USER_NAME = "MY_USER";
         //public static String PASSWORD = "MY_PASSWORD";
 
-
         private static String TARGET_EXECUTION = "Desktop"; // If "Desktop" create Web Machine, else run on Mobile browser
 
         [TestInitialize]
@@ -47,19 +46,17 @@ namespace GeicoCarInsuranceCSharp
                 var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", HOST));
                 driver = new RemoteWebDriver(url, capabilities);
             }
-            else
-            {
+
+            else {
                 var browserName = "mobileOS";
                 DesiredCapabilities capabilities = new DesiredCapabilities(browserName, string.Empty, new Platform(PlatformType.Any));
-                capabilities.SetCapability("user", USER_NAME);
-                capabilities.SetCapability("password", PASSWORD);
+                capabilities.SetCapability("securityToken", TOKEN);
 
-                //TODO: Provide your device ID
-                capabilities.SetCapability("deviceName", "[ENTER YOUR DEVICE ID HERE]");
+                // User name and Password Login
+                //capabilities.SetCapability("user", USER_NAME);
+                //capabilities.SetCapability("password", PASSWORD);
+
                 capabilities.SetPerfectoLabExecutionId(PERFECTO_HOST);
-
-                // Add a persona to your script (see https://community.perfectomobile.com/posts/1048047-available-personas)
-                //capabilities.SetCapability(WindTunnelUtils.WIND_TUNNEL_PERSONA_CAPABILITY, WindTunnelUtils.GEORGIA);
                 
                 // Define device allocation timeout, in minutes
                 capabilities.SetCapability("openDeviceTimeout", 5);
@@ -69,8 +66,8 @@ namespace GeicoCarInsuranceCSharp
 
                 var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", HOST));
                 driver = new RemoteWebDriver(url, capabilities);
-
             }
+
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
         }
@@ -105,7 +102,6 @@ namespace GeicoCarInsuranceCSharp
             driver.FindElementById("hasCycle").Click();
         }
 
-
         [TestCleanup]
         public void PerfectoCloseConnection()
         {
@@ -117,18 +113,6 @@ namespace GeicoCarInsuranceCSharp
                 var parameters = new Dictionary<string, object>();
                 driver.ExecuteScript("mobile:execution:close", parameters);
             }
-
-            // In case you want to download the report or the report attachments, do it here.
-            //try
-            //{
-            //    driver.DownloadReport(DownloadReportTypes.pdf, "C:/test/report");
-            //    driver.DownloadAttachment(DownloadAttachmentTypes.video, "C:/test/report/video", "flv");
-            //    driver.DownloadAttachment(DownloadAttachmentTypes.image, "C:/test/report/images", "jpg");
-            //}
-            //catch (Exception ex)
-            //{
-            //    Trace.WriteLine(string.Format("Error getting test logs: {0}", ex.Message));
-            //}
 
             driver.Quit();
         }

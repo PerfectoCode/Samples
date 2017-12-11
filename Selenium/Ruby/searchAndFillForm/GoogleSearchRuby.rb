@@ -20,7 +20,7 @@ class GoogleSearchRuby
       :browserVersion   => '49'
   }
   
-  @@url           = "http://" + host + "/nexperience/perfectomobile/wd/hub"
+  @@url           = 'http://' + host + '/nexperience/perfectomobile/wd/hub'
   
   #### test method ####
   def test()  
@@ -37,23 +37,24 @@ class GoogleSearchRuby
 
       #Fill a form in perfecto site.
       driver.find_element(:xpath , "//*[text() = 'Start Free']").click();
-      driver.find_element(:id , "FirstName").send_keys("MyFirstName");
-      driver.find_element(:id , "LastName").send_keys("MyLaseName");
-      driver.find_element(:id , "Company").send_keys("MyCompany");
-      driver.find_element(:id , "Mobile_Testing_Role__c").click();
+      driver.find_element(:id , 'FirstName').send_keys('MyFirstName');
+      driver.find_element(:id , 'LastName').send_keys('MyLaseName');
+      driver.find_element(:id , 'Company').send_keys('MyCompany');
+      driver.find_element(:id , 'Mobile_Testing_Role__c').click();
       driver.find_element(:xpath , "//*[@value = 'Development']").click();
-      driver.find_element(:id , "Email").send_keys("MyEmail@Somehost.com");
-      driver.find_element(:id , "Phone").send_keys("123456789");
-      driver.find_element(:id , "Country").click();
+      driver.find_element(:id , 'Email').send_keys('MyEmail@Somehost.com');
+      driver.find_element(:id , 'Phone').send_keys('123456789');
+      driver.find_element(:id , 'Country').click();
       driver.find_element(:xpath , "//*[@value = 'Israel']").click();
       
-    rescue=>e 
+    rescue => e
       puts e
     ensure
       driver.quit
     end  #end begin
+
   end  #end def
-  
+
 end #end class.
 
 

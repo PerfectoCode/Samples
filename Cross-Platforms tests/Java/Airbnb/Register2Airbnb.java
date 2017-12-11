@@ -73,22 +73,26 @@ public class Register2Airbnb {
         try {
         	desktopDriver.findElement(objectsXpaths.loginLink).click();
     		WebDriverWait wait = new WebDriverWait(desktopDriver, 15);
+
         	try {
         		wait.until(ExpectedConditions.visibilityOf(desktopDriver.findElement(objectsXpaths.loginWin)));
     		} catch (TimeoutException t) {
     			System.out.println("Could not find login popup window");
     		}
+
         	desktopDriver.findElement(objectsXpaths.emailId).sendKeys("yourAirbnbUser");
         	desktopDriver.findElement(objectsXpaths.pswdId).sendKeys("yourAirbnbPassword");
         	desktopDriver.findElement(objectsXpaths.loginBtnId).click();
         	
         	desktopDriver.findElement(objectsXpaths.userIcon).click();
         	desktopDriver.findElement(objectsXpaths.editProfile).click();
+
         	try {
     			wait.until(ExpectedConditions.visibilityOf(desktopDriver.findElement(objectsXpaths.addCellNo)));
     		} catch (TimeoutException t) {
     			System.out.println("Could not find window");
     		}
+
         	desktopDriver.findElement(objectsXpaths.addCellNo).click();
         	new Select(desktopDriver.findElement(objectsXpaths.CellCountryId)).selectByVisibleText("United States");
         	desktopDriver.findElement(objectsXpaths.cellNoId).sendKeys(mobileNumberNoCountry);
@@ -107,14 +111,8 @@ public class Register2Airbnb {
             e.printStackTrace();
         } finally {
             try {
-
                 mobileDriver.close();
                 desktopDriver.close();
-                // In case you want to download the report or the report attachments, do it here.
-                // PerfectoLabUtils.downloadReport(desktopDriver, "pdf", "C:/test/report");
-                // PerfectoLabUtils.downloadAttachment(driver, "video", "C:/test/report/video", "flv");
-                // PerfectoLabUtils.downloadAttachment(driver, "image", "C:/test/report/images", "jpg");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

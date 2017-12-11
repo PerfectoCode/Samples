@@ -58,19 +58,6 @@ namespace KeepRefVars
         public void PerfectoCloseConnection()
         {
             driver.Close();
-
-            // In case you want to download the report or the report attachments, do it here.
-            try
-            {
-                driver.DownloadReport(DownloadReportTypes.pdf, "C:\\testCS\\report_KeepRefVar");
-            //    driver.DownloadAttachment(DownloadAttachmentTypes.video, "C:\\test\\report\\video", "flv");
-            //    driver.DownloadAttachment(DownloadAttachmentTypes.image, "C:\\test\\report\\images", "jpg");
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(string.Format("Error getting test logs: {0}", ex.Message));
-            }
-
             driver.Quit();
         }
 

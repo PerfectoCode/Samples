@@ -158,14 +158,6 @@ public class NowCompareTest {
         } finally {
             try {
                 driver.close();
-
-                // In case you want to down the report or the report attachments, do it here.
-                 Map<String, Object> params = new HashMap<>(); 
-                 driver.executeScript("mobile:execution:close", params);
-                 PerfectoLabUtils.downloadReport(driver, "pdf", "C:\\test\\NowCompare-report");
-                // PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-                // PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

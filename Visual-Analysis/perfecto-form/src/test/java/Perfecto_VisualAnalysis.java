@@ -114,5 +114,4 @@ public class Perfecto_VisualAnalysis {
             ex.printStackTrace();
         }
     }
-
 }

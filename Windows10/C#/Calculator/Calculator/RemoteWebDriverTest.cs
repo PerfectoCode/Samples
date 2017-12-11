@@ -52,21 +52,7 @@ namespace Calculator
         [TestCleanup]
         public void PerfectoCloseConnection()
         {
-            
             driver.Close();
-
-            // In case you want to download the report or the report attachments, do it here.
-            try
-            {
-                Dictionary<string, object> parm = new Dictionary<string, object>();
-                driver.ExecuteScript("mobile:execution:close", parm);
-                driver.DownloadReport(DownloadReportTypes.pdf, "C:\\test\\reportSurface");
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(string.Format("Error getting test logs: {0}", ex.Message));
-            }
-
             Trace.WriteLine("Run ended report URL: " + reportUrl);
             driver.Quit();
             Trace.WriteLine("Execution completed");

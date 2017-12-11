@@ -128,15 +128,6 @@ public class GeicoCarInsuranceJavaMain {
 		} finally {
 			try {
 				driver.close();
-
-				if (TARGET_EXECUTION == "Desktop") {
-					Map<String, Object> params = new HashMap<String, Object>();
-					driver.executeScript("mobile:execution:close", params);
-				}
-				// In case you want to download the report or the report attachments, do it here.
-				// PerfectoLabUtils.downloadAttachment(driver, "video", "C:/test/report/video", "flv");
-				// PerfectoLabUtils.downloadAttachment(driver, "image", "C:/test/report/images", "jpg");
-
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

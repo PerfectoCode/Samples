@@ -29,6 +29,5 @@ public class PopUps {
         } catch (NoSuchElementException n1) {
             System.out.println("No notifications popup, just plow ahead!");
         }
-		
 	}
 }

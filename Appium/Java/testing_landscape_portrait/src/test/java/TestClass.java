@@ -36,5 +36,4 @@ public class TestClass extends PerfectoTestNG {
         // Just a busy waiting to watch pages changed
         Thread.sleep(2000);
     }
-
 }

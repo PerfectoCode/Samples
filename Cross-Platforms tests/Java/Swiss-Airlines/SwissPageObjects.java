@@ -86,7 +86,6 @@ public class SwissPageObjects {
 		this.secondFlightTree = By.xpath("//*[@id='frm-matrix']/div[2]/div[1]");
 		this.continueToSeatBtn = By.xpath("//button[ancestor::*[@id='stickybasket'] and contains(text(),'Continue')]");
 		this.freeRowAStandardSeats = By.xpath("//button[ancestor::*[@id='seatmapForm'] and contains(@class,'is-standard') and not(contains(@class,'is-occupied')) and contains(@name,'a')]");
-		
 	}
 
 	private void setMobileXpaths() {
@@ -121,5 +120,4 @@ public class SwissPageObjects {
 		this.seatSelectBtn = By.xpath("//div[contains(@class,'seat-selection') and text()='Select']");
 		this.freeRowAStandardSeats = By.xpath("./button[ancestor::*[@id='seatmapForm'] and contains(@class,'is-standard') and not(contains(@class,'is-occupied')) and contains(@name,'a')]");
 	}
-
 }

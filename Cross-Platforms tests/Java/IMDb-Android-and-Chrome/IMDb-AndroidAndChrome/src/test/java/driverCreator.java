@@ -22,6 +22,7 @@ public class driverCreator{
 	@SuppressWarnings("rawtypes")
 	public static AndroidDriver createAndroidDriver(String platformName , String model , String deviceName) throws MalformedURLException{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
+
 		//User capabilities - use security token instead.
 		//capabilities.setCapability("user", cloudUser);
 		//capabilities.setCapability("password", cloudPass);
@@ -46,9 +47,13 @@ public class driverCreator{
 	@SuppressWarnings("rawtypes")
 	public static IOSDriver createIOSDriver(String platformName , String model) throws MalformedURLException{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		//User capabilities
-		capabilities.setCapability("user", cloudUser);
-		capabilities.setCapability("password", cloudPass);
+
+		//User capabilities - use security token instead.
+		//capabilities.setCapability("user", cloudUser);
+		//capabilities.setCapability("password", cloudPass);
+
+		//Security Token
+		capabilities.setCapability("securityToken", TOKEN);
 		
 		//Device capabilities
 		capabilities.setCapability("platformName", platformName);
@@ -60,6 +65,7 @@ public class driverCreator{
 	//Creating a desktop driver .
 	public static RemoteWebDriver desktopDriver() throws MalformedURLException{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
+
 		//User capabilities - use security token instead
 		//capabilities.setCapability("user", cloudUser);
 		//capabilities.setCapability("password", cloudPass);
@@ -73,12 +79,10 @@ public class driverCreator{
 		capabilities.setCapability("browserVersion", "49");
 		
 		return new RemoteWebDriver(getCloud() , capabilities);
-		
 	}
 	
 	//Returns the cloud as a URL.
 	public static URL getCloud() throws MalformedURLException{
 		return new URL("https://" + HOST + "/nexperience/perfectomobile/wd/hub");
 	}
-	
 }

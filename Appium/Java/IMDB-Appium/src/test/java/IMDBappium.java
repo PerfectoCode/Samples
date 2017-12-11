@@ -30,8 +30,7 @@ public class IMDBappium {
 	final String user = "My_User";
 	final String pass = "My_Pass";
 	final String host = "My_Host.perfectomobile.com";
-	
-	
+
 	@Parameters({"deviceName" , "platformName" })
 	@BeforeTest
 	public void beforTest(String deviceName , String platformName) throws MalformedURLException{
@@ -44,8 +43,7 @@ public class IMDBappium {
 			capabilities.setCapability("password", pass);
 			capabilities.setCapability("deviceName", deviceName);
 			capabilities.setCapability("platformName", platformName);
-			capabilities.setCapability("autoAcceptAlerts",true); 
-			
+			capabilities.setCapability("autoAcceptAlerts",true);
 			
 			if(os.equals("iOS")){
 				driver = new IOSDriver(new URL("https://" + this.host + "/nexperience/perfectomobile/wd/hub"), capabilities) ;
@@ -61,7 +59,6 @@ public class IMDBappium {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		
 	}
 	
 	@Test
@@ -70,13 +67,12 @@ public class IMDBappium {
 		try{
 			OpenAPP();
 			Search();
-			if(os.equals("Android")) AndroidWatchTrailer() ;
-			
+			if(os.equals("Android"))
+				AndroidWatchTrailer();
 			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-	
 	}
 	
 	/**
@@ -90,7 +86,7 @@ public class IMDBappium {
 			//enable in order to install the application from your cloud's repository.
 			//driver.installApp("PRIVATE:IMDb Movies TV_v6.1.4.106140300_apkpure.com.apk");
 		}
-		else{
+		else {
 			//download on IOS case.
 		}
 		
@@ -119,7 +115,6 @@ public class IMDBappium {
 			driver.findElement(By.xpath(AppObjects.IOSWatchTrailer)).click();
 			Thread.sleep(this.interval); // Time interval to sleep while playing the trailer.
 		}
-		
 	}
 	
 	/**
@@ -139,7 +134,6 @@ public class IMDBappium {
 		}
 	}
 	
-	
 	@AfterTest
 	public void afterTest(){
 		try{
@@ -158,5 +152,4 @@ public class IMDBappium {
 			e.printStackTrace();
 		}
 	}
-  
 }

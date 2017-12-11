@@ -41,11 +41,6 @@ public class RemoteWebDriverTest {
             try {
                 driver.close();
 
-                // In case you want to down the report or the report attachments, do it here.
-                // PerfectoLabUtils.downloadReport(driver, "pdf", "C:/test/report");
-                // PerfectoLabUtils.downloadAttachment(driver, "video", "C:/test/report/video", "flv");
-                // PerfectoLabUtils.downloadAttachment(driver, "image", "C:/test/report/images", "jpg");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -58,8 +53,7 @@ public class RemoteWebDriverTest {
  	private static void sleep(long millis) {
         try {
             Thread.sleep(millis);
-        } catch (InterruptedException e) {
-        }
+        } catch (InterruptedException e) { }
     }
 
     private static void switchToContext(RemoteWebDriver driver, String context) {

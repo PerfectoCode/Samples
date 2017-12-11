@@ -31,8 +31,8 @@ public class Test_Main {
     String ESPN_EMAIL           = System.getProperty("np.ESPNuser", "My_Email");
     String ESPN_PASSWORD        = System.getProperty("np.ESPNpassword", "My_Pass");
     String PERFECTO_HOST        = System.getProperty("np.testHost", "My_Host.perfectomobile.com");
-    String PERFECTO_USER        = System.getProperty("np.testUsername", "My_User");
-    String PERFECTO_PASSWORD    = System.getProperty("np.testPassword", "My_Pass");
+    //String PERFECTO_USER        = System.getProperty("np.testUsername", "My_User");
+    //String PERFECTO_PASSWORD    = System.getProperty("np.testPassword", "My_Pass");
     String PERFECTO_TOKEN       = System.getProperty("np.testToken", "My_Token");
 
     //TODO: Insert your device capabilities at testng.XML file.
@@ -102,7 +102,6 @@ public class Test_Main {
             reportiumClient.testStop(TestResultFactory.createFailure(t.getMessage() , t));
             Assert.fail(t.getMessage());
         }
-
     }
 
     public void test2(){
@@ -131,7 +130,6 @@ public class Test_Main {
             Assert.fail(t.getMessage());
         }
     }
-
 
     @SuppressWarnings("Since15")
     @AfterTest

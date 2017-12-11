@@ -62,6 +62,5 @@ public class ExecutingJS_Java {
 			driver.close();
 			driver.quit();
 		}
-	
 	}
 }

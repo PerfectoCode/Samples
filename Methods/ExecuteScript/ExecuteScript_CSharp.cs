@@ -74,6 +74,5 @@ namespace RemoteExecuteJS
             driver.Close();
             driver.Quit();
         }
-
     }
 }

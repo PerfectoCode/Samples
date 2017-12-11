@@ -126,26 +126,14 @@ public class WebMapsTest {
 			e.printStackTrace();
 		} finally {
 			try {
-
 				driver.close();
-				params.clear();
-				driver.executeScript("mobile:execution:close", params);
-
-				// In case you want to download the report or the reportattachments, do it here.
-				PerfectoLabUtils.downloadReport(driver, "pdf", "google maps - web_report");
-				// PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-				// PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
-
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 			driver.quit();
 		}
-
 		System.out.println("Run ended");
 	}
-
 	
 	public static void setExecutionIdCapability(DesiredCapabilities capabilities, String host) throws IOException {
 		EclipseConnector connector = new EclipseConnector();
@@ -155,5 +143,4 @@ public class WebMapsTest {
 			capabilities.setCapability(EclipseConnector.ECLIPSE_EXECUTION_ID, executionId);
 		}
 	}
-
 }

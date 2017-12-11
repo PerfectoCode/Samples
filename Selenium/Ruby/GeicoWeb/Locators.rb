@@ -6,10 +6,10 @@ module Locators
   #Main Page Elements Handeling.
   class MainPage
     
-    $insurance_type  = {id: "insurancetype"}
-    $motorcycle_type = {id: "optionMotorcycle"}
-    $zip             = {id: "zip"}
-    $submit          = {id: "submitButton"}
+    $insurance_type  = {id: 'insurancetype'}
+    $motorcycle_type = {id: 'optionMotorcycle'}
+    $zip             = {id: 'zip'}
+    $submit          = {id: 'submitButton'}
     
     attr_reader :driver
     #constructor
@@ -38,19 +38,19 @@ module Locators
   class CostumerInformationPage
   
 	$no_auto_insurance = {xpath: "//*[@class = 'radio'][2]"}
-    $first_name               = {id: "firstName"}
-    $last_name                = {id: "lastName"}
-    $street_address           = {id: "street"}
-    $apt                      = {id: "apt"}
-    $zip                      = {id: "zip"}
-    $birth_day                = {id: "date-daydob"}
-    $birth_month              = {id: "date-monthdob"}
-    $birth_year               = {id: "date-yeardob"}
+    $first_name               = {id: 'firstName'}
+    $last_name                = {id: 'lastName'}
+    $street_address           = {id: 'street'}
+    $apt                      = {id: 'apt'}
+    $zip                      = {id: 'zip'}
+    $birth_day                = {id: 'date-daydob'}
+    $birth_month              = {id: 'date-monthdob'}
+    $birth_year               = {id: 'date-yeardob'}
     $geico_auto_insurance_yes = {xpath: "//*[@class = 'radio'][1]"}
     $geico_auto_insurance_no  = {xpath: "//*[@class = 'radio'][2]"}
     $motorcycle_insurance_yes = {xpath: "//*[@id = 'hasCycle']/option[2]"}
     $motorcycle_insurance_no  = {xpath: "//*[@id = 'hasCycle']/option[3]"}
-    $submit_2                   = {id: "btnSubmit"}
+    $submit_2                   = {id: 'btnSubmit'}
   
     attr_reader :driver
     #constructor

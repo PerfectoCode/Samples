@@ -100,11 +100,6 @@ public class KeepTest {
 			driver.closeApp();
 		    driver.close();
 
-		    // In case you want to download the report or the report attachments, do it here.
-		    PerfectoLabUtils.downloadReport(driver, "pdf", "C:\\test\\report" + reportName);
-		    // PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-		    // PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
-
 		    System.out.println(repClient.getReportUrl());
 
 		} catch (Exception e) {

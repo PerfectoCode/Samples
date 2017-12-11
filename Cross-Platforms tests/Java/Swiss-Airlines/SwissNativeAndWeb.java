@@ -205,13 +205,6 @@ public class SwissNativeAndWeb {
 
                 mobileDriver.close();
                 desktopDriver.close();
-                params.clear();
-                desktopDriver.executeScript("mobile:execution:close", params);
-                // In case you want to download the report or the report attachments, do it here.
-                PerfectoLabUtils.downloadReport(mobileDriver, "pdf", "C:\\test\\report - Swiss airlines");
-                // PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-                // PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -87,11 +87,7 @@ public class DynamicXpathAndValues {
 			e.printStackTrace();
 		} finally {
 			try {
-				
 				driver.close();
-				// Download a pdf version of the execution report
-				PerfectoLabUtils.downloadReport(driver, "pdf", "C:\\Users\\user\\Desktop\\report");
-
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

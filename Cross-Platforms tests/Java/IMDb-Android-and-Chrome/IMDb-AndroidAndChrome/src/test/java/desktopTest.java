@@ -35,7 +35,7 @@ public class desktopTest{
 			
 		}catch(Exception e){
 				e.printStackTrace();
-			}
+		}
 	}
 	
 	public void search(){
@@ -63,5 +63,4 @@ public class desktopTest{
 		driver.close();
 		driver.quit();
 	}
-	
 }

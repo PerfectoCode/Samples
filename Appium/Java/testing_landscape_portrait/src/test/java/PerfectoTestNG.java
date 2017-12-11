@@ -60,8 +60,5 @@ public class PerfectoTestNG {
         } finally {
             driver.quit();
         }
-
     }
-
-
 }

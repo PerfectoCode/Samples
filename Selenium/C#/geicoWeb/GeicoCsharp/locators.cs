@@ -6,10 +6,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 
-namespace GeicoCsharp
-{
-    class GeicoMainPage
-    {
+namespace GeicoCsharp {
+
+    class GeicoMainPage {
 
         private readonly IWebDriver driver;
 
@@ -37,11 +36,10 @@ namespace GeicoCsharp
         {
             return driver.FindElement(By.Id("submitButton"));
         }
-
     }
 
-    class CustumerInfoPage
-    {
+    class CustumerInfoPage {
+
         private readonly IWebDriver driver;
 
         public CustumerInfoPage(IWebDriver driver)
@@ -113,6 +111,5 @@ namespace GeicoCsharp
         {
             return driver.FindElement(By.Id("btnSubmit"));
         }
-
     }
 }

@@ -14,9 +14,6 @@ public class driverCreator {
     //static String PERFECTO_USER = "MY_USER";
     //static String PERFECTO_PASS = "MY_PASS";
 
-
-
-
     public static RemoteWebDriver init_driver(String platformName, String platformVersion, String browserName, String browserVersion, String screenResolution) throws MalformedURLException {
 
         DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
@@ -31,5 +28,4 @@ public class driverCreator {
 
         return new RemoteWebDriver(new URL("https://" + PERFECTO_HOST + "/nexperience/perfectomobile/wd/hub"), capabilities);
     }
-
 }

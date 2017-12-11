@@ -20,29 +20,23 @@ public class RemoteWebDriverTest {
     public static void main(String[] args) throws MalformedURLException, IOException {
         System.out.println("Run started");
 
-
         String browserName = "mobileOS";
         DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
         String host = "myHost.perfectomobile.com";
         capabilities.setCapability("user", "myUser");
         capabilities.setCapability("password", "myPassword");
 
-
         //We don't want to select the device, and instead use person device
         //capabilities.setCapability("deviceName", "12345");
-
 
         // Use the automationName capability to define the required framework - Appium (this is the default) or PerfectoMobile.
         // capabilities.setCapability("automationName", "PerfectoMobile");
 
-
         // Call this method if you want the script to share the devices with the Perfecto Lab plugin.
         setExecutionIdCapability(capabilities, host);
 
-
         // Add a persona to your script (see https://community.perfectomobile.com/posts/1048047-available-personas)
         capabilities.setCapability(WindTunnelUtils.WIND_TUNNEL_PERSONA_CAPABILITY, WindTunnelUtils.GEORGIA);
-
 
         // Name your script
         capabilities.setCapability("scriptName", "WindTunnelSample");
@@ -50,7 +44,6 @@ public class RemoteWebDriverTest {
 
         RemoteWebDriver driver = new RemoteWebDriver(new URL("https://" + host + "/nexperience/perfectomobile/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
 
         try {
             // write your code here
@@ -114,8 +107,6 @@ public class RemoteWebDriverTest {
             // Wind Tunnel: Add timer to Wind Tunnel Report
             WindTunnelUtils.reportTimer(driver, uxTimer1, 2000, "Checkpoint load time at welcome page.", "uxTimer1");
 
-
-            
             if (!resultString.equalsIgnoreCase("true")) {
                 System.out.println("'Welcome back John' text not found");
                 // Wind Tunnel: Add failure point of interest to the Wind Tunnel report
@@ -125,7 +116,6 @@ public class RemoteWebDriverTest {
             // Wind Tunnel: Add success point of interest to the Wind Tunnel report
             WindTunnelUtils.pointOfInterest(driver, "Point Of Interest 2: Welcome page", WindTunnelUtils.SUCCESS);
 
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -133,28 +123,16 @@ public class RemoteWebDriverTest {
 ​                // Stop collection of device vitals
 ​                params.clear();
 ​                result = driver.executeScript("mobile:monitor:stop", params);
-
                 driver.close();
-
-
-                // In case you want to download the report or the report attachments, do it here.
-                // PerfectoLabUtils.downloadReport(driver, "pdf", "C:\\test\\report");
-                // PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-                // PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-
             driver.quit();
         }
 
-
         System.out.println("Run ended");
     }
-
 
     // Wind Tunnel: Gets the user experience (UX) timer
     private static long timerGet(RemoteWebDriver driver, String timerType) {
@@ -172,20 +150,17 @@ public class RemoteWebDriverTest {
         executeMethod.execute(DriverCommand.SWITCH_TO_CONTEXT, params);
     }
 
-
     private static String getCurrentContextHandle(RemoteWebDriver driver) {
         RemoteExecuteMethod executeMethod = new RemoteExecuteMethod(driver);
         String context =  (String) executeMethod.execute(DriverCommand.GET_CURRENT_CONTEXT_HANDLE, null);
         return context;
     }
 
-
     private static List<String> getContextHandles(RemoteWebDriver driver) {
         RemoteExecuteMethod executeMethod = new RemoteExecuteMethod(driver);
         List<String> contexts =  (List<String>) executeMethod.execute(DriverCommand.GET_CONTEXT_HANDLES, null);
         return contexts;
     }
-
 
     private static void setExecutionIdCapability(DesiredCapabilities capabilities, String host) throws IOException {
         EclipseConnector connector = new EclipseConnector();

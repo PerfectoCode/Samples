@@ -22,8 +22,6 @@ public class mobileSessionMaps{
 		//old school credentials
 		//capabilities.setCapability("user", WebMapsTest.user);
 		//capabilities.setCapability("password", WebMapsTest.pswd);
-
-		capabilities.setCapability("deviceName", "MyDeviceID");
 		
 		driver = new AndroidDriver<>(new URL("https://" + WebMapsTest.host + "/nexperience/perfectomobile/wd/hub"), capabilities);
 	}
@@ -41,23 +39,11 @@ public class mobileSessionMaps{
 			ex.printStackTrace();
 		}finally {
 			try {
-				
 				driver.close();
-				
-				Map<String, Object> params = new HashMap<>();
-				driver.executeScript("mobile:execution:close", params);
-
-				// In case you want to download the report or the reportattachments, do it here.
-				PerfectoLabUtils.downloadReport(driver, "pdf", "google maps - Mobile_report");
-				// PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-				// PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
-
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
 			driver.quit();
 		}
 	}
-	
 }

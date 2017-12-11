@@ -9,5 +9,4 @@ public class AppObjects{
 	public static final String loginIMDB	= "//*[@text = 'IMDb']";
 	public static final String watchTrailer = "//*[@label='Watch Trailer']";
 	public static final String IOSWatchTrailer = "//*[@value='rows 1 to 6 of 6']/UIATableCell[1]/UIAButton[2]";
-	
 }

@@ -3,9 +3,6 @@ import time
 from selenium.webdriver import ActionChains
 from selenium.webdriver.remote.command import Command
 from selenium.webdriver.remote.mobile import Mobile
-
-from WindTunnelUtils import WindTunnelUtils
-from PerfectoLabUtils import PerfectoLabUtils
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -34,7 +31,6 @@ class RemoteWebDriverTest:
             'browserName'       : 'Chrome',
             'browserVersion'    : '49'
         }
-
 
         driver = webdriver.Remote("https://" + host + "/nexperience/perfectomobile/wd/hub", capabilities)
         driver.implicitly_wait(15)
@@ -68,15 +64,7 @@ class RemoteWebDriverTest:
             try:
                 # disconnect from the Remote server
                 if driver is not None:
-                    # Retrieve the URL of the Wind Tunnel Report, can be saved to your execution summary and used to download the report at a later point
-                    report_url = driver.capabilities[WindTunnelUtils.SINGLE_TEST_REPORT_URL_CAPABILITY]
-
                     driver.close()
-
-                    # In case you want to download the report or the report attachments, do it here.
-                    # PerfectoLabUtils.download_report(driver, 'pdf', '/test/report')
-                    # PerfectoLabUtils.download_attachment(driver, 'video', '/test/video', 'flv')
-                    # PerfectoLabUtils.download_attachment(driver, 'image', '/test/image', 'jpg')
 
             except Exception as e:
                 print(e)

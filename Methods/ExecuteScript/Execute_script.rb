@@ -6,7 +6,7 @@ token = 'MY_TOKEN'
 # user  = 'MY_USER'
 # pass  = 'MY_PASS'
 
-url   = "http://" + host + "/nexperience/perfectomobile/wd/hub"
+url   = 'http://" + host + "/nexperience/perfectomobile/wd/hub'
   
 capabilities  = {
   #:user             => user,
@@ -23,7 +23,7 @@ driver.manage.timeouts.implicit_wait = 25
 
 #Begin test
 begin
-  puts "Run started"
+  puts 'Run started'
   
   #Navigation
   driver.execute_script('window.location.href = "https://www.amazon.com/";')
@@ -40,7 +40,7 @@ begin
 rescue Exception => e
   puts e
 ensure 
-  puts "Run ended"
+  puts 'Run ended'
   driver.close
   driver.quit
 end

@@ -12,6 +12,7 @@ class GeicoTest:
                             'securityToken' : argv[1],
                             'browserName' : 'mobileOS' 
                              }
+
         HOST = argv[2] #use argv[3] if username and password credentials are used.
         self.driver = webdriver.Remote('https://' + HOST + '/nexperience/perfectomobile/wd/hub' , self.capabilities)
         #self.driver = webdriver.Chrome()

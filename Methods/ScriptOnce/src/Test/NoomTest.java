@@ -117,22 +117,12 @@ public class NoomTest {
         }     
         
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        
 	}
 	
 	@AfterMethod
 	public void finishUp() {
         try {
-            // Retrieve the URL of the Single Test Report, can be saved to your execution summary and used to download the report at a later point
-            String reportURL = (String)(driver.getCapabilities().getCapability(WindTunnelUtils.SINGLE_TEST_REPORT_URL_CAPABILITY));
-
             driver.close();
-
-            // In case you want to download the report or the report attachments, do it here.
-            PerfectoLabUtils.downloadReport(driver, "pdf", "C:\\test\\report" + reportName);
-            // PerfectoLabUtils.downloadAttachment(driver, "video", "C:\\test\\report\\video", "flv");
-            // PerfectoLabUtils.downloadAttachment(driver, "image", "C:\\test\\report\\images", "jpg");
-
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -41,6 +41,4 @@ public class AppLocators{
 	final static String FirstWebResult		= "//*[@class = 'findResult odd' ]/td[2]/a[1]";
 	final static String webYourRating		= "//*[@class ='star-rating-star rating']";
 	final static String webDeleteRating		= "//*[@class = 'star-rating-delete']";
-
-
 }

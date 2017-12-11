@@ -49,12 +49,6 @@ namespace GeicoCsharp
             try
             {
                 driver.Close();
-                //In case you would like download the report enable the following script:
-                var parameters = new Dictionary<string, object>();
-                driver.ExecuteScript("mobile:execution:close", parameters);
-                driver.DownloadReport(DownloadReportTypes.pdf, "C:/test/report");
-                //End report section.
-
             }
             catch (Exception e)
             {
@@ -98,7 +92,6 @@ namespace GeicoCsharp
             {
                 Console.WriteLine(e);
             }
-
         }
     }
 }

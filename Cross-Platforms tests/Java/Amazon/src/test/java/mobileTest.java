@@ -93,7 +93,6 @@ public class mobileTest {
   		}catch(Exception e){
   			System.out.println(e);
   		}
-  		
   	}
 
   	//Open application method.
@@ -119,6 +118,7 @@ public class mobileTest {
 				driver.findElement(By.xpath(TestObjects.password)).sendKeys(Properties.AppPass);
 				driver.findElement(By.xpath(TestObjects.login_button)).click();
 			}
+
 			else{//Android require click on the fields.
 				wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(TestObjects.Sign_in)))).click();
 				driver.findElement(By.xpath(TestObjects.userName)).click();
@@ -129,7 +129,7 @@ public class mobileTest {
 			}
 			
 			this.LoggedIn = true;
-		}catch(Exception e){
+		} catch(Exception e){
 			System.out.println(e);
 		}
 	}
@@ -141,12 +141,12 @@ public class mobileTest {
 			try{//Finding search area could be problematic therefore trying twice. 
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TestObjects.Search))).sendKeys(Properties.SearchValue);
 				menu_loaded = true;
-			}catch(Exception e){}
+			}catch(Exception e) {}
 			if(!menu_loaded){
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TestObjects.Search))).sendKeys(Properties.SearchValue);
 			}
 		}
-		else{
+		else {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TestObjects.Search))).click();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TestObjects.AndroidSearch2))).sendKeys(Properties.SearchValue);
 		}
@@ -155,18 +155,18 @@ public class mobileTest {
 		driver.findElement(By.xpath(TestObjects.DarkSideCD)).click();
 		//This part of code separate two cases of ScrollTO method.
 		//In order to find Basket button scrolling down and search for the text "Add to Basket" .
-		try{
+		try {
 			if(os.equals("iOS")){
 				driver.findElementByClassName("UIAButton");
 				//Scrolling down and find element by it's tag name.
 				IOSElement tbl = (IOSElement) driver.findElementByClassName("UIAWebView");
 				tbl.scrollTo("Add to Basket").click();
 			}
-			else{
+			else {
 					driver.scrollTo("Add to Basket");
 					driver.findElement(By.xpath(TestObjects.Android_AddtoBasket)).click();
 			}
-		}catch(Exception e){
+		} catch(Exception e){
 			System.out.println(e);
 		}
 	}
@@ -174,19 +174,19 @@ public class mobileTest {
 	//signOut method.
 	private void signOut(){
 		openAPP();//Reopen the application  in order to back the main menu.
-		try{
+		try {
 			driver.findElement(By.xpath(TestObjects.AppMenu)).click();
 			if(os.equals("iOS")){
 				driver.findElement(By.xpath(TestObjects.SignOut)).click();
 				driver.findElement(By.xpath(TestObjects.PopUpSignOut)).click();
 			}
-			else{
+			else {
 				driver.scrollTo("Not "+Properties.NameOnly+"? Sign out");
 				driver.findElement(By.xpath("//*[@text='Not "+Properties.NameOnly+"? Sign out']")).click();
 				driver.findElement(By.xpath(TestObjects.Android_PopUpSignOut)).click();
 			}
 			this.LoggedIn = false;
-		}catch(Exception e){
+		} catch(Exception e){
 			System.out.println("Sign out unsuccessfully.");
 		}
 	}

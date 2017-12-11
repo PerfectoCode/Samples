@@ -39,7 +39,6 @@ public class DragAndDropSample {
 	  	driver.manage().window().maximize();
 	  	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
-
     
     @Test
     public void f() {
@@ -93,5 +92,4 @@ public class DragAndDropSample {
     		e.printStackTrace();
     	}
     }
-
 }

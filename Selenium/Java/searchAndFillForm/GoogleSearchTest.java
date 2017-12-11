@@ -73,13 +73,10 @@ public class GoogleSearchTest{
 	public static void EndTest(){
 		try{
 			driver.close();
-			PerfectoLabUtils.downloadReport(driver, "pdf", "report"); // Downloads the report using perfecto utils
-			
-		}catch(Exception e){
+		} catch(Exception e){
 			e.printStackTrace();
 		}
 		
 		driver.quit();
 	}
-	
 }
