@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="TestNG POC" parallel="tests">
+
+	<listeners>
+		<!-- Don't change this listener -->
+		<listener
+			class-name="com.perfecto.commons.testng.TestNGListener" />
+	</listeners>
+
+	<!-- Select Specific Device for the test -->
+	<test name="ios_rotate" parallel="methods" enabled="true">
+
+		<!-- Desired Capabilities to include -->
+		<parameter name="platformName" value="iOS"></parameter>
+		<parameter name="deviceName" value="abn563gdv"></parameter>
+		<groups>
+			<run>
+				<include name="rotate_screen" />
+			</run>
+		</groups>
+		<packages>
+			<package name="com.perfecto.tests.*" />
+		</packages>
+	</test> <!-- primarycard_validation -->
+
+	<!-- Select Any Android Device for the test with OS version 7.* -->
+	<test name="android_primarycard_validation" parallel="methods"
+		enabled="false">
+
+		<!-- Desired Capabilities to include -->
+		<parameter name="platformName" value="Android"></parameter>
+		<parameter name="model" value=".*"></parameter>
+		<parameter name="platformVersion" value="7.*"></parameter>
+
+		<groups>
+			<run>
+				<include name="primarycard_validation" />
+			</run>
+		</groups>
+		<packages>
+			<package name="com.perfecto.tests.*" />
+		</packages>
+	</test> <!-- primarycard_validation -->
+
+	<!-- Test is disabled -->
+	<test name="android_another" parallel="methods" enabled="false">
+
+		<!-- Desired Capabilities to include -->
+		<parameter name="platformName" value="Android"></parameter>
+		<parameter name="model" value=".*"></parameter>
+		<parameter name="platformVersion" value="7.*"></parameter>
+
+		<groups>
+			<run>
+				<include name="anothertest" />
+			</run>
+		</groups>
+		<packages>
+			<package name="com.perfecto.tests.*" />
+		</packages>
+	</test> <!-- Another Test -->
+
+</suite> <!-- TestNG POC -->
