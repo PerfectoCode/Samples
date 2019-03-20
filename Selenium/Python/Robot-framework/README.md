@@ -5,7 +5,7 @@ The following sample demonstrate using [Robot](http://robotframework.org/) frame
 ### Getting Started: 
 - Make sure Python 2.7 is installed (use python --version) and configured in Env path. 
 - Download robotframework & selenium2library: <br/>
-Use `pip install robotframework==2.9.2` and `pip install selenium2library`. 
+Use `pip install robotframework` and `pip install robotframework-selenium2library`. 
 Download Perfecto repot with 'pip install perfecto'
 
 Follow more information in - https://developers.perfectomobile.com/display/PD/Download+SDK#DownloadSDK-Python
@@ -21,4 +21,4 @@ Follow more information in - https://developers.perfectomobile.com/display/PD/Do
 | ... | password:Password
 ```
 
-- Execute the test using `pybot .` or separate files 'pybot perfecto_Web_Desktop.robot' and 'pybot perfecto_Web_Mobile.robot', which will run test in Mobile and Desktop web browsers
+- Execute the test using `robot .` or separate files 'robot perfecto_Web_Desktop.robot' and 'robot perfecto_Web_Mobile.robot', which will run test in Mobile and Desktop web browsers
