@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181213 11:19:47.434" generator="Robot 3.0.4 (Python 2.7.10 on darwin)">
+<suite source="/Users/admin/Guru/Perfecto/Samples-master/Robot-framework/perfecto_Web_Desktop.robot" id="s1" name="perfecto Web Desktop">
+<kw type="setup" name="Open Browser" library="ExtendedSelenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${CAPABILITIES}</arg>
+</arguments>
+<msg timestamp="20181213 11:19:47.904" level="INFO">Opening browser 'firefox' to base url 'https://google.com/' through remote server at 'https://partners.perfectomobile.com/nexperience/perfectomobile/wd/hub'</msg>
+<msg timestamp="20181213 11:20:24.864" level="INFO">/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<status status="PASS" endtime="20181213 11:20:24.866" starttime="20181213 11:19:47.903"></status>
+</kw>
+<test id="s1-t1" name="Example using robot with Perfecto">
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>test1</arg>
+<arg>test2</arg>
+</arguments>
+<assign>
+<var>${tags}</var>
+</assign>
+<msg timestamp="20181213 11:20:24.871" level="INFO">${tags} = [u'test1', u'test2']</msg>
+<status status="PASS" endtime="20181213 11:20:24.871" starttime="20181213 11:20:24.870"></status>
+</kw>
+<kw name="Get Reporting Client" library="sample">
+<assign>
+<var>${reporting_client}</var>
+</assign>
+<msg timestamp="20181213 11:20:24.872" level="INFO">&lt;selenium.webdriver.remote.webdriver.WebDriver (session="25e83a96-87b7-4bd0-8ffc-c2427c2ea36c")&gt;
+&lt;perfecto.client.PerfectoReportiumClient.PerfectoReportiumClient instance at 0x10f7c1488&gt;</msg>
+<msg timestamp="20181213 11:20:24.872" level="INFO">${reporting_client} = &lt;perfecto.client.PerfectoReportiumClient.PerfectoReportiumClient instance at 0x10f7c1488&gt;</msg>
+<status status="PASS" endtime="20181213 11:20:24.872" starttime="20181213 11:20:24.871"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${reporting_client}</arg>
+</arguments>
+<msg timestamp="20181213 11:20:24.873" level="INFO">&lt;perfecto.client.PerfectoReportiumClient.PerfectoReportiumClient instance at 0x10f7c1488&gt;</msg>
+<status status="PASS" endtime="20181213 11:20:24.873" starttime="20181213 11:20:24.873"></status>
+</kw>
+<kw name="Reportium Start" library="sample">
+<arguments>
+<arg>${reporting_client}</arg>
+<arg>WebRobotTestPass</arg>
+<arg>${tags}</arg>
+</arguments>
+<msg timestamp="20181213 11:20:27.424" level="INFO">&lt;type 'dict'&gt;</msg>
+<msg timestamp="20181213 11:20:27.424" level="INFO">/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<status status="PASS" endtime="20181213 11:20:27.424" starttime="20181213 11:20:24.874"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>class=gLFyf</arg>
+<arg>${ELEMENT_LOAD_TIME}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="ExtendedSelenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181213 11:20:34.720" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20181213 11:20:34.720" level="INFO">/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<status status="PASS" endtime="20181213 11:20:34.721" starttime="20181213 11:20:27.425"></status>
+</kw>
+<msg timestamp="20181213 11:20:34.724" level="FAIL">ValueError: Element locator with prefix 'class' is not supported</msg>
+<status status="FAIL" endtime="20181213 11:20:34.724" starttime="20181213 11:20:27.424"></status>
+</kw>
+<kw type="teardown" name="Reportium Stop" library="sample">
+<arguments>
+<arg>${reporting_client}</arg>
+<arg>${TEST STATUS}</arg>
+<arg>${TEST MESSAGE}</arg>
+</arguments>
+<msg timestamp="20181213 11:20:36.332" level="INFO">&lt;perfecto.test.TestContext.TestContext instance at 0x10f7b6b00&gt;</msg>
+<msg timestamp="20181213 11:20:36.332" level="INFO">/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<status status="PASS" endtime="20181213 11:20:36.332" starttime="20181213 11:20:34.725"></status>
+</kw>
+<tags>
+<tag>mytest</tag>
+<tag>Tag1</tag>
+<tag>Tag2</tag>
+<tag>Tag3</tag>
+</tags>
+<status status="FAIL" endtime="20181213 11:20:36.332" critical="yes" starttime="20181213 11:20:24.867">ValueError: Element locator with prefix 'class' is not supported</status>
+</test>
+<test id="s1-t2" name="Example using robot with Perfecto Fail">
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>test1</arg>
+<arg>test2</arg>
+</arguments>
+<assign>
+<var>${tags}</var>
+</assign>
+<msg timestamp="20181213 11:20:36.337" level="INFO">${tags} = [u'test1', u'test2']</msg>
+<status status="PASS" endtime="20181213 11:20:36.337" starttime="20181213 11:20:36.337"></status>
+</kw>
+<kw name="Get Reporting Client" library="sample">
+<assign>
+<var>${reporting_client}</var>
+</assign>
+<msg timestamp="20181213 11:20:36.338" level="INFO">&lt;selenium.webdriver.remote.webdriver.WebDriver (session="25e83a96-87b7-4bd0-8ffc-c2427c2ea36c")&gt;
+&lt;perfecto.client.PerfectoReportiumClient.PerfectoReportiumClient instance at 0x10f7f4248&gt;</msg>
+<msg timestamp="20181213 11:20:36.338" level="INFO">${reporting_client} = &lt;perfecto.client.PerfectoReportiumClient.PerfectoReportiumClient instance at 0x10f7f4248&gt;</msg>
+<status status="PASS" endtime="20181213 11:20:36.338" starttime="20181213 11:20:36.337"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${reporting_client}</arg>
+</arguments>
+<msg timestamp="20181213 11:20:36.338" level="INFO">&lt;perfecto.client.PerfectoReportiumClient.PerfectoReportiumClient instance at 0x10f7f4248&gt;</msg>
+<status status="PASS" endtime="20181213 11:20:36.338" starttime="20181213 11:20:36.338"></status>
+</kw>
+<kw name="Reportium Start" library="sample">
+<arguments>
+<arg>${reporting_client}</arg>
+<arg>WebRobotTestFail</arg>
+<arg>${tags}</arg>
+</arguments>
+<msg timestamp="20181213 11:20:38.584" level="INFO">&lt;type 'dict'&gt;</msg>
+<msg timestamp="20181213 11:20:38.584" level="INFO">/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<status status="PASS" endtime="20181213 11:20:38.584" starttime="20181213 11:20:36.339"></status>
+</kw>
+<kw name="Page Should Contain Element" library="ExtendedSelenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>class=gLFyf</arg>
+<arg>${ELEMENT_LOAD_TIME}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="ExtendedSelenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181213 11:20:48.329" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20181213 11:20:48.330" level="INFO">/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<status status="PASS" endtime="20181213 11:20:48.330" starttime="20181213 11:20:38.585"></status>
+</kw>
+<msg timestamp="20181213 11:20:48.330" level="FAIL">ValueError: Element locator with prefix 'class' is not supported</msg>
+<status status="FAIL" endtime="20181213 11:20:48.330" starttime="20181213 11:20:38.585"></status>
+</kw>
+<kw type="teardown" name="Reportium Stop" library="sample">
+<arguments>
+<arg>${reporting_client}</arg>
+<arg>${TEST STATUS}</arg>
+<arg>${TEST MESSAGE}</arg>
+</arguments>
+<msg timestamp="20181213 11:20:49.745" level="INFO">&lt;perfecto.test.TestContext.TestContext instance at 0x10f7f4878&gt;</msg>
+<msg timestamp="20181213 11:20:49.745" level="INFO">/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<status status="PASS" endtime="20181213 11:20:49.745" starttime="20181213 11:20:48.331"></status>
+</kw>
+<tags>
+<tag>mytest</tag>
+<tag>Tag1</tag>
+<tag>Tag2</tag>
+<tag>Tag3</tag>
+</tags>
+<status status="FAIL" endtime="20181213 11:20:49.746" critical="yes" starttime="20181213 11:20:36.336">ValueError: Element locator with prefix 'class' is not supported</status>
+</test>
+<test id="s1-t3" name="test">
+<kw name="Sample" library="sample">
+<msg timestamp="20181213 11:20:49.747" level="INFO">this is sample fucntion</msg>
+<status status="PASS" endtime="20181213 11:20:49.747" starttime="20181213 11:20:49.747"></status>
+</kw>
+<status status="PASS" endtime="20181213 11:20:49.748" critical="yes" starttime="20181213 11:20:49.746"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="ExtendedSelenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<msg timestamp="20181213 11:21:00.137" level="INFO">/Library/Python/2.7/site-packages/urllib3/connectionpool.py:857: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<status status="PASS" endtime="20181213 11:21:00.137" starttime="20181213 11:20:49.749"></status>
+</kw>
+<status status="FAIL" endtime="20181213 11:21:00.137" starttime="20181213 11:19:47.437"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="1">Critical Tests</stat>
+<stat fail="2" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="2" pass="0">mytest</stat>
+<stat fail="2" pass="0">Tag1</stat>
+<stat fail="2" pass="0">Tag2</stat>
+<stat fail="2" pass="0">Tag3</stat>
+</tag>
+<suite>
+<stat fail="2" id="s1" name="perfecto Web Desktop" pass="1">perfecto Web Desktop</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
