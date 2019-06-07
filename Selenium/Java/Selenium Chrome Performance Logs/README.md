@@ -6,4 +6,3 @@ Perfecto Lab and device setup
 
 Ready for writing your tests
 
-Perfecto Reporting components
